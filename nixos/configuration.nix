@@ -6,14 +6,11 @@
   lib,
   config,
   pkgs,
+  npins,
   ...
 }: {
   # You can import other NixOS modules here
   imports = [
-    # nixos-hardware
-    inputs.hardware.nixosModules.common-cpu-amd
-    inputs.hardware.nixosModules.common-ssd
-    
     # My modules
     ./users.nix
 
@@ -37,6 +34,7 @@
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
+      pulseaudio = true;
     };
   };
 
@@ -62,12 +60,81 @@
     auto-optimise-store = true;
   };
 
-  # FIXME: Add the rest of your current configuration
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.sddm = {
+        enable = true;
+      };
+      windowManager.awesome = {
+        enable = true;
+	package = pkgs.awesome.overrideAttrs (oa: {
+	  version = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
+	  src = pkgs.fetchFromGitHub {
+            owner = "awesomeWM";
+	    repo = "awesome";
+	    rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
+	    hash = "sha256-ZGZ53IWfQfNU8q/hKexFpb/2mJyqtK5M9t9HrXoEJCg=";
+	  };
+	  patches = [];
+	  postPatch = ''
+	    patchShebangs tests/examples/_postprocess.lua
+	  '';
+	});
+	luaModules = with pkgs.luaPackages; [
+          luarocks
+	  luadbi-mysql
+	];
+      };
+    };
+    picom = {
+      enable = true;
+      # settings = {};
+    };
+  };
+
+  # Enabling sound
+  sound.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+    zeroconf.discovery.enable = true;
+  };
+
+  # Enable internet
+  networking.networkmanager.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "Europe/Bucharest";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    useXkbConfig = true;
+  };
 
   networking.hostName = "ASIMOV";
 
-  boot.loader.grub = {
+  boot.loader = {
+    systemd-boot.enable = true;  
+  };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # My traceroute
+  programs.mtr.enable = true;
+
+  # GnuPG
+  programs.gnupg.agent = {
     enable = true;
+    enableSSHSupport = true;
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -81,6 +148,33 @@
       PasswordAuthentication = false;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    gnumake
+    cmake
+    binutils
+    scons
+    python3
+    termite
+    git
+    xclip
+    neovim
+    bat
+    colordiff
+    curl
+    wget
+    papirus-nord
+    upower
+    bluez
+    bluez-alsa
+    bluez-tools
+    xfce.xfce4-power-manager
+    playerctl
+    flameshot
+    kitty
+    alacritty
+    pwvucontrol
+  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

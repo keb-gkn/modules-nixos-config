@@ -10,19 +10,14 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # nix-colors
-    inputs.nix-colors.homeManagerModules.default
-    
     # My modules
-    ./xresources-nord.nix
     ./neovim
   ];
-
-  colorScheme = inputs.nix-colors.homeManagerModules.nord;
 
   nixpkgs = {
     # You can add overlays here
     overlays = [
+      inputs.neovim-nightly-overlay.overlay
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
@@ -40,13 +35,20 @@
   home = {
     username = "arthank";
     homeDirectory = "/home/arthank";
+    sessionVariables = {
+      EDITOR = "neovide";
+    };
   };
+
+  fonts.fontconfig.enable = true;
 
   # Add programs
   home.packages = with pkgs; [
     termite
     bat
     colordiff
+    nerdfonts
+    unstable.neofetch
     xclip
     unstable.eza
     xdg-utils
@@ -55,11 +57,18 @@
     gdb
     gdbm
     cgdb
-    gdbui
-    unstable.godot
+    unstable.godot_4
     scons
     cmakeWithGui
     cmake-format
+    wget
+    curl
+    firefox
+    neovide
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
   ];
 
   # Enable home-manager and git
@@ -70,6 +79,22 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
+
+  # AwesomeWM
+
+  home.file = {
+    "/home/arthank/.config/awesome" = {
+      source = ./awesome;
+      recursive = true;
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";

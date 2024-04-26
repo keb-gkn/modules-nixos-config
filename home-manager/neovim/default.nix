@@ -11,12 +11,11 @@
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-nightly;
-    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     withNodeJs = true;
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs.unstable.vimPlugins; [
       # base distro
       LazyVim
       conform-nvim
@@ -26,6 +25,7 @@
 
       # theme
       nord-nvim
+      dracula-nvim
 
       # UI
       bufferline-nvim
@@ -59,6 +59,8 @@
 
       # LSP
       nvim-lspconfig
+      rust-tools-nvim
+      crates-nvim
       null-ls-nvim
       nvim-lightbulb # lightbulb for quick actions
       
@@ -105,15 +107,19 @@
       nvim-dap-virtual-text
       
       clangd_extensions-nvim
-      cmake-tools-nvim
+
+      # neotest
+      neotest
+      neotest-rust
 
       lazy-nvim
       vim-startuptime
     ];
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs.unstable; [
       libgcc # needed for nvim-treesitter
       libclang
+      lua-language-server
 
       # HTML, CSS, JSON
       vscode-langservers-extracted
@@ -121,6 +127,9 @@
       # LazyVim defaults
       stylua
       shfmt
+
+      # Telescope
+      ripgrep
 
       # Markdown extra
       nodePackages.markdownlint-cli
@@ -132,6 +141,9 @@
       # Custom
       editorconfig-checker
       shellcheck
+
+      # Pazzaz
+      nerdfonts
     ];
 
     extraLuaConfig = ''
@@ -184,7 +196,7 @@
             }
           },
         dev = {
-          path = "${pkgs.vimUtils.packDir config.home-manager.users.arthank.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
+          path = "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start",
           patterns = {"folke", "nvim-telescope", "hrsh7th", "akinsho", "stevearc", "LazyVim", "catppuccin", "saadparwaiz1", "nvimdev", "rafamadriz", "lewis6991", "lukas-reineke", "nvim-lualine", "L3MON4D3", "williamboman", "echasnovski", "nvim-neo-tree", "MunifTanjim", "mfussenegger", "rcarriga", "neovim", "nvim-pack", "nvim-treesitter", "windwp", "JoosepAlviste", "nvim-tree", "nvim-lua", "RRethy", "dstein64", "Saecki", "ggandor", "iamcco", "nvim-neotest", "rouge8", "theHamsta", "SmiteshP", "jbyuki", "simrat39", "b0o", "tpope", "kosayoda" },
         },
         install = {
