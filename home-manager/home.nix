@@ -88,6 +88,7 @@
   };
 
   # AwesomeWM
+
   home.file = {
     "/home/arthank/.config/awesome" = {
       source = ./awesome;
