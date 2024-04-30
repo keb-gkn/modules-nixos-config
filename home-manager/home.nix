@@ -11,13 +11,11 @@
   # You can import other home-manager modules here
   imports = [
     # My modules
-    ./neovim
   ];
 
   nixpkgs = {
     # You can add overlays here
     overlays = [
-      inputs.neovim-nightly-overlay.overlay
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
@@ -52,6 +50,7 @@
     xclip
     unstable.eza
     xdg-utils
+    gnumake
     libclang
     libgcc
     gdb
@@ -74,7 +73,12 @@
   # Enable home-manager and git
   programs = {
     home-manager.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      lfs.enable = true;
+      userEmail = "a.c.pufu@gmail.com";
+      userName = "CloudyChris";
+    };
   };
 
   # Nicely reload system units when changing configs
