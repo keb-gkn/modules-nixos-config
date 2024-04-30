@@ -9,6 +9,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     nur.url = "github:nix-community/NUR";
+
+    neovim-flake.url = "github:jordanisaacs/neovim-flake";
     
     # Libraries
     systems-dep.url = "github:nix-systems/default";
@@ -34,8 +36,6 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
@@ -44,6 +44,7 @@
     nixpkgs-unstable,
     home-manager,
     nix-colors,
+    neovim-flake,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -52,8 +53,6 @@
       "aarch64-linux"
       "i686-linux"
       "x86_64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
     ];
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
@@ -61,7 +60,11 @@
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    packages = forAllSystems (system:
+      import ./pkgs nixpkgs.legacyPackages.${system}
+      {
+        neovim = neovim-flake.packages.${system}.maximal;
+    });
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);

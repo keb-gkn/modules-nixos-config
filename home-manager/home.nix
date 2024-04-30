@@ -56,6 +56,7 @@
     gdb
     gdbm
     cgdb
+    neovim
     unstable.godot_4
     scons
     cmakeWithGui
