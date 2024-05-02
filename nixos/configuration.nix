@@ -25,10 +25,6 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
     ];
 
     # Configure your nixpkgs instance
@@ -162,7 +158,6 @@
     python3
     termite
     xclip
-    neovim
     bat
     colordiff
     curl
@@ -178,6 +173,8 @@
     kitty
     alacritty
     pwvucontrol
+
+    inputs.neovim-flake.packages.x86_64-linux.maximal
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

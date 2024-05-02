@@ -3,8 +3,6 @@
 {
   inputs,
   outputs,
-  lib,
-  config,
   pkgs,
   ...
 }: {
@@ -56,7 +54,6 @@
     gdb
     gdbm
     cgdb
-    neovim
     unstable.godot_4
     scons
     cmakeWithGui
@@ -69,6 +66,8 @@
     xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
+
+    inputs.neovim-flake.packages.x86_64-linux.maximal
   ];
 
   # Enable home-manager and git

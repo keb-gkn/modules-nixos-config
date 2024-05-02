@@ -57,14 +57,13 @@ return function(s)
 
   local get_volume = function()
     awful.spawn.easy_async_with_shell(
-      "./.config/awesome/src/scripts/vol.sh volume",
+      "awk -F \"\\\\\\[\" '{ gsub(\"%\",\"\"); print $1}' <(sh ./.config/awesome/src/scripts/vol.sh volume)",
       function(stdout)
         local icon = icondir .. "volume"
-        stdout = stdout:gsub("%%", "")
         local volume = tonumber(stdout) or 0
         audio_widget.container.audio_layout.spacing = dpi(5)
         audio_widget.container.audio_layout.label.visible = true
-        if volume < 1 then
+        if volume == 0 then
           icon = icon .. "-mute"
           audio_widget.container.audio_layout.spacing = dpi(0)
           audio_widget.container.audio_layout.label.visible = false

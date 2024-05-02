@@ -101,9 +101,9 @@ return function(s)
 
   local function update_osd()
     awful.spawn.easy_async_with_shell(
-      "./.config/awesome/src/scripts/vol.sh volume",
+      "awk -F \"\\\\\\[\" '{ gsub(\"%\",\"\"); print $1}' <(sh ./.config/awesome/src/scripts/vol.sh volume)",
       function(stdout)
-      local volume_level = stdout:gsub("\n", ""):gsub("%%", "")
+      local volume_level = tonumber(stdout) or 0
       awesome.emit_signal("widget::volume")
       volume_osd_widget.container.osd_layout.icon_slider_layout.label_value_layout.value:set_text(volume_level .. "%")
 
@@ -118,7 +118,7 @@ return function(s)
           true
         )
       end
-      volume_level = tonumber(volume_level)
+      volume_level = tonumber(volume_level) or 0
       local icon = icondir .. "volume"
       if volume_level < 1 then
         icon = icon .. "-mute"
@@ -150,9 +150,9 @@ return function(s)
         volume_osd_widget.container.osd_layout.icon_slider_layout.icon_margin1.icon_margin2.icon:set_image(icondir .. "volume-mute" .. ".svg")
       else
         awful.spawn.easy_async_with_shell(
-          "./.config/awesome/src/scripts/vol.sh volume",
+          "awk -F \"\\\\\\[\" '{ gsub(\"%\",\"\"); print $1}' <(sh ./.config/awesome/src/scripts/vol.sh volume)",
           function(stdout2)
-          stdout2 = stdout2:gsub("%%", ""):gsub("\n", "")
+          stdout2 = tonumber(stdout2) or 0
           volume_osd_widget.container.osd_layout.icon_slider_layout.slider_layout.volume_slider:set_value(tonumber(stdout2))
           update_osd()
         end

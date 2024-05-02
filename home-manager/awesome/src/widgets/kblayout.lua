@@ -1,5 +1,5 @@
 ------------------------------
--- This is the audio widget --
+-- This is the keyboard layout widget --
 ------------------------------
 
 -- Awesome Libs
