@@ -43,7 +43,7 @@ return function(s)
       "sh ./.config/awesome/src/scripts/pfp.sh 'userPfp'",
       function(stdout)
         if stdout then
-          profile_picture:set_image(stdout)
+          profile_picture:set_image(awful.util.getdir("config") .. "src/assets/userpfp/" .. "arthank.png")
         else
           profile_picture:set_image(icondir .. "defaultpfp.svg")
         end

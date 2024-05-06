@@ -141,6 +141,9 @@
     "/home/arthank/.face" = {
       source = ./assets/user-icon.png;
     };
+    "/home/arthank/.config/awesome/src/assets/userpfp/arthank.png" = {
+      source = ./assets/user-icon.png;
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
