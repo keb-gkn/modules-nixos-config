@@ -139,7 +139,7 @@
       recursive = true;
     };
     "/home/arthank/.face" = {
-      source = ./awesome/src/assets/userpfp/arthank.png;
+      source = ./assets/user-icon.png;
     };
   };
 
