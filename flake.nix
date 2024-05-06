@@ -11,7 +11,7 @@
     nur.url = "github:nix-community/NUR";
 
     neovim-flake.url = "github:CloudyChris/neovim-flake";
-    
+
     # Libraries
     systems-dep.url = "github:nix-systems/default";
     flake-utils-dep = {
@@ -30,7 +30,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -41,9 +41,7 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
-    nix-colors,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -52,7 +50,7 @@
       "aarch64-linux"
       "x86_64-linux"
     ];
-    
+
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     # Your custom packages
@@ -62,7 +60,7 @@
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-    
+
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
     # Reusable nixos modules you might want to export

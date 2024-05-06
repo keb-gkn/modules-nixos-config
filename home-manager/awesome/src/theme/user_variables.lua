@@ -59,13 +59,13 @@ user_vars = {
   wallpaper = home .. "/.config/awesome/src/assets/fuji.jpg",
 
   -- Naming scheme for the powermenu, userhost = "user@hostname", fullname = "Firstname Surname", something else ...
-  namestyle = "userhost",
+  namestyle = "fullname",
 
   -- List every Keyboard layout you use here comma seperated. (run localectl list-keymaps to list all averiable keymaps)
-  kblayout = { "de", "ru" },
+  kblayout = { "ro", "fr", "ru" },
 
   -- Your filemanager that opens with super+e
-  file_manager = "thunar",
+  file_manager = "dolphin",
 
   -- Screenshot program to make a screenshot when print is hit
   screenshot_program = "flameshot gui",
@@ -83,17 +83,6 @@ user_vars = {
   dock_programs = {
     { "Alacritty", "alacritty", "Alacritty" },
     { "firefox", "firefox", "Firefox" },
-    { "discord", "discord", "Discord" },
-    { "Spotify", "flatpak run com.spotify.Client", "Spotify" },
-    { "Code", "code", "Visual Studio Code" },
-    { "processing-app-Base", "arduino", "Arduino IDE" },
-    { "Zoom", "flatpak run us.zoom.Zoom", "Zoom" },
-    { "Thunderbird", "thunderbird", "Thunderbird" },
-    { "Mattermost", "mattermost-desktop", "Mattermost" },
-    { "Blender", "blender", "Blender" },
-    { "Steam", "steam", "Steam" },
-    { "FreeCAD", "freecad", "FreeCAD" },
-    { "Thunar", "thunar", "Dateien" },
-    { "Windows", "virsh start Windows_11", "Windows 11", "/home/crylia/Bilder/windows.png", false, 50 }
+    { "nautilus", "nautilus", "Nautilus" }
   }
 }

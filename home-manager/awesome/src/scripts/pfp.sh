@@ -2,47 +2,30 @@
 
 case $1 in
 
-  "userPfp")
-    iconPath="/var/lib/AccountsService/icons/$USER"
+"userPfp")
+	userIconPath="$HOME/.face"
 
-    userIconPath="$HOME/.config/awesome/src/assets/userpfp/"
+	awesomeIconPath="$HOME/.config/awesome/src/assets/userpfp/$USER.png"
 
-    if [[ -f "$userIconPath" ]];
-    then
-        if [[ -f "$iconPath" ]];
-        then
-            if ! cmp --silent "$userIconPath.png" "$iconPath";
-            then
-                cp "$iconPath" "$userIconPath$USER.png"
-            fi
-            printf "$userIconPath.png"
-        else
-            printf "$userIconPath.png"
-        fi
-        exit;
-    else
-        if [[ -f "$iconPath" ]];
-        then
-            cp "$iconPath" "$userIconPath$USER.png"
-            printf "$userIconPath$USER.png"
-            exit;
-        fi
-    fi
-  ;;
+	if [[ -f "$userIconPath" ]]; then
+		printf "$userIconPath"
+		exit
+	else
+		printf "$awesomeIconPath"
+	fi
+	;;
 
-  "userName")
-    fullname="$(getent passwd `whoami` | cut -d ':' -f 5)"
-    user="$(whoami)"
-    host="$(hostname)"
-    if [[ "$2" == "userhost" ]];
-    then
-        printf "$user@$host"
-    elif [[ "$2" == "fullname" ]];
-    then
-        printf "$fullname"
-    else
-        printf "Rick Astley"
-    fi
-  ;;
+"userName")
+	fullname="$(getent passwd $(whoami) | cut -d ':' -f 1)"
+	user="$(whoami)"
+	host="$(hostname)"
+	if [[ "$2" == "userhost" ]]; then
+		printf "$user@$host"
+	elif [[ "$2" == "fullname" ]]; then
+		printf "$fullname"
+	else
+		printf "The Abyss"
+	fi
+	;;
 
 esac

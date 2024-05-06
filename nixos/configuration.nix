@@ -6,13 +6,13 @@
   lib,
   config,
   pkgs,
-  npins,
   ...
 }: {
   # You can import other NixOS modules here
   imports = [
     # My modules
     ./users.nix
+    ./xresources-nord.nix
 
     # Hardware configuration (nixos-generate-config)
     ./hardware-configuration.nix
@@ -59,28 +59,32 @@
   services = {
     xserver = {
       enable = true;
-      displayManager.sddm = {
-        enable = true;
+      displayManager = {
+        defaultSession = "none+awesome";
+        sddm = {
+          enable = true;
+          theme = "nord";
+        };
       };
       windowManager.awesome = {
         enable = true;
-	package = pkgs.awesome.overrideAttrs (oa: {
-	  version = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
-	  src = pkgs.fetchFromGitHub {
+        package = pkgs.awesome.overrideAttrs {
+          version = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
+          src = pkgs.fetchFromGitHub {
             owner = "awesomeWM";
-	    repo = "awesome";
-	    rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
-	    hash = "sha256-ZGZ53IWfQfNU8q/hKexFpb/2mJyqtK5M9t9HrXoEJCg=";
-	  };
-	  patches = [];
-	  postPatch = ''
-	    patchShebangs tests/examples/_postprocess.lua
-	  '';
-	});
-	luaModules = with pkgs.luaPackages; [
+            repo = "awesome";
+            rev = "8b1f8958b46b3e75618bc822d512bb4d449a89aa";
+            hash = "sha256-ZGZ53IWfQfNU8q/hKexFpb/2mJyqtK5M9t9HrXoEJCg=";
+          };
+          patches = [];
+          postPatch = ''
+            patchShebangs tests/examples/_postprocess.lua
+          '';
+        };
+        luaModules = with pkgs.luaPackages; [
           luarocks
-	  luadbi-mysql
-	];
+          luadbi-mysql
+        ];
       };
     };
     picom = {
@@ -118,7 +122,7 @@
   networking.hostName = "ASIMOV";
 
   boot.loader = {
-    systemd-boot.enable = true;  
+    systemd-boot.enable = true;
   };
 
   # Enable CUPS to print documents.
@@ -150,19 +154,36 @@
     };
   };
 
+  qt.style = "breeze";
+
   environment.systemPackages = with pkgs; [
+    # build tools
     gnumake
     cmake
     binutils
+    libgcc
+    libclang
     scons
     python3
+
+    # terminals
+    alacritty
     termite
-    xclip
+
+    #shell utils
     bat
     colordiff
     curl
     wget
+
+    # icons
     papirus-nord
+
+    # cursors
+    nordzy-cursor-theme
+
+    # utils
+    xclip
     upower
     bluez
     bluez-alsa
@@ -171,10 +192,57 @@
     playerctl
     flameshot
     kitty
-    alacritty
     pwvucontrol
 
+    # xorg
+    xorg.xrdb
+    xorg.xfs
+    xorg.xfd
+    xorg.xwd
+    xorg.xpr
+    xorg.xsm
+    xorg.xev
+    xorg.xwud
+    xorg.xset
+    xorg.xmag
+    xorg.luit
+    xorg.xprop
+    xorg.xmore
+    xorg.xload
+    #xorg.xkill
+    #xorg.xinit
+    #xorg.xhost
+    xorg.xrandr
+    xorg.imake
+    xorg.xvinfo
+    xorg.xinput
+    xorg.xgamma
+    xorg.xcmsdb
+    xorg.xkbevd
+    xorg.xmodmap
+    xorg.xkbcomp
+    xorg.xfsinfo
+    xorg.viewres
+    xorg.smproxy
+    xorg.xstdcmap
+    xorg.xsetroot
+    xorg.xrefresh
+    xorg.xmessage
+    xorg.xkbprint
+
+    # settings
+    xsettingsd
+
+    # neovim
+    neovide
     inputs.neovim-flake.packages.x86_64-linux.maximal
+
+    # sddm
+    sddm-themes.nord
+    libsForQt5.full
+    libsForQt5.plasma-framework
+    libsForQt5.breeze-qt5
+    libsForQt5.breeze-icons
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

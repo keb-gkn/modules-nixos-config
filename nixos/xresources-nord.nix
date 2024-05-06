@@ -5,9 +5,7 @@
   pkgs,
   lib,
   ...
-}:
-
-{
+}: {
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
       #define nord0 #2E3440

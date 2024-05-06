@@ -40,10 +40,10 @@ return function(s)
   -- TODO: If the user doesnt have AccountsService look into $HOME/.faces
   local update_profile_picture = function()
     awful.spawn.easy_async_with_shell(
-      "./.config/awesome/src/scripts/pfp.sh 'userPfp'",
+      "sh ./.config/awesome/src/scripts/pfp.sh 'userPfp'",
       function(stdout)
         if stdout then
-          profile_picture:set_image(stdout:gsub("\n", ""))
+          profile_picture:set_image(stdout)
         else
           profile_picture:set_image(icondir .. "defaultpfp.svg")
         end
@@ -55,10 +55,10 @@ return function(s)
   -- Get the full username(if set) and the username + hostname
   local update_user_name = function()
     awful.spawn.easy_async_with_shell(
-      "./.config/awesome/src/scripts/pfp.sh 'userName' '" .. user_vars.namestyle .. "'",
+      "sh ./.config/awesome/src/scripts/pfp.sh 'userName' '" .. user_vars.namestyle .. "'",
       function(stdout)
-        if stdout:gsub("\n", "") == "Rick Astley" then
-          profile_picture:set_image(awful.util.getdir("config") .. "src/assets/userpfp/" .. "rickastley.jpg")
+        if stdout:gsub("\n", "") == "The Abyss" then
+          profile_picture:set_image(awful.util.getdir("config") .. "src/assets/userpfp/" .. "arthank.png")
         end
         profile_name:set_text(stdout)
       end

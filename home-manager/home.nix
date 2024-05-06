@@ -38,36 +38,77 @@
 
   fonts.fontconfig.enable = true;
 
+  home.pointerCursor = {
+    name = "Nordzy-cursors";
+    package = pkgs.nordzy-cursor-theme;
+    x11.enable = true;
+    gtk.enable = true;
+    size = 32;
+  };
+
   # Add programs
   home.packages = with pkgs; [
+    # terminals
     termite
+    alacritty
+
+    # web browser
+    firefox
+
+    # shell utils
     bat
     colordiff
-    nerdfonts
     unstable.neofetch
-    xclip
     unstable.eza
+
+    # fonts
+    nerdfonts
+
+    # utils
+    xclip
     xdg-utils
+    wget
+    curl
+
+    # build tools
     gnumake
     libclang
     libgcc
     gdb
     gdbm
     cgdb
-    unstable.godot_4
     scons
     cmakeWithGui
     cmake-format
-    wget
-    curl
-    firefox
-    neovide
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
 
+    # game dev
+    unstable.godot_4
+
+    # editor
+    neovide
     inputs.neovim-flake.packages.x86_64-linux.maximal
+
+    # icons
+    papirus-nord
+
+    # cursors
+    nordzy-cursor-theme
+
+    # gnome bs
+    gnome.gnome-settings-daemon
+    gsettings-desktop-schemas
+    gnome.dconf-editor
+    gnome.zenity
+
+    # file explorer
+    gnome.nautilus
+    nautilus-open-any-terminal
+    gnome.nautilus-python
+    gnome.sushi
+
+    # ssh
+    gnome.gnome-keyring
+    gnome.libgnome-keyring
   ];
 
   # Enable home-manager and git
@@ -96,6 +137,9 @@
     "/home/arthank/.config/awesome" = {
       source = ./awesome;
       recursive = true;
+    };
+    "/home/arthank/.face" = {
+      source = ./awesome/src/assets/userpfp/arthank.png;
     };
   };
 
