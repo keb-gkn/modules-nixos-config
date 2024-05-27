@@ -164,10 +164,11 @@
     libgcc
     libclang
     scons
-    python3
-
-    # python libs
-    python311Packages.requests
+    (python3.withPackages (ps:
+      with ps; [
+        pip
+        requests
+      ]))
 
     # terminals
     alacritty

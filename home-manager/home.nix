@@ -55,6 +55,9 @@
     # web browser
     firefox
 
+    # apps
+    disrcord
+
     # shells
     fish
 
@@ -144,14 +147,6 @@
     };
     "/home/arthank/.config/fish" = {
       source = ./fish;
-      recursive = true;
-    };
-    "/home/arthank/.discord/download/.keep" = {
-      source = builtins.toFile "keep" "";
-      recursive = true;
-    };
-    "/home/arthank/.discord/app/.keep" = {
-      source = builtins.toFile "keep" "";
       recursive = true;
     };
     "/home/arthank/.face" = {
