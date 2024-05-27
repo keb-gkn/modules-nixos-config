@@ -56,7 +56,7 @@
     firefox
 
     # apps
-    disrcord
+    discord
 
     # shells
     fish
