@@ -196,57 +196,53 @@ local draw_titlebar = function(c)
   end
 end
 
+function handle_maximized_button(c)
+    if c.maximized
+        then
+          Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
+          Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
+          Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
+        else
+          Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
+          Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
+          Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
+    end
+end
+
+function handle_showing_titlebar(c)
+    if c.floating or (c.floating and c.maximized)
+        then
+          awful.titlebar.hide(c, 'left')
+          awful.titlebar.hide(c, 'right')
+          awful.titlebar.show(c, 'top')
+          awful.titlebar.hide(c, 'bottom')
+        else
+          awful.titlebar.hide(c, 'left')
+          awful.titlebar.hide(c, 'right')
+          awful.titlebar.hide(c, 'top')
+          awful.titlebar.hide(c, 'bottom')
+    end
+end
+
 client.connect_signal(
   "property::maximized",
   function(c)
-    if c.maximized then
-      Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
-    elseif not c.minimized then
-      Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
-    end
+    handle_maximized_button(c) 
   end
 )
 
 client.connect_signal(
   "request::titlebars",
   function(c)
-    if c.maximized then
-      Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
-      draw_titlebar(c)
-    elseif not c.minimized then
-      Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
-      draw_titlebar(c)
-    end
-    if not c.floating or c.maximized then
-      awful.titlebar.hide(c, 'left')
-      awful.titlebar.hide(c, 'right')
-      awful.titlebar.hide(c, 'top')
-      awful.titlebar.hide(c, 'bottom')
-    end
+    handle_maximized_button(c)
+    draw_titlebar(c)
+    handle_showing_titlebar(c)
   end
 )
 
 client.connect_signal(
   'property::floating',
   function(c)
-    if c.floating or (c.floating and c.maximized) then
-      awful.titlebar.show(c, 'left')
-      awful.titlebar.hide(c, 'right')
-      awful.titlebar.hide(c, 'top')
-      awful.titlebar.hide(c, 'bottom')
-    else
-      awful.titlebar.hide(c, 'left')
-      awful.titlebar.hide(c, 'right')
-      awful.titlebar.hide(c, 'top')
-      awful.titlebar.hide(c, 'bottom')
-    end
+    handle_showing_titlebar(c)
   end
 )

@@ -127,7 +127,7 @@ return function(screen, programs)
     return fake_elements
   end
 
-  local function create_incicator_widget(prog)
+  local function create_indicator_widget(prog)
     local container = { layout = wibox.layout.flex.horizontal }
     local clients = client.get()
     for index, pr in ipairs(prog) do
@@ -249,7 +249,7 @@ return function(screen, programs)
       check_for_dock_hide(screen)
       dock:setup {
         dock_elements,
-        create_incicator_widget(programs),
+        create_indicator_widget(programs),
         layout = wibox.layout.fixed.vertical
       }
     end
@@ -261,7 +261,7 @@ return function(screen, programs)
       check_for_dock_hide(screen)
       dock:setup {
         dock_elements,
-        create_incicator_widget(programs),
+        create_indicator_widget(programs),
         layout = wibox.layout.fixed.vertical
       }
     end
@@ -273,7 +273,7 @@ return function(screen, programs)
       check_for_dock_hide(screen)
       dock:setup {
         dock_elements,
-        create_incicator_widget(programs),
+        create_indicator_widget(programs),
         layout = wibox.layout.fixed.vertical
       }
     end
@@ -285,7 +285,7 @@ return function(screen, programs)
       check_for_dock_hide(screen)
       dock:setup {
         dock_elements,
-        create_incicator_widget(programs),
+        create_indicator_widget(programs),
         layout = wibox.layout.fixed.vertical
       }
       dock_intelligent_hide:again()
@@ -308,7 +308,7 @@ return function(screen, programs)
 
   dock:setup {
     get_dock_elements(programs),
-    create_incicator_widget(programs),
+    create_indicator_widget(programs),
     layout = wibox.layout.fixed.vertical
   }
 end

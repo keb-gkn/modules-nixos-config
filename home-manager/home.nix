@@ -69,6 +69,7 @@
     xdg-utils
     wget
     curl
+    dex
 
     # build tools
     gnumake
