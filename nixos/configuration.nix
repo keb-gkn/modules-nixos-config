@@ -166,6 +166,9 @@
     scons
     python3
 
+    # python libs
+    python311Packages.requests
+
     # terminals
     alacritty
     termite

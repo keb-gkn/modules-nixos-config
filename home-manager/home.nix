@@ -146,6 +146,14 @@
       source = ./fish;
       recursive = true;
     };
+    "/home/arthank/.discord/download/.keep" = {
+      source = builtins.toFile "keep" "";
+      recursive = true;
+    };
+    "/home/arthank/.discord/app/.keep" = {
+      source = builtins.toFile "keep" "";
+      recursive = true;
+    };
     "/home/arthank/.face" = {
       source = ./assets/user-icon.png;
     };
