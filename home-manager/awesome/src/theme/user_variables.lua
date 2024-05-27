@@ -74,6 +74,7 @@ user_vars = {
   dock_programs = {
     { "Alacritty", "alacritty", "Alacritty" },
     { "firefox", "firefox", "Firefox" },
+    { "discord", "discord", "Discord"},
     { "nautilus", "nautilus", "Nautilus" }
   }
 }

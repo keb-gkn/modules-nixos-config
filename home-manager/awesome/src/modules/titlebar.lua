@@ -62,7 +62,7 @@ end
 
 local create_titlebar = function(c, bg, size)
   local titlebar = awful.titlebar(c, {
-    position = "left",
+    position = "top",
     bg = bg,
     size = size
   })
@@ -70,14 +70,25 @@ local create_titlebar = function(c, bg, size)
   titlebar:setup {
     {
       {
+        widget = awful.widget.clienticon(c)
+      },
+      margins = dpi(5),
+      widget = wibox.container.margin
+    },
+    {
+      buttons = create_click_events(c),
+      layout = wibox.layout.flex.horizontal
+    },
+    {
+      {
         {
-          awful.titlebar.widget.closebutton(c),
+          awful.titlebar.widget.minimizebutton(c),
           widget = wibox.container.background,
-          bg = color["Red200"],
+          bg = color["Green200"],
           shape = function(cr, height, width)
             gears.shape.rounded_rect(cr, width, height, 4)
           end,
-          id = "closebutton"
+          id = "minimizebutton"
         },
         {
           awful.titlebar.widget.maximizedbutton(c),
@@ -89,34 +100,23 @@ local create_titlebar = function(c, bg, size)
           id = "maximizebutton"
         },
         {
-          awful.titlebar.widget.minimizebutton(c),
+          awful.titlebar.widget.closebutton(c),
           widget = wibox.container.background,
-          bg = color["Green200"],
+          bg = color["Red200"],
           shape = function(cr, height, width)
             gears.shape.rounded_rect(cr, width, height, 4)
           end,
-          id = "minimizebutton"
+          id = "closebutton"
         },
         spacing = dpi(10),
-        layout  = wibox.layout.fixed.vertical,
+        layout  = wibox.layout.fixed.horizontal,
         id      = "spacing"
       },
       margins = dpi(8),
       widget = wibox.container.margin,
       id = "margin"
     },
-    {
-      buttons = create_click_events(c),
-      layout = wibox.layout.flex.vertical
-    },
-    {
-      {
-        widget = awful.widget.clienticon(c)
-      },
-      margins = dpi(5),
-      widget = wibox.container.margin
-    },
-    layout = wibox.layout.align.vertical,
+    layout = wibox.layout.align.horizontal,
     id = "main"
   }
   Hover_signal(titlebar.main.margin.spacing.closebutton, color["Red200"], color["Grey900"])
@@ -126,7 +126,7 @@ end
 
 local create_titlebar_dialog = function(c, bg, size)
   local titlebar = awful.titlebar(c, {
-    position = "left",
+    position = "top",
     bg = bg,
     size = size
   })
@@ -153,7 +153,7 @@ local create_titlebar_dialog = function(c, bg, size)
           id = "minimizebutton"
         },
         spacing = dpi(10),
-        layout  = wibox.layout.fixed.vertical,
+        layout  = wibox.layout.fixed.horizontal,
         id      = "spacing"
       },
       margins = dpi(8),
@@ -162,7 +162,7 @@ local create_titlebar_dialog = function(c, bg, size)
     },
     {
       buttons = create_click_events(c),
-      layout = wibox.layout.flex.vertical
+      layout = wibox.layout.flex.horizontal
     },
     {
       {
@@ -171,7 +171,7 @@ local create_titlebar_dialog = function(c, bg, size)
       margins = dpi(5),
       widget = wibox.container.margin
     },
-    layout = wibox.layout.align.vertical,
+    layout = wibox.layout.align.horizontal,
     id = "main"
   }
   Hover_signal(titlebar.main.margin.spacing.closebutton, color["Red200"], color["Grey900"])
@@ -212,9 +212,9 @@ end
 function handle_showing_titlebar(c)
     if c.floating or (c.screen.selected_tag.layout.name == "floating")
     then
-      awful.titlebar.show(c, 'left')
+      awful.titlebar.hide(c, 'left')
       awful.titlebar.hide(c, 'right')
-      awful.titlebar.hide(c, 'top')
+      awful.titlebar.show(c, 'top')
       awful.titlebar.hide(c, 'bottom')
     else
       awful.titlebar.hide(c, 'left')
