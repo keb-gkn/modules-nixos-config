@@ -76,6 +76,12 @@
     wget
     curl
     dex
+    vulkan-tools
+    wine
+
+    # gaming
+    steam
+    lutris
 
     # build tools
     gnumake
