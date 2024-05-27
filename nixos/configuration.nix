@@ -170,6 +170,9 @@
     alacritty
     termite
 
+    # shells
+    fish
+
     #shell utils
     bat
     colordiff

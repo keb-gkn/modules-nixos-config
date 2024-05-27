@@ -55,6 +55,9 @@
     # web browser
     firefox
 
+    # shells
+    fish
+
     # shell utils
     bat
     colordiff
@@ -137,6 +140,10 @@
   home.file = {
     "/home/arthank/.config/awesome" = {
       source = ./awesome;
+      recursive = true;
+    };
+    "/home/arthank/.config/fish" = {
+      source = ./fish;
       recursive = true;
     };
     "/home/arthank/.face" = {
