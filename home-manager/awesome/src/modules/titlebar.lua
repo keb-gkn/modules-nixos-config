@@ -198,29 +198,29 @@ end
 
 function handle_maximized_button(c)
     if c.maximized
-        then
-          Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
-          Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
-          Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
-        else
-          Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
-          Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
-          Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
+    then
+      Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
+      Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
+      Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
+    else
+      Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
+      Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
+      Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
     end
 end
 
 function handle_showing_titlebar(c)
-    if c.floating
-        then
-          awful.titlebar.hide(c, 'left')
-          awful.titlebar.hide(c, 'right')
-          awful.titlebar.show(c, 'top')
-          awful.titlebar.hide(c, 'bottom')
-        else
-          awful.titlebar.hide(c, 'left')
-          awful.titlebar.hide(c, 'right')
-          awful.titlebar.hide(c, 'top')
-          awful.titlebar.hide(c, 'bottom')
+    if c.floating or (c.screen.selected_tag.layout.name == "floating")
+    then
+      awful.titlebar.show(c, 'left')
+      awful.titlebar.hide(c, 'right')
+      awful.titlebar.hide(c, 'top')
+      awful.titlebar.hide(c, 'bottom')
+    else
+      awful.titlebar.hide(c, 'left')
+      awful.titlebar.hide(c, 'right')
+      awful.titlebar.hide(c, 'top')
+      awful.titlebar.hide(c, 'bottom')
     end
 end
 
@@ -241,8 +241,25 @@ client.connect_signal(
 )
 
 client.connect_signal(
-  'property::floating',
+  "property::floating",
   function(c)
     handle_showing_titlebar(c)
+  end
+)
+
+client.connect_signal(
+  "manage",
+  function(c)
+    handle_showing_titlebar(c)  
+  end
+)
+
+tag.connect_signal(
+  "property::layout",
+  function(t)
+    for _, c in ipairs(t.screen.all_clients)
+    do
+      handle_showing_titlebar(c)
+    end
   end
 )

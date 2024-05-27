@@ -26,7 +26,7 @@ Theme.fg_urgent = color["White"]
 Theme.fg_minimize = color["White"]
 
 Theme.useless_gap = dpi(5) -- Change this to 0 if you dont like window gaps
-Theme.border_width = dpi(0) -- Change this to 0 if you dont like borders
+Theme.border_width = dpi(1) -- Change this to 0 if you dont like borders
 Theme.border_normal = color["Grey800"]
 --Theme.border_focus = color["Red"] -- Doesnt work, no idea why; workaround is in signals.lua
 Theme.border_marked = color["Red400"]
@@ -38,7 +38,7 @@ Theme.menu_bg_normal = color["Grey900"]
 Theme.menu_bg_focus = color["Grey800"]
 Theme.menu_fg_focus = color["White"]
 Theme.menu_border_color = color["Grey800"]
-Theme.menu_border_width = dpi(0)
+Theme.menu_border_width = dpi(1)
 Theme.menu_shape = function(cr, width, heigth)
   gears.shape.rounded_rect(cr, width, heigth, 5)
 end
@@ -80,12 +80,6 @@ local layout_path = Theme_path .. "../assets/layout/"
 -- Here are the icons for the layouts defined, if you want to add more layouts go to main/layouts.lua
 Theme.layout_floating = layout_path .. "floating.svg"
 Theme.layout_tile = layout_path .. "tile.svg"
-Theme.layout_dwindle = layout_path .. "dwindle.svg"
-Theme.layout_fairh = layout_path .. "fairh.svg"
-Theme.layout_fairv = layout_path .. "fairv.svg"
 Theme.layout_fullscreen = layout_path .. "fullscreen.svg"
 Theme.layout_max = layout_path .. "max.svg"
-Theme.layout_cornerne = layout_path .. "cornerne.svg"
 Theme.layout_cornernw = layout_path .. "cornernw.svg"
-Theme.layout_cornerse = layout_path .. "cornerse.svg"
-Theme.layout_cornersw = layout_path .. "cornersw.svg"
