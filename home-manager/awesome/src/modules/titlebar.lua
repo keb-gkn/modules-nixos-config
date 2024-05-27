@@ -210,7 +210,7 @@ function handle_maximized_button(c)
 end
 
 function handle_showing_titlebar(c)
-    if c.floating or (c.floating and c.maximized)
+    if c.floating
         then
           awful.titlebar.hide(c, 'left')
           awful.titlebar.hide(c, 'right')
