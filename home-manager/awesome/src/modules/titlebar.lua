@@ -199,16 +199,18 @@ function handle_maximized_button(c)
 end
 
 function handle_showing_titlebar(c)
-    if c.floating or (c.screen.selected_tag.layout.name == "floating") then
-        awful.titlebar.hide(c, 'left')
-        awful.titlebar.hide(c, 'right')
-        awful.titlebar.show(c, 'top')
-        awful.titlebar.hide(c, 'bottom')
-    else
-        awful.titlebar.hide(c, 'left')
-        awful.titlebar.hide(c, 'right')
-        awful.titlebar.hide(c, 'top')
-        awful.titlebar.hide(c, 'bottom')
+    if c.type == "normal" then
+        if c.floating or (c.screen.selected_tag.layout.name == "floating") then
+            awful.titlebar.hide(c, 'left')
+            awful.titlebar.hide(c, 'right')
+            awful.titlebar.show(c, 'top')
+            awful.titlebar.hide(c, 'bottom')
+        else
+            awful.titlebar.hide(c, 'left')
+            awful.titlebar.hide(c, 'right')
+            awful.titlebar.hide(c, 'top')
+            awful.titlebar.hide(c, 'bottom')
+        end
     end
 end
 
