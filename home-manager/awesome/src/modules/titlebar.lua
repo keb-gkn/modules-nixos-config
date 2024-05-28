@@ -226,7 +226,7 @@ end
 client.connect_signal(
   "property::maximized",
   function(c)
-    handle_maximized_button(c) 
+    handle_maximized_button(c)
   end
 )
 
@@ -243,13 +243,15 @@ client.connect_signal(
   "property::floating",
   function(c)
     handle_showing_titlebar(c)
+    handle_maximized_state_in_tile_layout(c)
   end
 )
 
 client.connect_signal(
   "manage",
   function(c)
-    handle_showing_titlebar(c)  
+    handle_showing_titlebar(c)
+    handle_maximized_state_in_tile_layout(c)
   end
 )
 
