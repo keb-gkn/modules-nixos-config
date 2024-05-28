@@ -73,8 +73,9 @@ user_vars = {
   -- { WM_CLASS, program, name, user_icon, isSteam }
   dock_programs = {
     { "Alacritty", "alacritty", "Alacritty" },
+    { "nautilus", "nautilus", "Nautilus" },
     { "firefox", "firefox", "Firefox" },
     { "discord", "discord", "Discord"},
-    { "nautilus", "nautilus", "Nautilus" }
+    { "steam", "steam", "Steam"},
   }
 }
