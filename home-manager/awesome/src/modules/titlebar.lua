@@ -180,9 +180,9 @@ end
 
 local draw_titlebar = function(c)
   if c.type == 'normal' and not c.requests_no_titlebar then
-        create_titlebar(c, '#121212AA', 35)
+        create_titlebar(c, '#4c566a', 35)
     elseif c.type == 'dialog' then
-        create_titlebar_dialog(c, '#121212AA', 35)
+        create_titlebar_dialog(c, '#4c566a', 35)
   end
 end
 

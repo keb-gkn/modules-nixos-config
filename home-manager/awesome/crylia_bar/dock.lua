@@ -34,7 +34,7 @@ return function(screen, programs)
         shape = function(cr, width, height)
           gears.shape.rounded_rect(cr, width, height, 10)
         end,
-        bg = color["Grey900"],
+        bg = "#4c566a",
         widget = wibox.container.background,
         id = "background"
       },
@@ -46,11 +46,11 @@ return function(screen, programs)
 
     for _, c in ipairs(client.get()) do
       if string.lower(c.class):match(program) and c == client.focus then
-        dock_element.background.bg = color["Grey800"]
+        dock_element.background.bg = "#2E3440"
       end
     end
 
-    Hover_signal(dock_element.background, color["Grey800"], color["White"])
+    Hover_signal(dock_element.background, "#2e3440", "#eceff4")
 
     dock_element:connect_signal(
       "button::press",
@@ -77,7 +77,7 @@ return function(screen, programs)
   local dock = awful.popup {
     widget = wibox.container.background,
     ontop = true,
-    bg = color["Grey900"],
+    bg = "#4c566a",
     visible = true,
     screen = screen,
     type = "dock",
@@ -146,7 +146,7 @@ return function(screen, programs)
           elseif c.fullscreen then
             col = color["PinkA200"]
           else
-            col = color["Grey600"]
+            col = "#d8dee9"
           end
           indicators[i] = wibox.widget {
             widget = wibox.container.background,

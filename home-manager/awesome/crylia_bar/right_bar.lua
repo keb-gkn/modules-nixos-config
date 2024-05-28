@@ -13,7 +13,7 @@ return function(s, widgets)
   local top_right = awful.popup {
     widget = wibox.container.background,
     ontop = false,
-    bg = color["Grey900"],
+    bg = "#4c566a",
     visible = true,
     screen = s,
     placement = function(c) awful.placement.top_right(c, { margins = dpi(10) }) end,
