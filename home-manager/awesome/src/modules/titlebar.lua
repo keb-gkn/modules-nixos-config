@@ -179,11 +179,10 @@ local create_titlebar_dialog = function(c, bg, size)
 end
 
 local draw_titlebar = function(c)
-  if c.type == 'normal' and not c.requests_no_titlebar
-        then
-            create_titlebar(c, '#121212AA', 35)
-        elseif c.type == 'dialog' then
-            create_titlebar_dialog(c, '#121212AA', 35)
+  if c.type == 'normal' and not c.requests_no_titlebar then
+        create_titlebar(c, '#121212AA', 35)
+    elseif c.type == 'dialog' then
+        create_titlebar_dialog(c, '#121212AA', 35)
   end
 end
 
@@ -216,7 +215,9 @@ end
 function handle_maximized_state_in_tile_layout(c)
     if c.screen.selected_tag.layout.name == "tile" then
         c.maximized = false;
-        c.floating = false;
+        if c.type == "normal" then
+            c.floating = false;
+        end
     end
 end
 
