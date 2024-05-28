@@ -50,7 +50,6 @@
   fileSystems."/bigboy" = {
     device = "/dev/disk/by-uuid/3ed598b3-03c9-4825-9104-d1681a2db4fe";
     fsType = "btrfs";
-    options = [];
   };
 
   swapDevices = [

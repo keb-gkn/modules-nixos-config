@@ -242,6 +242,7 @@
     kitty
     pwvucontrol
     pciutils
+    toybox
 
     # xorg
     xorg.xrdb
@@ -292,7 +293,17 @@
     libsForQt5.plasma-framework
     libsForQt5.breeze-qt5
     libsForQt5.breeze-icons
+
+    # steam
+    steamPackages.steamcmd
+    steamPackages.steam-runtime
   ];
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

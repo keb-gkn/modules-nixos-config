@@ -80,7 +80,6 @@
     wine
 
     # gaming
-    steam
     lutris
 
     # build tools

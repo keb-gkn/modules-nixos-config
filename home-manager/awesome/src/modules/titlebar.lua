@@ -179,48 +179,47 @@ local create_titlebar_dialog = function(c, bg, size)
 end
 
 local draw_titlebar = function(c)
-  if c.type == 'normal' and not c.requests_no_titlebar then
-    if c.class == 'Firefox' then
-      create_titlebar(c, '#121212AA', 35)
-    elseif c.name == "Steam" then
-      create_titlebar(c, '#121212AA', 0)
-    elseif c.name == "Settings" then
-      create_titlebar(c, '#121212AA', 0)
-    elseif c.class == "gcr-prompter" or c.class == "Gcr-prompter" then
-      create_titlebar(c, '#121212AA', 0)
-    else
-      create_titlebar(c, '#121212AA', 35)
-    end
-  elseif c.type == 'dialog' then
-    create_titlebar_dialog(c, '#121212AA', 35)
+  if c.type == 'normal' and not c.requests_no_titlebar
+        then
+            create_titlebar(c, '#121212AA', 35)
+        elseif c.type == 'dialog' then
+            create_titlebar_dialog(c, '#121212AA', 35)
   end
 end
 
 function handle_maximized_button(c)
     if c.maximized
-    then
-      Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
-    else
-      Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
-      Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
+        then
+            Theme.titlebar_maximized_button_normal = icondir .. "unmaximize.svg"
+            Theme.titlebar_maximized_button_active = icondir .. "unmaximize.svg"
+            Theme.titlebar_maximized_button_inactive = icondir .. "unmaximize.svg"
+        else
+            Theme.titlebar_maximized_button_normal = icondir .. "maximize.svg"
+            Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
+            Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
     end
 end
 
 function handle_showing_titlebar(c)
     if c.floating or (c.screen.selected_tag.layout.name == "floating")
-    then
-      awful.titlebar.hide(c, 'left')
-      awful.titlebar.hide(c, 'right')
-      awful.titlebar.show(c, 'top')
-      awful.titlebar.hide(c, 'bottom')
-    else
-      awful.titlebar.hide(c, 'left')
-      awful.titlebar.hide(c, 'right')
-      awful.titlebar.hide(c, 'top')
-      awful.titlebar.hide(c, 'bottom')
+        then
+            awful.titlebar.hide(c, 'left')
+            awful.titlebar.hide(c, 'right')
+            awful.titlebar.show(c, 'top')
+            awful.titlebar.hide(c, 'bottom')
+        else
+            awful.titlebar.hide(c, 'left')
+            awful.titlebar.hide(c, 'right')
+            awful.titlebar.hide(c, 'top')
+            awful.titlebar.hide(c, 'bottom')
+    end
+end
+
+function handle_maximized_state_in_tile_layout(c)
+    if c.screen.selected_tag.layout.name == "tile"
+        then
+            c.maximized = false;
+            c.floating = false;
     end
 end
 
@@ -260,6 +259,7 @@ tag.connect_signal(
     for _, c in ipairs(t.screen.all_clients)
     do
       handle_showing_titlebar(c)
+      handle_maximized_state_in_tile_layout(c)
     end
   end
 )
