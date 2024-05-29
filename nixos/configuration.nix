@@ -242,6 +242,7 @@
     pwvucontrol
     pciutils
     toybox
+    luarocks_pulseaudio_dbus
 
     # xorg
     xorg.xrdb
