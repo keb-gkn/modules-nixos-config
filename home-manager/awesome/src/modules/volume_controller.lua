@@ -909,7 +909,7 @@ return function(s)
           .. "microphone.svg", color["nord9"]))
       else
         volume_controller:get_children_by_id("mic_volume_margin")[1].mic_volume.icon:set_image(gears.color.recolor_image(icondir
-          .. "microphone-off.svg", color["nord9"))
+          .. "microphone-off.svg", color["nord9"]))
       end
     end
   )

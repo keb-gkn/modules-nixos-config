@@ -52,7 +52,7 @@ awful.screen.connect_for_each_screen(
   end
 
   if s.index == 2 then
-    s.network = require("src.widgets.network")()
+    s.systray = require("src.widgets.systray")(s)
     s.cpu_usage = require("src.widgets.cpu_info")("usage")
     s.ram_info = require("src.widgets.ram_info")()
 
