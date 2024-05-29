@@ -6,6 +6,6 @@
   # pkgs
   sddm-themes = pkgs.callPackage ./sddm-themes.nix {};
 
-  # luarocks
-  luarocks_pulseaudio_dbus = pkgs.callPackage ./luarocks-pkgs/pulseaudio_dbus.nix {};
+  # lua
+  extraLuaPackages = pkgs.callPackage ./lua {};
 }
