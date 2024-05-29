@@ -207,6 +207,7 @@
         pip
         requests
       ]))
+    lua
 
     # terminals
     alacritty
