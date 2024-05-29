@@ -72,12 +72,18 @@
 
     # utils
     xclip
+    dconf
     xdg-utils
     wget
     curl
     dex
     vulkan-tools
     wine
+
+    # audio
+    noisetorch
+    pulsemixer
+    pavucontrol
 
     # gaming
     lutris
@@ -97,7 +103,6 @@
     unstable.godot_4
 
     # editor
-    neovide
     inputs.neovim-flake.packages.x86_64-linux.maximal
 
     # icons
@@ -109,7 +114,6 @@
     # gnome bs
     gnome.gnome-settings-daemon
     gsettings-desktop-schemas
-    gnome.dconf-editor
     gnome.zenity
 
     # file explorer
@@ -121,6 +125,12 @@
     # ssh
     gnome.gnome-keyring
     gnome.libgnome-keyring
+
+    # apps
+    gimp-with-plugins
+    gimpPlugins.gap
+    gimpPlugins.fourier
+    gimpPlugins.texturize
   ];
 
   # Enable home-manager and git

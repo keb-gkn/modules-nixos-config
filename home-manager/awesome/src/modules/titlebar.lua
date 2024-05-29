@@ -134,6 +134,17 @@ local create_titlebar_dialog = function(c, bg, size)
   titlebar:setup {
     {
       {
+        widget = awful.widget.clienticon(c)
+      },
+      margins = dpi(5),
+      widget = wibox.container.margin
+    },
+    {
+      buttons = create_click_events(c),
+      layout = wibox.layout.flex.horizontal
+    },
+    {
+      {
         {
           awful.titlebar.widget.closebutton(c),
           widget = wibox.container.background,
@@ -159,17 +170,6 @@ local create_titlebar_dialog = function(c, bg, size)
       margins = dpi(8),
       widget = wibox.container.margin,
       id = "margin"
-    },
-    {
-      buttons = create_click_events(c),
-      layout = wibox.layout.flex.horizontal
-    },
-    {
-      {
-        widget = awful.widget.clienticon(c)
-      },
-      margins = dpi(5),
-      widget = wibox.container.margin
     },
     layout = wibox.layout.align.horizontal,
     id = "main"
