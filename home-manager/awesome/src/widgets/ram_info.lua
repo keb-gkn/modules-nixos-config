@@ -22,7 +22,7 @@ return function()
             {
               id = "icon",
               widget = wibox.widget.imagebox,
-              image = gears.color.recolor_image(icon_dir .. "ram.svg", color["Grey900"]),
+              image = gears.color.recolor_image(icon_dir .. "ram.svg", color["nord0"]),
               resize = false
             },
             id = "icon_layout",
@@ -47,15 +47,15 @@ return function()
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Red200"],
-    fg = color["Grey900"],
+    bg = color["nord11"],
+    fg = color["nord0"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
     widget = wibox.container.background
   }
 
-  Hover_signal(ram_widget, color["Red200"], color["Grey900"])
+  Hover_signal(ram_widget, color["nord11"], color["nord0"])
 
   watch(
     [[ bash -c "cat /proc/meminfo| grep Mem | awk '{print $2}'" ]],

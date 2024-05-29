@@ -36,7 +36,7 @@ local list_update = function(widget, buttons, label, data, objects)
         id = "container",
         layout = wibox.layout.fixed.horizontal
       },
-      fg = color["White"],
+      fg = color["nord6"],
       shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, 5)
       end,
@@ -67,13 +67,13 @@ local list_update = function(widget, buttons, label, data, objects)
 
     tag_widget.container.margin.label:set_text(object.index)
     if object.urgent == true then
-      tag_widget:set_bg(color["RedA200"])
-      tag_widget:set_fg(color["Grey900"])
+      tag_widget:set_bg(color["nord11"])
+      tag_widget:set_fg(color["nord0"])
     elseif object == awful.screen.focused().selected_tag then
-      tag_widget:set_bg(color["White"])
-      tag_widget:set_fg(color["Grey900"])
+      tag_widget:set_bg(color["nord6"])
+      tag_widget:set_fg(color["nord0"])
     else
-      tag_widget:set_bg("#3A475C")
+      tag_widget:set_bg(color["nord10-00"])
     end
 
     -- Set the icon for each client
@@ -108,9 +108,9 @@ local list_update = function(widget, buttons, label, data, objects)
       function()
         old_bg = tag_widget.bg
         if object == awful.screen.focused().selected_tag then
-          tag_widget.bg = '#dddddd' .. 'dd'
+          tag_widget.bg = color["nord4"]
         else
-          tag_widget.bg = '#3A475C' .. 'dd'
+          tag_widget.bg = color["nord10-00"]
         end
         local w = mouse.current_wibox
         if w then
@@ -124,9 +124,9 @@ local list_update = function(widget, buttons, label, data, objects)
       "button::press",
       function()
         if object == awful.screen.focused().selected_tag then
-          tag_widget.bg = '#bbbbbb' .. 'dd'
+          tag_widget.bg = color["nord40"]
         else
-          tag_widget.bg = '#3A475C' .. 'dd'
+          tag_widget.bg = color["nord10-00"]
         end
       end
     )
@@ -135,9 +135,9 @@ local list_update = function(widget, buttons, label, data, objects)
       "button::release",
       function()
         if object == awful.screen.focused().selected_tag then
-          tag_widget.bg = '#dddddd' .. 'dd'
+          tag_widget.bg = color["nord4"]
         else
-          tag_widget.bg = '#3A475C' .. 'dd'
+          tag_widget.bg = color["nord10-00"]
         end
       end
     )

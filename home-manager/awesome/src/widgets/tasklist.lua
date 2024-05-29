@@ -48,8 +48,8 @@ local list_update = function(widget, buttons, label, data, objects)
 				widget = wibox.container.margin,
 				id = "container"
 			},
-			bg = color["White"],
-			fg = color["Grey900"],
+			bg = color["nord6"],
+			fg = color["nord0"],
 			shape = function(cr, width, height)
 				gears.shape.rounded_rect(cr, width, height, 5)
 			end,
@@ -106,11 +106,11 @@ local list_update = function(widget, buttons, label, data, objects)
 					task_tool_tip:remove_from_object(task_widget)
 				end
 			end
-			task_widget:set_bg(color["White"])
-			task_widget:set_fg(color["Grey900"])
+			task_widget:set_bg(color["nord6"])
+			task_widget:set_fg(color["nord0"])
 			task_widget.container.layout_it.title:set_text(text)
 		else
-			task_widget:set_bg("#3A475C")
+			task_widget:set_bg(color["nord10-00"])
 			task_widget.container.layout_it.title:set_text('')
 		end
 		task_widget.container.layout_it.margin.layout_icon.icon:set_image(Get_icon(user_vars.icon_theme, object))
@@ -124,9 +124,9 @@ local list_update = function(widget, buttons, label, data, objects)
 			function()
 				old_bg = task_widget.bg
 				if object == client.focus then
-					task_widget.bg = '#dddddddd'
+					task_widget.bg = color["nord4"]
 				else
-					task_widget.bg = '#3A475Cdd'
+					task_widget.bg = color["nord10-00"]
 				end
 				local w = mouse.current_wibox
 				if w then
@@ -140,9 +140,9 @@ local list_update = function(widget, buttons, label, data, objects)
 			"button::press",
 			function()
 				if object == client.focus then
-					task_widget.bg = "#ffffffaa"
+					task_widget.bg = color["nord6"]
 				else
-					task_widget.bg = '#3A475Caa'
+					task_widget.bg = color["nord10-00"]
 				end
 			end
 		)
@@ -151,9 +151,9 @@ local list_update = function(widget, buttons, label, data, objects)
 			"button::release",
 			function()
 				if object == client.focus then
-					task_widget.bg = "#ffffffdd"
+					task_widget.bg = color["nord6"]
 				else
-					task_widget.bg = '#3A475Cdd'
+					task_widget.bg = color["nord10-00"]
 				end
 			end
 		)

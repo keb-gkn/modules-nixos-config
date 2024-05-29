@@ -34,7 +34,7 @@ return function(screen, programs)
         shape = function(cr, width, height)
           gears.shape.rounded_rect(cr, width, height, 10)
         end,
-        bg = "#4c566a",
+        bg = color["nord0"],
         widget = wibox.container.background,
         id = "background"
       },
@@ -46,20 +46,16 @@ return function(screen, programs)
 
     for _, c in ipairs(client.get()) do
       if string.lower(c.class):match(program) and c == client.focus then
-        dock_element.background.bg = "#2E3440"
+        dock_element.background.bg = color["nord0-0"]
       end
     end
 
-    Hover_signal(dock_element.background, "#2e3440", "#eceff4")
+    Hover_signal(dock_element.background, color["nord0-0"], color["nord6"])
 
     dock_element:connect_signal(
       "button::press",
       function()
-        if is_steam then
-          awful.spawn("steam steam://rungameid/" .. program)
-        else
-          awful.spawn(program)
-        end
+        awful.spawn(program)
       end
     )
 
@@ -77,7 +73,7 @@ return function(screen, programs)
   local dock = awful.popup {
     widget = wibox.container.background,
     ontop = true,
-    bg = "#4c566a",
+    bg = color["nord0"],
     visible = true,
     screen = screen,
     type = "dock",
@@ -132,21 +128,21 @@ return function(screen, programs)
     local clients = client.get()
     for index, pr in ipairs(prog) do
       local indicators = { layout = wibox.layout.flex.horizontal, spacing = dpi(5) }
-      local col = color["Grey600"]
+      local col = color["nord3"]
       for i, c in ipairs(clients) do
         if string.lower(c.class or c.name):match(string.lower(pr[1]) or string.lower(pr[2])) then
           if c == client.focus then
-            col = color["YellowA200"]
+            col = color["nord13"]
           elseif c.urgent then
-            col = color["RedA200"]
+            col = color["nord11"]
           elseif c.maximized then
-            col = color["GreenA200"]
+            col = color["nord14"]
           elseif c.minimized then
-            col = color["BlueA200"]
+            col = color["nord10"]
           elseif c.fullscreen then
-            col = color["PinkA200"]
+            col = color["nord15"]
           else
-            col = "#d8dee9"
+            col = color["nord4"]
           end
           indicators[i] = wibox.widget {
             widget = wibox.container.background,

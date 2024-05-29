@@ -14,7 +14,7 @@ return function(s, widgets)
     screen = s,
     widget = wibox.container.background,
     ontop = false,
-    bg = "#4c566a",
+    bg = color["nord0"],
     visible = true,
     maximum_width = dpi(500),
     placement = function(c) awful.placement.top(c, { margins = dpi(10) }) end,

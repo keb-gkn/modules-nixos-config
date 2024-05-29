@@ -24,7 +24,7 @@ return function(widget, clock_mode)
             {
               id = "icon",
               widget = wibox.widget.imagebox,
-              image = gears.color.recolor_image(icon_dir .. "cpu.svg", color["Grey900"]),
+              image = gears.color.recolor_image(icon_dir .. "cpu.svg", color["nord0"]),
               resize = false
             },
             id = "icon_layout",
@@ -49,8 +49,8 @@ return function(widget, clock_mode)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Blue200"],
-    fg = color["Grey900"],
+    bg = color["nord10"],
+    fg = color["nord0"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -89,8 +89,8 @@ return function(widget, clock_mode)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Green200"],
-    fg = color["Grey900"],
+    bg = color["nord14"],
+    fg = color["nord0"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -130,8 +130,8 @@ return function(widget, clock_mode)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Purple200"],
-    fg = color["Grey900"],
+    bg = color["nord15"],
+    fg = color["nord0"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -172,16 +172,16 @@ return function(widget, clock_mode)
 
       local temp_num = tonumber(stdout:match("%d+"))
       if temp_num < 50 then
-        temp_color = color["Green200"]
+        temp_color = color["nord14"]
         temp_icon = icon_dir .. "thermometer-low.svg"
       elseif temp_num >= 50 and temp_num < 80 then
-        temp_color = color["Orange200"]
+        temp_color = color["nord12"]
         temp_icon = icon_dir .. "thermometer.svg"
       elseif temp_num >= 80 then
-        temp_color = color["Red200"]
+        temp_color = color["nord11"]
         temp_icon = icon_dir .. "thermometer-high.svg"
       end
-      Hover_signal(cpu_temp, temp_color, color["Grey900"])
+      Hover_signal(cpu_temp, temp_color, color["nord0"])
       cpu_temp.container.cpu_layout.icon_margin.icon_layout.icon:set_image(temp_icon)
       cpu_temp:set_bg(temp_color)
       cpu_temp.container.cpu_layout.label.text = math.floor(temp_num) .. "°C"
@@ -212,8 +212,8 @@ return function(widget, clock_mode)
     end
   )
 
-  Hover_signal(cpu_usage_widget, color["Blue200"], color["Grey900"])
-  Hover_signal(cpu_clock, color["Purple200"], color["Grey900"])
+  Hover_signal(cpu_usage_widget, color["nord10"], color["nord0"])
+  Hover_signal(cpu_clock, color["nord15"], color["nord0"])
 
   if widget == "usage" then
     return cpu_usage_widget

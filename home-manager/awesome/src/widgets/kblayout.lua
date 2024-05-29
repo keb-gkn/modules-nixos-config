@@ -23,7 +23,7 @@ return function(s)
               id = "icon",
               widget = wibox.widget.imagebox,
               resize = false,
-              image = gears.color.recolor_image(icondir .. "keyboard.svg", color["Grey900"])
+              image = gears.color.recolor_image(icondir .. "keyboard.svg", color["nord0"])
             },
             id = "icon_layout",
             widget = wibox.container.place
@@ -47,8 +47,8 @@ return function(s)
       right = dpi(8),
       widget = wibox.container.margin
     },
-    bg = color["Green200"],
-    fg = color["Grey900"],
+    bg = color["nord14"],
+    fg = color["nord0"],
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
@@ -182,7 +182,7 @@ return function(s)
               font = user_vars.font.extrabold,
               id = "shortname"
             },
-            fg = color["Red200"],
+            fg = color["nord11"],
             widget = wibox.container.background,
             id = "background2"
           },
@@ -193,7 +193,7 @@ return function(s)
               font = user_vars.font.bold,
               id = "longname",
             },
-            fg = color["Purple200"],
+            fg = color["nord15"],
             widget = wibox.container.background,
             id = "background1"
           },
@@ -208,8 +208,8 @@ return function(s)
       shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, 8)
       end,
-      bg = color["Grey800"],
-      fg = color["White"],
+      bg = color["nord1"],
+      fg = color["nord6"],
       widget = wibox.container.background,
       id = "background",
       keymap = keymap
@@ -224,13 +224,13 @@ return function(s)
           function(stdout)
             local layout = stdout:gsub("\n", "")
             if kb_layout_item.keymap == layout then
-              kb_layout_item.bg = color["DeepPurple200"]
-              kb_layout_item:get_children_by_id("background2")[1].fg = color["Grey900"]
-              kb_layout_item:get_children_by_id("background1")[1].fg = color["Grey900"]
+              kb_layout_item.bg = color["nord150"]
+              kb_layout_item:get_children_by_id("background2")[1].fg = color["nord0"]
+              kb_layout_item:get_children_by_id("background1")[1].fg = color["nord0"]
             else
-              kb_layout_item.bg = color["Grey800"]
-              kb_layout_item:get_children_by_id("background2")[1].fg = color["Red200"]
-              kb_layout_item:get_children_by_id("background1")[1].fg = color["Purple200"]
+              kb_layout_item.bg = color["nord1"]
+              kb_layout_item:get_children_by_id("background2")[1].fg = color["nord11"]
+              kb_layout_item:get_children_by_id("background1")[1].fg = color["nord15"]
             end
           end
         )
@@ -280,10 +280,10 @@ return function(s)
       gears.shape.rounded_rect(cr, width, height, 12)
     end,
     widget = wibox.container.background,
-    bg = color["Grey900"],
-    fg = color["White"],
+    bg = color["nord0"],
+    fg = color["nord6"],
     border_width = dpi(4),
-    border_color = color["Grey800"],
+    border_color = color["nord1"],
     width = dpi(100),
     max_height = dpi(600),
     visible = false,
@@ -296,7 +296,7 @@ return function(s)
     function()
       mousegrabber.run(
         function()
-          kblayout_widget.bg = color["Green200"]
+          kblayout_widget.bg = color["nord14"]
           awesome.emit_signal("kblayout::hide:kbmenu")
           mousegrabber.stop()
           return true
@@ -352,7 +352,7 @@ return function(s)
   )
 
   -- Signals
-  Hover_signal(kblayout_widget, color["Green200"], color["Grey900"])
+  Hover_signal(kblayout_widget, color["nord14"], color["nord0"])
 
   local kblayout_keygrabber = awful.keygrabber {
     autostart = false,

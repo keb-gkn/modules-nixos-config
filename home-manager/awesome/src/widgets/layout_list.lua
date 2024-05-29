@@ -34,7 +34,7 @@ return function(s)
   }
 
   -- Signals
-  Hover_signal(layout, color["LightBlue200"], color["Grey900"])
+  Hover_signal(layout, color["LightBlue200"], color["nord0"])
 
   layout:connect_signal(
     "button::press",
