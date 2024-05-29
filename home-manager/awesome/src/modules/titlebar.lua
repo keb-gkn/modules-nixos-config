@@ -146,15 +146,6 @@ local create_titlebar_dialog = function(c, bg, size)
     {
       {
         {
-          awful.titlebar.widget.closebutton(c),
-          widget = wibox.container.background,
-          bg = color["nord11"],
-          shape = function(cr, height, width)
-            gears.shape.rounded_rect(cr, width, height, 4)
-          end,
-          id = "closebutton"
-        },
-        {
           awful.titlebar.widget.minimizebutton(c),
           widget = wibox.container.background,
           bg = color["nord14"],
@@ -162,6 +153,15 @@ local create_titlebar_dialog = function(c, bg, size)
             gears.shape.rounded_rect(cr, width, height, 4)
           end,
           id = "minimizebutton"
+        },
+        {
+          awful.titlebar.widget.closebutton(c),
+          widget = wibox.container.background,
+          bg = color["nord11"],
+          shape = function(cr, height, width)
+            gears.shape.rounded_rect(cr, width, height, 4)
+          end,
+          id = "closebutton"
         },
         spacing = dpi(10),
         layout  = wibox.layout.fixed.horizontal,
