@@ -27,7 +27,7 @@ return function(s)
     shape = function(cr, width, height)
       gears.shape.rounded_rect(cr, width, height, 5)
     end,
-    bg = color["BlueGrey800"]
+    bg = color["nord0"]
   }
   -- Signals
   Hover_signal(systray.container, color["nord11"], color["nord0"])

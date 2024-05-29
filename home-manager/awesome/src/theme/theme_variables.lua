@@ -63,7 +63,7 @@ Theme.titlebar_minimize_button_normal = icondir .. "minimize.svg"
 Theme.titlebar_maximized_button_active = icondir .. "maximize.svg"
 Theme.titlebar_maximized_button_inactive = icondir .. "maximize.svg"
 
-Theme.bg_systray = color["nord9"]
+Theme.bg_systray = color["nord0"]
 Theme.systray_icon_spacing = dpi(10)
 
 Theme.hotkeys_bg = color["nord0"]
