@@ -207,7 +207,8 @@
         pip
         requests
       ]))
-    lua
+    lua54Packages.lua
+    lua54Packages.luarocks-nix
 
     # terminals
     alacritty
