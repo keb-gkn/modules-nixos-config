@@ -110,7 +110,7 @@ local list_update = function(widget, buttons, label, data, objects)
 			task_widget:set_fg(color["nord0"])
 			task_widget.container.layout_it.title:set_text(text)
 		else
-			task_widget:set_bg(color["nord10-00"])
+			task_widget:set_bg(color["nord0-0"])
 			task_widget.container.layout_it.title:set_text('')
 		end
 		task_widget.container.layout_it.margin.layout_icon.icon:set_image(Get_icon(user_vars.icon_theme, object))
@@ -126,7 +126,7 @@ local list_update = function(widget, buttons, label, data, objects)
 				if object == client.focus then
 					task_widget.bg = color["nord4"]
 				else
-					task_widget.bg = color["nord10-00"]
+					task_widget.bg = color["nord0-0"]
 				end
 				local w = mouse.current_wibox
 				if w then
@@ -142,7 +142,7 @@ local list_update = function(widget, buttons, label, data, objects)
 				if object == client.focus then
 					task_widget.bg = color["nord6"]
 				else
-					task_widget.bg = color["nord10-00"]
+					task_widget.bg = color["nord0-0"]
 				end
 			end
 		)
@@ -153,7 +153,7 @@ local list_update = function(widget, buttons, label, data, objects)
 				if object == client.focus then
 					task_widget.bg = color["nord6"]
 				else
-					task_widget.bg = color["nord10-00"]
+					task_widget.bg = color["nord0-0"]
 				end
 			end
 		)

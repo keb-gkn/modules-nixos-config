@@ -73,7 +73,7 @@ local list_update = function(widget, buttons, label, data, objects)
       tag_widget:set_bg(color["nord6"])
       tag_widget:set_fg(color["nord0"])
     else
-      tag_widget:set_bg(color["nord10-00"])
+      tag_widget:set_bg(color["nord0-0"])
     end
 
     -- Set the icon for each client
@@ -110,7 +110,7 @@ local list_update = function(widget, buttons, label, data, objects)
         if object == awful.screen.focused().selected_tag then
           tag_widget.bg = color["nord4"]
         else
-          tag_widget.bg = color["nord10-00"]
+          tag_widget.bg = color["nord0-0"]
         end
         local w = mouse.current_wibox
         if w then
@@ -126,7 +126,7 @@ local list_update = function(widget, buttons, label, data, objects)
         if object == awful.screen.focused().selected_tag then
           tag_widget.bg = color["nord40"]
         else
-          tag_widget.bg = color["nord10-00"]
+          tag_widget.bg = color["nord0-0"]
         end
       end
     )
@@ -137,7 +137,7 @@ local list_update = function(widget, buttons, label, data, objects)
         if object == awful.screen.focused().selected_tag then
           tag_widget.bg = color["nord4"]
         else
-          tag_widget.bg = color["nord10-00"]
+          tag_widget.bg = color["nord0-0"]
         end
       end
     )
