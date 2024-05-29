@@ -242,7 +242,12 @@
     pwvucontrol
     pciutils
     toybox
-    luarocks_pulseaudio_dbus
+
+    # lua
+    extraLuaPackages.dbus_proxy
+    extraLuaPackages.enum
+    extraLuaPackages.pulseaudio_dbus
+    extraLuaPackages.upower_dbus
 
     # xorg
     xorg.xrdb
