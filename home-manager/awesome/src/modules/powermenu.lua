@@ -67,7 +67,7 @@ return function(s)
   update_user_name()
 
   -- Universal Button widget
-  local button = function(name, icon, bg_color, callback)
+  local button = function(name, icon, fg_color, bg_color, callback)
     local item = wibox.widget {
       {
         {
@@ -100,7 +100,7 @@ return function(s)
           margins = dpi(10),
           widget = wibox.container.margin
         },
-        fg = color["nord0-0"],
+        fg = fg_color,
         bg = bg_color,
         shape = function(cr, width, height)
           gears.shape.rounded_rect(cr, width, height, 10)
@@ -148,19 +148,18 @@ return function(s)
   end
 
   -- Create the buttons with their command and name etc
-  local shutdown_button = button("Shutdown", icondir .. "shutdown.svg", color["nord10"] .. "ff", shutdown_command)
-  local reboot_button = button("Reboot", icondir .. "reboot.svg", color["nord11"] .. "ff", reboot_command)
-  local suspend_button = button("Suspend", icondir .. "suspend.svg", color["nord13"] .. "ff", suspend_command)
-  local logout_button = button("Logout", icondir .. "logout.svg", color["nord14"] .. "ff", logout_command)
-  local lock_button = button("Lock", icondir .. "lock.svg", color["nord12"] .. "ff", lock_command)
+  local lock_button = button("Lock", icondir .. "lock.svg", color["nord10-0"] .. "ff", color["nord10"] .. "ff", lock_command)
+  local logout_button = button("Logout", icondir .. "logout.svg", color["nord13-0"] .. "ff", color["nord13"] .. "ff", logout_command)
+  local suspend_button = button("Suspend", icondir .. "suspend.svg", color["nord7-0"] .. "ff", color["nord7"] .. "ff", suspend_command)
+  local reboot_button = button("Reboot", icondir .. "reboot.svg", color["nord12-0"] .. "ff", color["nord12"] .. "ff", reboot_command)
+  local shutdown_button = button("Shutdown", icondir .. "shutdown.svg", color["nord11-0"] .. "ff", color["nord11"] .. "ff", shutdown_command)
 
   -- Signals to change color on hover
-  Hover_signal(shutdown_button.background, color["nord10"] .. "ff", color["nord6"] .. "ff")
-  Hover_signal(reboot_button.background, color["nord11"] .. "ff", color["nord6"] .. "ff")
-  Hover_signal(suspend_button.background, color["nord13"] .. "ff", color["nord6"] .. "ff")
-  Hover_signal(logout_button.background, color["nord14"] .. "ff", color["nord6"] .. "ff")
-  Hover_signal(lock_button.background, color["nord12"] .. "ff", color["nord6"] .. "ff")
-
+  Hover_signal(lock_button.background, color["nord10"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(logout_button.background, color["nord13"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(suspend_button.background, color["nord7"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(reboot_button.background, color["nord12"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(shutdown_button.background, color["nord11"] .. "ff", color["nord6"] .. "ff")
   -- The powermenu widget
   local powermenu = wibox.widget {
     layout = wibox.layout.align.vertical,
@@ -203,11 +202,11 @@ return function(s)
         nil,
         {
           {
-            shutdown_button,
-            reboot_button,
-            logout_button,
             lock_button,
+            logout_button,
             suspend_button,
+            reboot_button,
+            shutdown_button,
             spacing = dpi(30),
             layout = wibox.layout.fixed.horizontal
           },

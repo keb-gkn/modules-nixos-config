@@ -210,8 +210,8 @@ return {
   ['BlueGrey900'] = '#263238',
 
   -- Polar Night
-  ['nord0-0'] = "#191c22",
   ['nord0'] = "#2e3440",
+  ['nord0-0'] = "#191c22",
   ['nord1'] = "#3b4252",
   ['nord2'] = "#434c5e",
   ['nord3'] = "#4c566a",
@@ -222,14 +222,22 @@ return {
   ['nord6'] = "#eceff4",
   -- Frost
   ['nord7'] = "#8fbcbb",
+  ['nord7-0'] = "#5f9f9e",
   ['nord8'] = "#88c0d0",
+  ['nord8-0'] = "#51a3ba",
   ['nord9'] = "#81a1c1",
+  ['nord9-0'] = "#517ba5",
   ['nord10'] = "#5e81ac",
+  ['nord10-0'] = "#405c7d",
   -- Aurora
   ['nord11'] = "#bf616a",
+  ['nord11-0'] = "#973d46",
   ['nord12'] = "#d08770",
+  ['nord12-0'] = "#b75a3c",
   ['nord13'] = "#ebcb8b",
+  ['nord13-0'] = "#e0ae4a",
   ['nord14'] = "#a3be8c",
+  ['nord14-0'] = "#7ca25c",
   ['nord15'] = "#b48ead",
   ['nord15-0'] = "#94628a",
 
