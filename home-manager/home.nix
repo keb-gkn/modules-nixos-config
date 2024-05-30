@@ -126,11 +126,13 @@
     gnome.gnome-keyring
     gnome.libgnome-keyring
 
-    # apps
+    #################### apps
+    # graphics
     gimp-with-plugins
     gimpPlugins.gap
     gimpPlugins.fourier
     gimpPlugins.texturize
+    inkscape
   ];
 
   # Enable home-manager and git
