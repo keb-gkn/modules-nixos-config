@@ -148,18 +148,18 @@ return function(s)
   end
 
   -- Create the buttons with their command and name etc
-  local shutdown_button = button("Shutdown", icondir .. "shutdown.svg", color["nord10"], shutdown_command)
-  local reboot_button = button("Reboot", icondir .. "reboot.svg", color["nord11"], reboot_command)
-  local suspend_button = button("Suspend", icondir .. "suspend.svg", color["nord13"], suspend_command)
-  local logout_button = button("Logout", icondir .. "logout.svg", color["nord14"], logout_command)
-  local lock_button = button("Lock", icondir .. "lock.svg", color["nord12"], lock_command)
+  local shutdown_button = button("Shutdown", icondir .. "shutdown.svg", color["nord10"] .. "ff", shutdown_command)
+  local reboot_button = button("Reboot", icondir .. "reboot.svg", color["nord11"] .. "ff", reboot_command)
+  local suspend_button = button("Suspend", icondir .. "suspend.svg", color["nord13"] .. "ff", suspend_command)
+  local logout_button = button("Logout", icondir .. "logout.svg", color["nord14"] .. "ff", logout_command)
+  local lock_button = button("Lock", icondir .. "lock.svg", color["nord12"] .. "ff", lock_command)
 
   -- Signals to change color on hover
-  Hover_signal(shutdown_button.background, color["nord10"], color["nord0-0"])
-  Hover_signal(reboot_button.background, color["nord11"], color["nord0-0"])
-  Hover_signal(suspend_button.background, color["nord13"], color["nord0-0"])
-  Hover_signal(logout_button.background, color["nord14"], color["nord0-0"])
-  Hover_signal(lock_button.background, color["nord12"], color["nord0-0"])
+  Hover_signal(shutdown_button.background, color["nord10"] .. "ff", color["nord0-0"] .. "ff")
+  Hover_signal(reboot_button.background, color["nord11"] .. "ff", color["nord0-0"] .. "ff")
+  Hover_signal(suspend_button.background, color["nord13"] .. "ff", color["nord0-0"] .. "ff")
+  Hover_signal(logout_button.background, color["nord14"] .. "ff", color["nord0-0"] .. "ff")
+  Hover_signal(lock_button.background, color["nord12"] .. "ff", color["nord0-0"] .. "ff")
 
   -- The powermenu widget
   local powermenu = wibox.widget {
