@@ -230,7 +230,7 @@ return function(s)
     type = "splash",
     visible = false,
     ontop = true,
-    bg = color["nord0"],
+    bg = color["nord0"] .. "99",
     height = s.geometry.height,
     width = s.geometry.width,
     x = s.geometry.x,
