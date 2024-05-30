@@ -101,6 +101,10 @@
 
     # game dev
     unstable.godot_4
+    blender
+
+    # cad
+    openscad
 
     # editor
     inputs.neovim-flake.packages.x86_64-linux.maximal
