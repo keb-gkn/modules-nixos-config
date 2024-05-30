@@ -155,11 +155,11 @@ return function(s)
   local lock_button = button("Lock", icondir .. "lock.svg", color["nord12"] .. "ff", lock_command)
 
   -- Signals to change color on hover
-  Hover_signal(shutdown_button.background, color["nord10"] .. "ff", color["nord0-0"] .. "ff")
-  Hover_signal(reboot_button.background, color["nord11"] .. "ff", color["nord0-0"] .. "ff")
-  Hover_signal(suspend_button.background, color["nord13"] .. "ff", color["nord0-0"] .. "ff")
-  Hover_signal(logout_button.background, color["nord14"] .. "ff", color["nord0-0"] .. "ff")
-  Hover_signal(lock_button.background, color["nord12"] .. "ff", color["nord0-0"] .. "ff")
+  Hover_signal(shutdown_button.background, color["nord10"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(reboot_button.background, color["nord11"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(suspend_button.background, color["nord13"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(logout_button.background, color["nord14"] .. "ff", color["nord6"] .. "ff")
+  Hover_signal(lock_button.background, color["nord12"] .. "ff", color["nord6"] .. "ff")
 
   -- The powermenu widget
   local powermenu = wibox.widget {
