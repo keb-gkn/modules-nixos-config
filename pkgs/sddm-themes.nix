@@ -12,8 +12,8 @@
     src = fetchFromGitHub {
       owner = "CloudyChris";
       repo = "nord-sddm";
-      rev = "f00b8b19e85661cdc0e2fee4127f265a05bf45e1";
-      hash = "sha256-HEntl/RTeQNCmjoYhg6S/7fB+Y6QHf+0ZgaaWu5YX50=";
+      rev = "8b7f76239cd2200b55a2c3176ce6ae4b022e93ed";
+      hash = "sha256-fUBQorqkQGt8+YcQXUIUBrZJO7BjPcWl1ZM6p+2eY00=";
     };
   };
 }
