@@ -209,6 +209,7 @@
       ]))
     lua54Packages.lua
     lua54Packages.luarocks-nix
+    stylua
 
     # terminals
     alacritty
