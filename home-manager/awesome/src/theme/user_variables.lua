@@ -47,7 +47,7 @@ user_vars = {
   modkey = "Mod4",
 
   -- place your wallpaper at this path with this name, you could also try to change the path
-  wallpapers = {home .. "/.config/awesome/src/assets/wallpapers/1.png", home .. "/.config/awesome/src/assets/wallpapers/2.png"},
+  wallpaper_dir = home .. "/.wallpapers",
 
   -- Naming scheme for the powermenu, userhost = "user@hostname", fullname = "Firstname Surname", something else ...
   namestyle = "fullname",

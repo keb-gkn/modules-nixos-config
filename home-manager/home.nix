@@ -176,6 +176,10 @@
     "/home/arthank/.config/awesome/src/assets/userpfp/arthank.png" = {
       source = ./assets/user-icon.png;
     };
+    "/home/arthank/.wallpapers" = {
+      source = ./assets/wallpapers;
+      recursive = true;
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
