@@ -160,10 +160,6 @@
     };
   };
 
-  home.shellAliases = {
-    "ls" = "eza -alh";
-  };
-
   # AwesomeWM
   home.file = {
     "/home/arthank/.config/awesome" = {
