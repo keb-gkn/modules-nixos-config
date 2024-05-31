@@ -40,7 +40,7 @@ Theme.menu_fg_focus = color["nord6"]
 Theme.menu_border_color = color["nord1"]
 Theme.menu_border_width = dpi(1)
 Theme.menu_shape = function(cr, width, heigth)
-	gears.shape.rounded_rect(cr, width, heigth, 5)
+  gears.shape.rounded_rect(cr, width, heigth, 5)
 end
 
 Theme.taglist_fg_focus = color["nord0"]
@@ -52,7 +52,7 @@ Theme.tooltip_fg = color["nord13"]
 Theme.tooltip_border_width = dpi(4)
 Theme.tooltip_gaps = dpi(15)
 Theme.tooltip_shape = function(cr, width, heigth)
-	gears.shape.rounded_rect(cr, width, heigth, 5)
+  gears.shape.rounded_rect(cr, width, heigth, 5)
 end
 
 Theme.notification_spacing = dpi(20)
@@ -70,7 +70,7 @@ Theme.hotkeys_bg = color["nord0"]
 Theme.hotkeys_fg = color["nord6"]
 Theme.hotkeys_border_width = 0
 Theme.hotkeys_shape = function(cr, width, height)
-	gears.shape.rounded_rect(cr, width, height, 10)
+  gears.shape.rounded_rect(cr, width, height, 10)
 end
 Theme.hotkeys_description_font = user_vars.font.bold
 
