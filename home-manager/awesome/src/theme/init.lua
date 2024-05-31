@@ -19,7 +19,10 @@ Theme.awesome_icon = Theme_path .. "../assets/icons/ArchLogo.png"
 Theme.awesome_subicon = Theme_path .. "../assets/icons/ArchLogo.png"
 
 -- Wallpaper
-beautiful.wallpaper = user_vars.wallpaper
+beautiful.wallpaper = function (s)
+  local i = s.index > #user_vars.wallpapers and #user_vars.wallpapers or s.index
+  gears.wallpaper.maximized(user_vars.wallpapers[i], s)
+end
 screen.connect_signal(
   'request::wallpaper',
   function(s)
