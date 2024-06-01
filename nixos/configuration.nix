@@ -195,7 +195,7 @@
   qt.style = "breeze";
 
   environment.systemPackages = with pkgs; [
-    # build tools
+    # build tools & dev
     gnumake
     cmake
     binutils
@@ -209,6 +209,7 @@
       ]))
     lua54Packages.lua
     lua54Packages.luarocks-nix
+    stylua
 
     # terminals
     alacritty
