@@ -8,6 +8,7 @@ local wibox = require("wibox")
 local dpi = require("beautiful").xresources.apply_dpi
 local gears = require("gears")
 local color = require("src.theme.colors")
+require("src.tools.icon_handler")
 
 local list_update = function(widget, buttons, label, data, objects)
 	widget:reset()

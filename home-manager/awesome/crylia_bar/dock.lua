@@ -7,6 +7,7 @@ local color = require("src.theme.colors")
 local dpi = require("beautiful").xresources.apply_dpi
 local gears = require("gears")
 local wibox = require("wibox")
+require("src.tools.icon_handler")
 
 return function(screen, programs)
 	local function create_dock_element(class, program, name, user_icon, is_steam, size)
