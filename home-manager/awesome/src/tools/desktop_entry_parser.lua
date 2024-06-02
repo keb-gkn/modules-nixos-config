@@ -11,32 +11,39 @@ require("src.tools.string_utils.lua")
 function parse_desktop_entry(desktop_entry_file)
     local de = {}
     -- supported desktop entry keys per the Desktop Entry Specification
+    -- * for required, nothing for not required
     de["Desktop Entry"] = {}
-    de["Desktop Entry"]["Type"] = ""
-    de["Desktop Entry"]["Version"] = ""
-    de["Desktop Entry"]["Name"] = ""
-    de["Desktop Entry"]["GenericName"] = ""
-    de["Desktop Entry"]["NoDisplay"] = ""
-    de["Desktop Entry"]["Comment"] = ""
-    de["Desktop Entry"]["Icon"] = ""
-    de["Desktop Entry"]["Hidden"] = ""
-    de["Desktop Entry"]["OnlyShowIn"] = ""
-    de["Desktop Entry"]["NotShowIn"] = ""
-    de["Desktop Entry"]["DBusActivatable"] = ""
-    de["Desktop Entry"]["TryExec"] = ""
-    de["Desktop Entry"]["Exec"] = ""
-    de["Desktop Entry"]["Path"] = ""
-    de["Desktop Entry"]["Terminal"] = ""
-    de["Desktop Entry"]["Actions"] = ""
-    de["Desktop Entry"]["MimeType"] = ""
-    de["Desktop Entry"]["Categories"] = ""
-    de["Desktop Entry"]["Implements"] = ""
-    de["Desktop Entry"]["Keywords"] = ""
-    de["Desktop Entry"]["StartupNotify"] = ""
-    de["Desktop Entry"]["StartupWMClass"] = ""
-    de["Desktop Entry"]["URL"] = ""
-    de["Desktop Entry"]["PrefersNonDefaultGPU"] = ""
-    de["Desktop Entry"]["SingleMainWindow"] = ""
+    de["Desktop Entry"]["Type"] = "" -- string / enum [Application, Link, Directory] -- *
+    de["Desktop Entry"]["Version"] = "" -- string --
+    de["Desktop Entry"]["Name"] = "" -- localestring -- *
+    de["Desktop Entry"]["GenericName"] = "" -- localestring --
+    de["Desktop Entry"]["NoDisplay"] = "" -- boolean -- 
+    de["Desktop Entry"]["Comment"] = "" -- localestring --
+    de["Desktop Entry"]["Icon"] = "" -- iconstring --
+    de["Desktop Entry"]["Hidden"] = "" -- boolean --
+    de["Desktop Entry"]["OnlyShowIn"] = "" -- string(s) (matched against $XDG_CURRENT_DESKTOP, if match, desktop entry is shown)--
+    de["Desktop Entry"]["NotShowIn"] = "" -- string(s) (matched against $XDG_CURRENT_DESKTOP, if match, desktop entry is not shown) --
+    -- if an app can be launched with D-Bus (https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus)
+    de["Desktop Entry"]["DBusActivatable"] = "" -- boolean --
+    de["Desktop Entry"]["TryExec"] = "" -- string --
+    -- has some special argument parsing that we WON'T DO but here's the docs (https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables)
+    de["Desktop Entry"]["Exec"] = "" -- string -- * (if DBusActivatable is not present or set to false, but req always for compatibility)
+    de["Desktop Entry"]["Path"] = "" -- string --
+    de["Desktop Entry"]["Terminal"] = "" -- boolean --
+    de["Desktop Entry"]["Actions"] = "" -- string(s) --
+    de["Desktop Entry"]["MimeType"] = "" -- string(s) --
+    -- Categories at time of writing [AudioVideo, Audio, Video, Development, Education, Game, Graphics, Network, Office, Science, Settings, System, Utility]
+    de["Desktop Entry"]["Categories"] = "" -- string(s) (https://specifications.freedesktop.org/menu-spec/latest/apa.html) --
+    -- Must fikkiw the rules used for D-Bus interface names
+    de["Desktop Entry"]["Implements"] = "" -- string(s) (https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#interfaces) --
+    de["Desktop Entry"]["Keywords"] = "" -- localestring(s) used for searching, not display, should not be redundant with Name and GenericName --
+    de["Desktop Entry"]["StartupNotify"] = "" -- boolean (https://specifications.freedesktop.org/startup-notification-spec/startup-notification-0.1.txt) --
+    de["Desktop Entry"]["StartupWMClass"] = "" -- string (https://specifications.freedesktop.org/startup-notification-spec/startup-notification-0.1.txt) --
+    de["Desktop Entry"]["URL"] = "" -- string -- * (if Type is Link)
+    -- hints that this application prefers to be run on a more powerful discrete GPU if available
+    de["Desktop Entry"]["PrefersNonDefaultGPU"] = "" -- boolean --
+    -- hints that this application had a single main window and does not support having an additional one open. Useful for stuff like steam --
+    de["Desktop Entry"]["SingleMainWindow"] = "" -- boolean --
 
     de["Actions"] = {}
 
@@ -44,6 +51,9 @@ function parse_desktop_entry(desktop_entry_file)
     action_keys["Name"] = ""
     action_keys["Icon"] = ""
     action_keys["Exec"] = ""
+
+    supported_types = {"Application", "Link", "Directory"}
+    -- supported_version = "1.5" -- won't check for it, this is informative, might use in the future
 
     local de_lines = readlines(desktop_entry_file)
     if #de_lines < 1 then
