@@ -3,7 +3,7 @@ local lfs = require("lfs")
 -- directory: string -- the location to walk through
 -- recursive: bool -- should or should not walk subdirs :: default false
 -- mode: string -- [a, f, d] :: default a
-local function walk(self, directory, recursive, mode)
+function walk(self, directory, recursive, mode)
     recursive = recursive or false
     mode = mode or "a"
 	return coroutine.wrap(function()
