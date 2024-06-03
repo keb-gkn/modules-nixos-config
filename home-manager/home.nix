@@ -161,6 +161,20 @@
         enable = true;
       };
     };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      shellAliases = {
+        ll = "ls -l";
+        update = "sudo nixos-rebuild switch";
+      };
+      history = {
+        size = 10000;
+        path = "/home/arthank/.config/zsh/history";
+      };
+    };
   };
 
   # Nicely reload system units when changing configs
