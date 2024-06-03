@@ -92,7 +92,7 @@ local list_update = function(widget, buttons, label, data, objects)
 				margins = dpi(6),
 				widget = wibox.container.margin,
 			})
-			icon.icon_container.icon:set_image(GetIcon(client.class:gsub(" ", "")))
+			icon.icon_container.icon:set_image(Get_icon(user_vars.icon_theme, client))
 			tag_widget.container:setup({
 				icon,
 				strategy = "exact",
