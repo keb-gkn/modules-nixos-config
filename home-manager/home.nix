@@ -114,7 +114,6 @@
 
     # vlc
     vlc
-    libvlc
     libmicrodns
 
     # jellyfin
