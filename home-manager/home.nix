@@ -151,12 +151,15 @@
     };
     direnv = {
       enable = true;
-      loadInNixShell = true;
-      silent = false;
+      config = {};
+      stdlib = "";
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = false;
       nix-direnv = {
         enable = true;
       };
-      direnvrcExtra = "";
     };
   };
 
