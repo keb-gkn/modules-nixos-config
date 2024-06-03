@@ -8,6 +8,10 @@ function string:split(pat)
   return function() if st then return getter(st, g()) end end
 end
 
+function string:trim()
+   return (self:gsub("^%s*(.-)%s*$", "%1"))
+end
+
 function string:is_empty()
     if self:len() == 0 then
         return true

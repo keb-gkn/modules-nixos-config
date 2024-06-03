@@ -44,7 +44,7 @@ function walk(self, directory, recursive, mode)
 				end
 				if lfs.attributes(_f, "mode") == "directory" then
                     if recursive then
-                        for n in walk(_f, directory) do
+                        for n in walk(_f, directory, recursive, mode) do
                             coroutine.yield(n)
                         end
                     end
@@ -56,7 +56,7 @@ end
 
 function list_files(directory)
 	local i, t = 0, {}
-	for f in walk(directory, false, "f") do
+	for f in walk(directory, nil, false, "f") do
 		i = i + 1
 		t[i] = f
 	end
@@ -65,7 +65,7 @@ end
 
 function list_directories(directory)
     local i, t = 0, {}
-	for f in walk(directory, false, "d") do
+	for f in walk(directory, nil, false, "d") do
 		i = i + 1
 		t[i] = f
 	end

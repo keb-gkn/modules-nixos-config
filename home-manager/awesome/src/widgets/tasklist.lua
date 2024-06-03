@@ -114,7 +114,7 @@ local list_update = function(widget, buttons, label, data, objects)
 			task_widget:set_bg(color["nord0-0"])
 			task_widget.container.layout_it.title:set_text("")
 		end
-		task_widget.container.layout_it.margin.layout_icon.icon:set_image(Get_icon(user_vars.icon_theme, object))
+		task_widget.container.layout_it.margin.layout_icon.icon:set_image(GetIcon(object.class:gsub(" ", "")))
 		widget:add(task_widget)
 		widget:set_spacing(dpi(6))
 
