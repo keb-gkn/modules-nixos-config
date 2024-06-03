@@ -46,6 +46,8 @@
     size = 32;
   };
 
+  home.sessionVariables.GTK_THEME = "Nordic";
+
   # Add programs
   home.packages = with pkgs; [
     # terminals
