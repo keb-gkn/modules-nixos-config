@@ -88,7 +88,8 @@
     # gaming
     lutris
 
-    # build tools
+    # dev tools
+    devenv
     gnumake
     libclang
     libgcc
@@ -147,6 +148,15 @@
       lfs.enable = true;
       userEmail = "a.c.pufu@gmail.com";
       userName = "CloudyChris";
+    };
+    direnv = {
+      enable = true;
+      loadInNixShell = true;
+      silent = false;
+      nix-direnv = {
+        enable = true;
+      };
+      direnvrcExtra = "";
     };
   };
 
