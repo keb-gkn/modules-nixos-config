@@ -97,6 +97,8 @@
     dex
     vulkan-tools
     wine
+    gnome.eog
+    vlc
 
     # audio
     noisetorch
