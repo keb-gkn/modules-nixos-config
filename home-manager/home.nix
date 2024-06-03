@@ -62,6 +62,14 @@
     };
   };
 
+  qt = {
+    enable = true;
+    style = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+  };
+
   home.sessionVariables.GTK_THEME = "Nordic";
 
   # Add programs
@@ -98,12 +106,39 @@
     vulkan-tools
     wine
     gnome.eog
-    vlc
 
-    # audio
+    # audio / pulse
     noisetorch
     pulsemixer
     pavucontrol
+
+    # vlc
+    vlc
+    libvlc
+    libmicrodns
+
+    # jellyfin
+    jellyfin
+    jellyfin-media-player
+    jellycli
+    jftui
+    jellyseerr
+    delfin
+    jellyfin-ffmpeg
+
+    # kodi
+    kodi
+    kodiPackages.jellycon
+    kodiPackages.arrow
+    kodiPackages.keymap
+    kodiPackages.future
+    kodiPackages.youtube
+    kodiPackages.urllib3
+    kodiPackages.signals
+    kodiPackages.routing
+    kodiPackages.chardet
+    kodiPackages.certifi
+    kodiPackages.netflix
 
     # gaming
     lutris
