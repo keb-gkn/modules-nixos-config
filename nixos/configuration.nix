@@ -59,13 +59,6 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = {
-        defaultSession = "none+awesome";
-        sddm = {
-          enable = true;
-          theme = "nord";
-        };
-      };
       windowManager.awesome = {
         enable = true;
         package = pkgs.awesome.overrideAttrs {
@@ -85,6 +78,13 @@
           luarocks-nix
           luadbi-mysql
         ];
+      };
+    };
+    displayManager = {
+      defaultSession = "none+awesome";
+      sddm = {
+        enable = true;
+        theme = "nord";
       };
     };
     picom = {
