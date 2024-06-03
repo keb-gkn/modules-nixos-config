@@ -227,6 +227,9 @@
       source = ./assets/wallpapers;
       recursive = true;
     };
+    "/home/arthank/.local/share/vlc/skins2/Arc-Dark.vlt" = {
+      source = ./assets/vlc/Arc-Dark.vlt;
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
