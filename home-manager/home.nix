@@ -261,8 +261,9 @@
       source = ./assets/wallpapers;
       recursive = true;
     };
-    "/home/arthank/.local/share/vlc/skins2/eDark.vlt" = {
-      source = ./assets/vlc/eDark.vlt;
+    "/home/arthank/.local/share/vlc/skins2/" = {
+      source = ./assets/vlc/skins2;
+      recursive = true;
     };
   };
 
