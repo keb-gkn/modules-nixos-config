@@ -36,16 +36,6 @@
     };
   };
 
-  xsession = {
-    enable = true;
-  };
-
-  systemd = {
-    user = {
-      enable = true;
-    };
-  };
-
   fonts.fontconfig.enable = true;
 
   home.pointerCursor = {
@@ -81,15 +71,6 @@
   };
 
   home.sessionVariables.GTK_THEME = "Nordic";
-
-  home.keyboard = {
-    layout = "ro_RO";
-    model = "pc105+inet";
-    options = [
-      "lv3:ralt_switch_multikey"
-      "grp:sclk_toggle"
-    ];
-  };
 
   # Add programs
   home.packages = with pkgs; [
