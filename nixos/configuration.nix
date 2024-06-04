@@ -79,6 +79,12 @@
           luadbi-mysql
         ];
       };
+      xkb = {
+        layout = "ro";
+        model = "p105+inet";
+        variant = "";
+        options = "lv3:ralt_switch_multikey, grp:sclk_toggle";
+      };
     };
     displayManager = {
       defaultSession = "none+awesome";

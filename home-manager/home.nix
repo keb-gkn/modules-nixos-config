@@ -32,7 +32,17 @@
     username = "arthank";
     homeDirectory = "/home/arthank";
     sessionVariables = {
-      EDITOR = "neovide";
+      EDITOR = "neovim";
+    };
+  };
+
+  xsession = {
+    enable = true;
+  };
+
+  systemd = {
+    user = {
+      enable = true;
     };
   };
 
@@ -71,6 +81,15 @@
   };
 
   home.sessionVariables.GTK_THEME = "Nordic";
+
+  home.keyboard = {
+    layout = "ro_RO";
+    model = "pc105+inet";
+    options = [
+      "lv3:ralt_switch_multikey"
+      "grp:sclk_toggle"
+    ];
+  };
 
   # Add programs
   home.packages = with pkgs; [
