@@ -261,10 +261,6 @@
       source = ./assets/wallpapers;
       recursive = true;
     };
-    "/home/arthank/.local/share/vlc/skins2/" = {
-      source = ./assets/vlc/skins2;
-      recursive = true;
-    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
