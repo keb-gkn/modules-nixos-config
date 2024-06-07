@@ -12,10 +12,14 @@ local wibox = require("wibox")
 require("src.core.signals")
 
 return function(s)
+    local systray_widget = wibox.widget.systray()
+    systray_widget.set_screen(s)
+    systray_widget.id = "tray"
+
 	local systray = wibox.widget({
 		{
 			{
-				wibox.widget.systray(),
+				systray_widget,
 				widget = wibox.container.margin,
 				id = "st",
 			},
@@ -43,8 +47,6 @@ return function(s)
 	end)
 
 	systray.container.st.widget:set_base_size(dpi(20))
-
-    systray.container.st.set_screen(s)
 
 	return systray
 end
