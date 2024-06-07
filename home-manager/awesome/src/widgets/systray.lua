@@ -44,5 +44,7 @@ return function(s)
 
 	systray.container.st.widget:set_base_size(dpi(20))
 
+    systray.container.st.set_screen(s)
+
 	return systray
 end
