@@ -139,6 +139,9 @@
     kodiPackages.certifi
     kodiPackages.netflix
 
+    # muzak
+    lmms
+
     # gaming
     lutris
 
