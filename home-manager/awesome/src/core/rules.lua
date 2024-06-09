@@ -39,14 +39,14 @@ awful.rules.rules = {
 				"pop-up",
 			},
 		},
-		properties = { floating = true, titlebars_enabled = true },
+		properties = { floating = true, titlebars_enabled = false },
 	},
 	{
 		id = "titlebar",
 		rule_any = {
 			type = { "normal", "dialog", "modal", "utility" },
 		},
-		properties = { titlebars_enabled = true },
+		properties = { titlebars_enabled = false },
 	},
 }
 
@@ -55,7 +55,7 @@ awful.spawn.easy_async_with_shell("cat ~/.config/awesome/src/assets/rules.txt", 
 		ruled.client.append_rule({
 			rule = { class = class },
 			properties = {
-				floating = true,
+				floating = false,
 			},
 		})
 	end

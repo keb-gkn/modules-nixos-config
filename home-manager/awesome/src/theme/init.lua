@@ -36,4 +36,10 @@ screen.connect_signal("request::wallpaper", function(s)
 	end
 end)
 
+client.connect_signal("property::maximized", function(c)
+	if c.maximized then
+		c.maximized = false
+	end
+end)
+
 beautiful.init(Theme)
