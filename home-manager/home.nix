@@ -210,13 +210,12 @@
       enable = true;
       config = {};
       stdlib = "";
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      enableFishIntegration = true;
-      enableNushellIntegration = false;
       nix-direnv = {
         enable = true;
       };
+    };
+    bash = {
+      enable = true;
     };
     zsh = {
       enable = true;
@@ -224,13 +223,17 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        ll = "ls -l";
-        update = "sudo nixos-rebuild switch";
+        ll = "eza -alh";
+        nors = "sudo nixos-rebuild switch --flake /etc/nixos#ASIMOV";
+        hmrs = "home-manager switch --flake /etc/nixos#arthank@ASIMOV";
       };
       history = {
         size = 10000;
         path = "/home/arthank/.config/zsh/history";
       };
+    };
+    fish = {
+      enable = true;
     };
   };
 
