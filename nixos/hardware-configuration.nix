@@ -12,10 +12,51 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot = {
+    plymouth = {
+      enable = true;
+      theme = "black_hud";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["black_hud"];
+        })
+      ];
+    };
+
+    # Enable "Silent Boot"
+    consoleLogLevel = 0;
+    initrd = {
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = [];
+      verbose = false;
+    };
+    extraModulePackages = [];
+    kernelModules = ["kvm-intel"];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+    # Hide the OS choice for bootloaders.
+    # It's still possible to open the bootloader list by pressing any key
+    # It will just not appear on screen unless a key is pressed
+    loader = {
+      grub = {
+        enable = true;
+        theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
+        useOSProber = true;
+        efiSupport = true;
+        device = "nodev";
+        fsIdentifier = "label";
+      };
+      timeout = 5;
+    };
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/19357ee1-ca37-4b83-97a8-b5ea0ecd5aa4";

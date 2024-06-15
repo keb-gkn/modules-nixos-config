@@ -165,10 +165,6 @@
 
   networking.hostName = "ASIMOV";
 
-  boot.loader = {
-    systemd-boot.enable = true;
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
