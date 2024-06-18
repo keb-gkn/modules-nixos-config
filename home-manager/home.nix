@@ -106,6 +106,8 @@
     vulkan-tools
     wine
     gnome.eog
+    fontconfig
+    xorg.libX11
 
     # audio / pulse
     noisetorch
