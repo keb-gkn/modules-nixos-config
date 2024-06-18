@@ -221,6 +221,7 @@
       with ps; [
         pip
         requests
+        xlib
       ]))
     lua54Packages.lua
     lua54Packages.luarocks-nix

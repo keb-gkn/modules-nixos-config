@@ -108,6 +108,7 @@
     gnome.eog
     fontconfig
     xorg.libX11
+    freetype
 
     # audio / pulse
     noisetorch
