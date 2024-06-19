@@ -149,9 +149,9 @@
     lutris
 
     # dev tools
-    devenv
     gnumake
     libclang
+    ccls
     libgcc
     gdb
     gdbm
@@ -208,14 +208,6 @@
       lfs.enable = true;
       userEmail = "a.c.pufu@gmail.com";
       userName = "CloudyChris";
-    };
-    direnv = {
-      enable = true;
-      config = {};
-      stdlib = "";
-      nix-direnv = {
-        enable = true;
-      };
     };
     bash = {
       enable = true;
