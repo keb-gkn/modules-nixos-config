@@ -110,6 +110,11 @@
     xorg.libX11
     freetype
 
+    # documents
+    pdfslicer
+    zathura
+    libreoffice
+
     # audio / pulse
     noisetorch
     pulsemixer
