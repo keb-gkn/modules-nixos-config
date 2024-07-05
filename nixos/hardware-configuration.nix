@@ -15,13 +15,13 @@
   boot = {
     plymouth = {
       enable = true;
-      theme = "black_hud";
-      themePackages = with pkgs; [
-        # By default we would install all themes
-        (adi1090x-plymouth-themes.override {
-          selected_themes = ["black_hud"];
-        })
-      ];
+      #theme = "black_hud";
+      #themePackages = with pkgs; [
+      #  # By default we would install all themes
+      #  (adi1090x-plymouth-themes.override {
+      #    selected_themes = ["black_hud"];
+      #  })
+      #];
     };
 
     # Enable "Silent Boot"
@@ -42,9 +42,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    # Hide the OS choice for bootloaders.
-    # It's still possible to open the bootloader list by pressing any key
-    # It will just not appear on screen unless a key is pressed
+
     loader = {
       grub = {
         enable = true;
@@ -53,6 +51,8 @@
         efiSupport = true;
         device = "nodev";
         fsIdentifier = "label";
+        splashImage = ./assets/skull.png;
+        splashMode = "stretch";
       };
       timeout = 5;
     };
