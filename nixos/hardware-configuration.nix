@@ -32,6 +32,8 @@
       verbose = false;
       systemd = {
         enable = true;
+        additionalUpstreamUnits = ["systemd-vconsole-setup.service"];
+        storePaths = [config.console.font];
       };
     };
     extraModulePackages = [];
