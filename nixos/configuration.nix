@@ -159,7 +159,12 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
+    earlySetup = true;
+    font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
+    packages = with pkgs; [
+      terminus_font
+      kbd
+    ];
     useXkbConfig = true;
   };
 
@@ -180,6 +185,17 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+  };
+
+  programs.command-not-found = {
+    enable = false;
+  };
+
+  programs.nix-index = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.gamemode = {
