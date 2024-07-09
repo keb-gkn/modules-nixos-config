@@ -124,7 +124,6 @@
 
     # audio / pulse
     noisetorch
-    pulsemixer
     pavucontrol
 
     # vlc

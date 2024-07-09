@@ -27,7 +27,6 @@
     # Configure your nixpkgs instance
     config = {
       allowUnfree = true;
-      pulseaudio = true;
     };
   };
 
@@ -133,14 +132,14 @@
   # Enabling sound
   sound.enable = true;
   hardware.pulseaudio = {
-    enable = lib.mkForce false;
-    #package = pkgs.pulseaudioFull;
-    #support32Bit = true;
-    #zeroconf.discovery.enable = true;
-    #extraConfig = ''
-    #  load-module module-equalizer-sink
-    #  load-module module-dbus-protocol
-    #'';
+    enable = false;
+    package = pkgs.pulseaudioFull;
+    support32Bit = true;
+    zeroconf.discovery.enable = true;
+    extraConfig = ''
+      load-module module-equalizer-sink
+      load-module module-dbus-protocol
+    '';
   };
 
   # Enable internet
@@ -299,7 +298,7 @@
     # lua
     extraLuaPackages.dbus_proxy
     extraLuaPackages.enum
-    extraLuaPackages.pulseaudio_dbus
+    #extraLuaPackages.pulseaudio_dbus
     extraLuaPackages.upower_dbus
 
     # xorg
