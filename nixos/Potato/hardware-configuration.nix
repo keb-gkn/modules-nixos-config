@@ -52,11 +52,15 @@
     ];
 
     loader = {
+      efi = {
+        canTouchEfiVariables = false;
+      };
       grub = {
         enable = true;
         theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
         useOSProber = true;
         efiSupport = true;
+        efiInstallAsRemovable = true;
         device = "nodev";
         fsIdentifier = "label";
         splashImage = ../assets/raven_eats_eye_2556x1440.png;
