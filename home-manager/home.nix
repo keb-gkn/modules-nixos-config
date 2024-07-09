@@ -70,6 +70,10 @@
     };
   };
 
+  wayland.windowManager.hyprland.systemd.vaiables = [
+    "-all"
+  ];
+
   home.sessionVariables.GTK_THEME = "Nordic";
 
   # Add programs
@@ -249,10 +253,6 @@
 
   # AwesomeWM
   home.file = {
-    "/home/arthank/.config/awesome" = {
-      source = ./awesome;
-      recursive = true;
-    };
     "/home/arthank/.config/fish" = {
       source = ./fish;
       recursive = true;
