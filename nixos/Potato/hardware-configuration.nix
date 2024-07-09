@@ -66,6 +66,40 @@
     };
   };
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/28a2cde3-1c4b-4afd-9dca-0a3bccd9b3e2";
+    fsType = "btrfs";
+    options = ["subvol=@"];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/8A1A-FD75";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/28a2cde3-1c4b-4afd-9dca-0a3bccd9b3e2";
+    fsType = "btrfs";
+    options = ["subvol=@home"];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/28a2cde3-1c4b-4afd-9dca-0a3bccd9b3e2";
+    fsType = "btrfs";
+    options = ["subol=@nix"];
+  };
+
+  fileSystems."/var/log" = {
+    device = "/dev/disk/by-uuid/28a2cde3-1c4b-4afd-9dca-0a3bccd9b3e2";
+    fsType = "btrfs";
+    options = ["subvol=@log"];
+  };
+
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/68fc0507-3721-4d66-9100-9e58e0a55210";}
+  ];
+
   networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
