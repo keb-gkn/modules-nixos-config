@@ -60,7 +60,7 @@
         device = "nodev";
         fsIdentifier = "label";
         splashImage = ../assets/raven_eats_eye_2556x1440.png;
-        spashMode = "stretch";
+        splashMode = "stretch";
       };
       timeout = 5;
     };
