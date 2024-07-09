@@ -87,7 +87,7 @@
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/28a2cde3-1c4b-4afd-9dca-0a3bccd9b3e2";
     fsType = "btrfs";
-    options = ["subol=@nix"];
+    options = ["subvol=@nix"];
   };
 
   fileSystems."/var/log" = {

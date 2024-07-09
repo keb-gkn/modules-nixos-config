@@ -70,7 +70,7 @@
     };
   };
 
-  wayland.windowManager.hyprland.systemd.vaiables = [
+  wayland.windowManager.hyprland.systemd.variables = [
     "-all"
   ];
 
