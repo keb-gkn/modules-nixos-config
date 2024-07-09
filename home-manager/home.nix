@@ -70,9 +70,12 @@
     };
   };
 
-  wayland.windowManager.hyprland.systemd.variables = [
-    "-all"
-  ];
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.variables = [
+      "-all"
+    ];
+  };
 
   home.sessionVariables.GTK_THEME = "Nordic";
 
