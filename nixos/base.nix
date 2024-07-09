@@ -58,7 +58,7 @@
       enable = true;
     };
     rtkit = {
-      rnable = true;
+      enable = true;
     };
   };
 
