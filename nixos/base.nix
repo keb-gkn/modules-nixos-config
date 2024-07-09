@@ -85,7 +85,7 @@
       enable = true;
     };
     displayManager = {
-      defaultSession = "wayland+hyprland";
+      defaultSession = "hyprland";
       sddm = {
         enable = true;
         wayland = {
