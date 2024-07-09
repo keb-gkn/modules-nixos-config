@@ -99,6 +99,7 @@
         enable = true;
       };
       systemWide = true;
+      socketActivation = true;
       raopOpenFirewall = true;
       wireplumber = {
         enable = true;
@@ -131,6 +132,13 @@
 
   # Enabling sound
   sound.enable = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    wlr = {
+      enable = true;
+    };
+  };
   hardware.pulseaudio = {
     enable = false;
     package = pkgs.pulseaudioFull;
