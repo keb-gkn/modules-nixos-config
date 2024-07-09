@@ -71,7 +71,7 @@
   };
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    #enable = true;
     systemd.variables = [
       "-all"
     ];
