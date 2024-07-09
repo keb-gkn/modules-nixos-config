@@ -99,7 +99,7 @@
       audio = {
         enable = true;
       };
-      ststemWide = true;
+      systemWide = true;
       raopOpenFirewall = true;
       wireplumber = {
         enable = true;
