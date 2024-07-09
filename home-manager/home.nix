@@ -89,7 +89,7 @@
     firefox
 
     # apps
-    discord
+    vesktop
 
     # shells
     fish

@@ -8,6 +8,8 @@
   pkgs,
   ...
 }: {
+  # TODO: split into multiple files (one for hyprland and all related stuff, one for pipewire and all replated stuff, one for installed programs (general), you get the jist)
+
   # You can import other NixOS modules here
   imports = [
     # My modules
@@ -64,6 +66,10 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  programs.xwayland = {
+    enable = true;
   };
 
   programs.hyprlock = {
@@ -138,6 +144,11 @@
     wlr = {
       enable = true;
     };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
+    ];
   };
   hardware.pulseaudio = {
     enable = false;
