@@ -8,7 +8,9 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # My modules
+    ./programs
+    ./styles
+    ./hypr
   ];
 
   nixpkgs = {
@@ -35,49 +37,6 @@
       EDITOR = "neovim";
     };
   };
-
-  fonts.fontconfig.enable = true;
-
-  home.pointerCursor = {
-    name = "Nordzy-cursors";
-    package = pkgs.nordzy-cursor-theme;
-    x11.enable = true;
-    gtk.enable = true;
-    size = 32;
-  };
-
-  gtk = {
-    enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-    };
-    cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
-    };
-  };
-
-  qt = {
-    enable = true;
-    style = {
-      name = "Nordic";
-      package = pkgs.nordic;
-    };
-  };
-
-  wayland.windowManager.hyprland = {
-    #enable = true;
-    systemd.variables = [
-      "-all"
-    ];
-  };
-
-  home.sessionVariables.GTK_THEME = "Nordic";
 
   # Add programs
   home.packages = with pkgs; [
@@ -129,29 +88,6 @@
     # vlc
     vlc
     libmicrodns
-
-    # jellyfin
-    jellyfin
-    jellyfin-media-player
-    jellycli
-    jftui
-    jellyseerr
-    delfin
-    jellyfin-ffmpeg
-
-    # kodi
-    kodi
-    kodiPackages.jellycon
-    kodiPackages.arrow
-    kodiPackages.keymap
-    kodiPackages.future
-    kodiPackages.youtube
-    kodiPackages.urllib3
-    kodiPackages.signals
-    kodiPackages.routing
-    kodiPackages.chardet
-    kodiPackages.certifi
-    kodiPackages.netflix
 
     # muzak
     lmms
@@ -211,38 +147,6 @@
     inkscape
   ];
 
-  # Enable home-manager and git
-  programs = {
-    home-manager.enable = true;
-    git = {
-      enable = true;
-      lfs.enable = true;
-      userEmail = "a.c.pufu@gmail.com";
-      userName = "CloudyChris";
-    };
-    bash = {
-      enable = true;
-    };
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-      shellAliases = {
-        ll = "eza -alh";
-        nors = "sudo nixos-rebuild switch --flake /etc/nixos#ASIMOV";
-        hmrs = "home-manager switch --flake /etc/nixos#arthank@ASIMOV";
-      };
-      history = {
-        size = 10000;
-        path = "/home/arthank/.config/zsh/history";
-      };
-    };
-    fish = {
-      enable = true;
-    };
-  };
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
   xdg = {
@@ -250,24 +154,6 @@
     userDirs = {
       enable = true;
       createDirectories = true;
-    };
-  };
-
-  # AwesomeWM
-  home.file = {
-    "/home/arthank/.config/fish" = {
-      source = ./fish;
-      recursive = true;
-    };
-    "/home/arthank/.face" = {
-      source = ./assets/user-icon.png;
-    };
-    "/home/arthank/.config/awesome/src/assets/userpfp/arthank.png" = {
-      source = ./assets/user-icon.png;
-    };
-    "/home/arthank/.wallpapers" = {
-      source = ./assets/wallpapers;
-      recursive = true;
     };
   };
 
