@@ -46,10 +46,8 @@
         gaps_out = 20;
         border_size = 2;
 
-        col = {
-          active_border = "rgba(33ccffee)";
-          inactive_border = "rgba(595959aa)";
-        };
+        "col.active_border" = "rgba(33ccffee)";
+        "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = false;
         allow_tearing = false;
@@ -92,8 +90,6 @@
       };
 
       animations = {
-        enable = true;
-
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         animation = [
           "windows, 1, 7, myBezier"
