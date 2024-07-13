@@ -1,5 +1,8 @@
 {config, ...}: {
-  services.hypridle.settings = {
-    # hypridle settings go here
+  services.hypridle = {
+    enable = true;
+    settings = {
+      # hypridle settings go here
+    };
   };
 }
