@@ -4,7 +4,7 @@
   };
 
   home.file."/home/arthank/.config/fish" = {
-    source = ./fish;
+    source = ../fish;
     recursive = true;
   };
 }

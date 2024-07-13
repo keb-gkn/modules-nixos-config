@@ -18,10 +18,10 @@
 
   home.file = {
     "/home/arthank/.face" = {
-      source = ./assets/user-icon.png;
+      source = ../assets/user-icon.png;
     };
     "/home/arthank/.wallpapers" = {
-      source = ./assets/wallpapers;
+      source = ../assets/wallpapers;
       recursive = true;
     };
   };
