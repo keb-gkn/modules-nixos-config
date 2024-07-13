@@ -147,7 +147,7 @@
                 "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
                 "$mainMod, KP_${ws}, workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, KP_${ws}, movetoworkspace ${toString (x + 1)}"
+                "$mainMod SHIFT, KP_${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
             )
             10)
