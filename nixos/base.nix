@@ -72,14 +72,6 @@
     enable = true;
   };
 
-  programs.hyprlock = {
-    enable = true;
-  };
-
-  programs.waybar = {
-    enable = true;
-  };
-
   services = {
     xserver = {
       enable = true;
@@ -89,9 +81,6 @@
         variant = "";
         options = "lv3:ralt_switch_multikey, grp:sclk_toggle";
       };
-    };
-    hypridle = {
-      enable = true;
     };
     displayManager = {
       defaultSession = "hyprland";
