@@ -75,6 +75,7 @@
     fontconfig
     xorg.libX11
     freetype
+    wev
 
     # documents
     pdfslicer
