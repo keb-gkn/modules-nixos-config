@@ -131,6 +131,28 @@
 
           "$mainMod, Q, killactive"
           "$mainMod CTRL SHIFT, Q, exit"
+
+          "$mainMod, KP_End, workspace, 1"
+          "$mainMod, KP_Down, workspace, 2"
+          "$mainMod, KP_Next, workspace, 3"
+          "$mainMod, KP_Left, workspace, 4"
+          "$mainMod, KP_Begin, workspace, 5"
+          "$mainMod, KP_Right, workspace, 6"
+          "$mainMod, KP_Home, workspace, 7"
+          "$mainMod, KP_Up, workspace, 8"
+          "$mainMod, KP_Prior, workspace, 9"
+          "$mainMod, KP_Insert, workspace, 10"
+
+          "$mainMod SHIFT, KP_End, movetoworkspace, 1"
+          "$mainMod SHIFT, KP_Down, movetoworkspace, 2"
+          "$mainMod SHIFT, KP_Next, movetoworkspace, 3"
+          "$mainMod SHIFT, KP_Left, movetoworkspace, 4"
+          "$mainMod SHIFT, KP_Begin, movetoworkspace, 5"
+          "$mainMod SHIFT, KP_Right, movetoworkspace, 6"
+          "$mainMod SHIFT, KP_Home, movetoworkspace, 7"
+          "$mainMod SHIFT, KP_Up, movetoworkspace, 8"
+          "$mainMod SHIFT, KP_Prior, movetoworkspace, 9"
+          "$mainMod SHIFT, KP_Insert, movetoworkspace, 10"
         ]
         ++ (
           builtins.concatLists (builtins.genList (
@@ -142,8 +164,6 @@
               in [
                 "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-                "$mainMod, KP_${ws}, workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, KP_${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
             )
             10)
