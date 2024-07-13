@@ -137,7 +137,7 @@
           "$mainMod CTRL SHIFT, Q, exit"
         ]
         ++ (
-          builtins.concatLists (builtins.getList (
+          builtins.concatLists (builtins.genList (
               x: let
                 ws = let
                   c = (x + 1) / 10;
