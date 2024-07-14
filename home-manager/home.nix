@@ -9,6 +9,7 @@
   # You can import other home-manager modules here
   imports = [
     ./programs
+    ./services
     ./style
     ./hypr
   ];
