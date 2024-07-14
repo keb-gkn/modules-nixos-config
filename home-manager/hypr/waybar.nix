@@ -3,7 +3,7 @@
     enable = true;
     systemd = {
       enable = true;
-      target = "hyprland-session.target";
+      target = "graphical-session.target";
     };
     settings = {};
     #style = ./waybar.css;
