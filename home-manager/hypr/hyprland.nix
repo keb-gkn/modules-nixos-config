@@ -107,6 +107,11 @@
       # stops all windows from beign maximized
       windowrulev2 = "suppressevent maximize, class:.*";
 
+      # autostart
+      exec-once = [
+        "waybar"
+      ];
+
       "$mainMod" = "SUPER";
 
       bind =
