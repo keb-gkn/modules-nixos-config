@@ -1,9 +1,13 @@
 {config, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.variables = [
-      "-all"
-    ];
+    systemd = {
+      enable = true;
+      enableXdgAutostart = true;
+      variables = [
+        "-all"
+      ];
+    };
     settings = {
       "$terminal" = "alacritty";
       "$fileManager" = "nautilus";
