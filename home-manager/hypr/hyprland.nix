@@ -134,10 +134,6 @@
           "$mainMod ALT, right, workspace, e+1"
           "$mainMod ALT, left, workspace, e-1"
 
-          "$mainMod, N, movetoworkspacesilent, special:minimized"
-          "$mainMod CTRL, N, togglespecialworkspace, minimized"
-          "$mainMod CTRL, N, movetoworkspace, +0"
-
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
 
@@ -186,5 +182,21 @@
         "$mainMod, mouse:273, resizewindow"
       ];
     };
+    extraConfig = ''
+      bind = SUPER, N, movetoworkspacesilent, special:minimized
+      bind = SUPER CTRL, N, togglespecialworkspace, minimized
+      bind = SUPER CTRL, N, submap, minimized
+
+      submap = minimized
+      bind = , Q, killactive
+      bind = , N, movetoworkspace, +0
+      bind = , N, submap, reset
+      bind = , mouse:272, movetoworkspace, +0
+      bind = , mouse:272, submap, reset
+      bind = , escape, togglespecialworkspace, minimized
+      bind = , escape, submap, reset
+      submap = reset
+
+    '';
   };
 }
