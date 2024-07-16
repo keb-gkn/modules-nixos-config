@@ -18,7 +18,9 @@
       ];
 
       monitor = [
-        ",preferred,auto,auto"
+        "HDMI-A-1,2560x1440,0x0,1"
+        "HDMI-A-2,2560x1440,2560x0,1"
+        "Unknown-1, disable"
       ];
 
       input = {
@@ -117,7 +119,7 @@
       bind =
         [
           "$mainMod, T, exec, $terminal"
-          "$mainMod, E, exec, $fileManager"
+          "$mainMod, N, exec, $fileManager"
 
           "$mainMod, F, togglefloating,"
 
@@ -132,8 +134,9 @@
           "$mainMod ALT, right, workspace, e+1"
           "$mainMod ALT, left, workspace, e-1"
 
-          "$mainMod, S, togglespecialworkspace, magic"
-          "$mainMod SHIFT, S, movetoworkspace, special:magic"
+          "$mainMod, W, movetoworkspace, special:minimized"
+          "$mainMod SHIFT, W, movetoworkspace, +0"
+          "$mainMod SHIFT, W, togglespecialworkspace, minimized"
 
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
