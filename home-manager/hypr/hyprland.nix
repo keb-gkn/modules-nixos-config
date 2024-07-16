@@ -119,7 +119,7 @@
       bind =
         [
           "$mainMod, T, exec, $terminal"
-          "$mainMod, N, exec, $fileManager"
+          "$mainMod, E, exec, $fileManager"
 
           "$mainMod, F, togglefloating,"
 
@@ -134,9 +134,9 @@
           "$mainMod ALT, right, workspace, e+1"
           "$mainMod ALT, left, workspace, e-1"
 
-          "$mainMod, W, movetoworkspace, special:minimized"
-          "$mainMod SHIFT, W, movetoworkspace, +0"
-          "$mainMod SHIFT, W, togglespecialworkspace, minimized"
+          "$mainMod, N, movetoworkspacesilent, special:minimized"
+          "$mainMod CTRL, N, togglespecialworkspace, minimized"
+          "$mainMod CTRL, N, movetoworkspace, +0"
 
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
