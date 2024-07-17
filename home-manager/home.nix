@@ -131,6 +131,9 @@
     gsettings-desktop-schemas
     gnome.zenity
 
+    # gnome-bluetooth
+    blueberry
+
     # file explorer
     gnome.nautilus
     nautilus-open-any-terminal
