@@ -77,6 +77,7 @@
     xorg.libX11
     freetype
     wev
+    bluetuith
 
     # documents
     pdfslicer
