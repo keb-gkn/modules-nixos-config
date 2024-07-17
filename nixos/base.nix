@@ -102,7 +102,7 @@
       raopOpenFirewall = true;
       wireplumber = {
         enable = true;
-        extraConfig = {
+        extraConfig.bluetoothEnchancements = {
           "monitor.bluez.properties" = {
             "bluez5.enable-sbc-xq" = true;
             "bluez5.enable-msbc" = true;
