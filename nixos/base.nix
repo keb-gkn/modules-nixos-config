@@ -275,6 +275,7 @@
     # terminals
     alacritty
     termite
+    kitty
 
     # shells
     fish
@@ -292,28 +293,35 @@
     nordzy-cursor-theme
 
     # utils
-    xclip
-    wl-clipboard
-    wl-clipboard-x11
-    upower
-    bluez
-    bluez-alsa
-    bluez-tools
-    xfce.xfce4-power-manager
-    playerctl
-    flameshot
-    kitty
-    pwvucontrol
     pciutils
     toybox
 
-    # lua
+    # wayland
+    wl-clipboard
+    wl-clipboard-x11
+    egl-wayland
+
+    # lua custom packages
     extraLuaPackages.dbus_proxy
     extraLuaPackages.enum
-    #extraLuaPackages.pulseaudio_dbus
+    extraLuaPackages.pulseaudio_dbus
     extraLuaPackages.upower_dbus
 
+    # power management
+    upower
+    xfce.xfce4-power-manager
+
+    # audio / control
+    pwvucontrol
+    playerctl
+
+    # bluetooth
+    bluez
+    bluez-alsa
+    bluez-tools
+
     # xorg
+    xclip
     xorg.xrdb
     xorg.xfs
     xorg.xfd

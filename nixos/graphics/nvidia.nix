@@ -12,7 +12,7 @@
     };
 
     # enable open source nvidia drivers (only works for Turing or newer) (not nouveau)
-    open = true;
+    open = false;
 
     nvidiaSettings = true;
 
