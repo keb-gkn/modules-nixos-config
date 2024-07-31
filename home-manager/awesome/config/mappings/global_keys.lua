@@ -61,9 +61,6 @@ return gears.table.join(
 	awful.key({ modkey }, "#40", function()
 		awful.spawn("rofi -show drun")
 	end, { descripton = "Application launcher", group = "Applications" }),
-	awful.key({ modkey }, "#23", function()
-		awful.spawn("rofi -show window")
-	end, { descripton = "Client switcher (alt+tab)", group = "Applications" }),
 	awful.key({ "Mod1" }, "#23", function()
 		awful.spawn("rofi -show window")
 	end, { descripton = "Client switcher (alt+tab)", group = "Applications" }),
