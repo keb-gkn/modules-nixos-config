@@ -78,6 +78,7 @@
     wev
     bluetuith
     flameshot
+    rofi
 
     # documents
     pdfslicer
