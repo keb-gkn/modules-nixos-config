@@ -101,7 +101,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          "./home-manager/arthank_AWESIMOV.nix"
+          ./home-manager/arthank_AWESIMOV.nix
         ];
       };
       "arthank@ASIMOWL" = home-manager.lib.homeManagerConfiguration {
@@ -109,7 +109,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          "./home-manager/arthank_ASIMOWL.nix"
+          ./home-manager/arthank_ASIMOWL.nix
         ];
       };
     };

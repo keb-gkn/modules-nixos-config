@@ -48,7 +48,7 @@
     firefox
 
     # apps
-    vesktop
+    discord
 
     # shells
     fish
