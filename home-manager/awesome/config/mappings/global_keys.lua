@@ -58,6 +58,9 @@ return gears.table.join(
 	awful.key({ modkey, "Shift" }, "#36", function()
 		awful.layout.inc(1)
 	end, { description = "Select next layout", group = "Layout" }),
+	awful.key({ modkey }, "#27", function()
+		awful.spawn("rofi -show run")
+	end, { descripton = "Run", group = "Applications" }),
 	awful.key({ modkey }, "#40", function()
 		awful.spawn("rofi -show drun")
 	end, { descripton = "Application launcher", group = "Applications" }),
