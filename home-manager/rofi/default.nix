@@ -1,10 +1,12 @@
 {
   home.file = {
-    "~/.nix-profile/share/rofi/themes/nord-full.rasi" = {
+    "/home/arthank/.local/share/rofi/themes/nord-full.rasi" = {
       source = ./nord-full.rasi;
+      recursive = true;
     };
-    "~/.nix-profile/share/rofi/themes/nord-round.rasi" = {
+    "/home/arthank/.local/share/rofi/themes/nord-round.rasi" = {
       source = ./nord-round.rasi;
+      recursive = true;
     };
   };
 }
