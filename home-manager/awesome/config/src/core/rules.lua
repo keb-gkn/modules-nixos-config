@@ -49,14 +49,3 @@ awful.rules.rules = {
 		properties = { titlebars_enabled = false },
 	},
 }
-
-awful.spawn.easy_async_with_shell("cat ~/.config/awesome/src/assets/rules.txt", function(stdout)
-	for class in stdout:gmatch("%a+") do
-		ruled.client.append_rule({
-			rule = { class = class },
-			properties = {
-				floating = false,
-			},
-		})
-	end
-end)
