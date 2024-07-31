@@ -11,7 +11,6 @@
     ./programs
     ./services
     ./style
-    ./hypr
   ];
 
   nixpkgs = {

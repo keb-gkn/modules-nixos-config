@@ -54,6 +54,9 @@
     auto-optimise-store = true;
   };
 
+  # Required for SDDM
+  qt.style = "breeze";
+
   security = {
     polkit = {
       enable = true;
@@ -61,15 +64,6 @@
     rtkit = {
       enable = true;
     };
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  programs.xwayland = {
-    enable = true;
   };
 
   services = {
@@ -83,48 +77,9 @@
       };
     };
     displayManager = {
-      defaultSession = "hyprland";
       sddm = {
         enable = true;
-        wayland = {
-          enable = true;
-        };
         theme = "nord";
-      };
-    };
-    pipewire = {
-      enable = true;
-      audio = {
-        enable = true;
-      };
-      systemWide = true;
-      socketActivation = true;
-      raopOpenFirewall = true;
-      wireplumber = {
-        enable = true;
-        extraConfig.bluetoothEnhancements = {
-          "monitor.bluez.properties" = {
-            "bluez5.enable-sbc-xq" = true;
-            "bluez5.enable-msbc" = true;
-            "bluez5.enable-hw-volume" = true;
-            "bluez5.roles" = [
-              "hsp_hs"
-              "hsp_ag"
-              "hfp_hf"
-              "hfp_ag"
-            ];
-          };
-        };
-      };
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse = {
-        enable = true;
-      };
-      jack = {
-        enable = true;
       };
     };
   };
@@ -134,35 +89,14 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    wlr = {
-      enable = true;
-    };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-kde
     ];
-  };
-  hardware.pulseaudio = {
-    enable = false;
-    package = pkgs.pulseaudioFull;
-    support32Bit = true;
-    zeroconf.discovery.enable = true;
-    extraConfig = ''
-      load-module module-equalizer-sink
-      load-module module-dbus-protocol
-    '';
   };
 
   # Enable internet
   networking.networkmanager.enable = true;
-
-  # Enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-  services.blueman.enable = true;
 
   # Enable OpenGL
   hardware.opengl = {
@@ -185,11 +119,6 @@
     ];
     useXkbConfig = true;
   };
-
-  networking.hostName = "ASIMOV";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # My traceroute
   programs.mtr.enable = true;
@@ -220,25 +149,6 @@
     enableZshIntegration = true;
   };
 
-  programs.gamemode = {
-    enable = true;
-    settings = {
-      general = {
-        renice = 10;
-      };
-      custom = {
-        start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-        end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-      };
-    };
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
@@ -250,9 +160,6 @@
       PasswordAuthentication = false;
     };
   };
-
-  # Required for SDDM
-  qt.style = "breeze";
 
   environment.systemPackages = with pkgs; [
     # build tools & dev
@@ -296,11 +203,6 @@
     pciutils
     toybox
 
-    # wayland
-    wl-clipboard
-    wl-clipboard-x11
-    egl-wayland
-
     # lua custom packages
     extraLuaPackages.dbus_proxy
     extraLuaPackages.enum
@@ -312,13 +214,7 @@
     xfce.xfce4-power-manager
 
     # audio / control
-    pwvucontrol
     playerctl
-
-    # bluetooth
-    bluez
-    bluez-alsa
-    bluez-tools
 
     # xorg
     xclip

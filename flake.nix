@@ -73,11 +73,16 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      ASIMOV = nixpkgs.lib.nixosSystem {
+      AWESIMOV = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
-          ./nixos/ASIMOV.nix
+          ./nixos/AWESIMOV.nix
+        ];
+      };
+      ASIMOWL = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/ASIMOWL.nix
         ];
       };
       Potato = nixpkgs.lib.nixosSystem {
@@ -89,14 +94,22 @@
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    # Available through 'home-manager --flake .#your-username@'
     homeConfigurations = {
-      "arthank@ASIMOV" = home-manager.lib.homeManagerConfiguration {
+      "arthank@AWESIMOV" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          "./home-manager/arthank@AWESIMOV.nix"
+        ];
+      };
+      "arthank@ASIMOWL" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          "./home-manager/arthank@ASIMOWL.nix"
         ];
       };
     };
