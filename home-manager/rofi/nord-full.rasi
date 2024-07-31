@@ -29,7 +29,7 @@
     bg1:  @nord1;
     bg2:  @nord0;
     bg3:  #eceff440;
-    bg4:  #2e3440E6;
+    bg4:  #4c566aE6;
 
     fg0:  @nord6;
     fg1:  #eceff480;
@@ -43,7 +43,7 @@
 window {
   fullscreen: true;
   padding: 1em;
-  background-color: @bg0;
+  background-color: @nord0;
 }
 
 mainbox {
@@ -58,7 +58,7 @@ inputbar {
   spacing:  4px;
 
   border:         1px;
-  border-radius:  10px;
+  border-radius:  20px;
   border-color:   @bg2;
 
   children: [icon-search,entry];
@@ -77,6 +77,7 @@ icon-search {
 entry {
   placeholder:        "Search";
   placeholder-color:  @bg2;
+  font:               "JetBrains Mono Bold 16";
 }
 
 listview {
