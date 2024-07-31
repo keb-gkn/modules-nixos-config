@@ -77,6 +77,7 @@
     freetype
     wev
     bluetuith
+    flameshot
 
     # documents
     pdfslicer
