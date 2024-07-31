@@ -59,13 +59,13 @@ return gears.table.join(
 		awful.layout.inc(1)
 	end, { description = "Select next layout", group = "Layout" }),
 	awful.key({ modkey }, "#27", function()
-		awful.spawn("rofi -show run")
+		awful.spawn("rofi -show run -theme ~/.nix-profile/share/rofi/themes/nord-round.rasi")
 	end, { descripton = "Run", group = "Applications" }),
 	awful.key({ modkey }, "#40", function()
-		awful.spawn("rofi -show drun")
+		awful.spawn("rofi -show drun -theme ~/.nix-profile/share/rofi/themes/nord-full.rasi")
 	end, { descripton = "Application launcher", group = "Applications" }),
 	awful.key({ "Mod1" }, "#23", function()
-		awful.spawn("rofi -show window")
+		awful.spawn("rofi -show window -theme ~/.nix-profile/share/rofi/themes/nord-round.rasi")
 	end, { descripton = "Client switcher (alt+tab)", group = "Applications" }),
 	awful.key({ modkey }, "#26", function()
 		awful.spawn(user_vars.file_manager)
