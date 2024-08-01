@@ -3,19 +3,23 @@
     # base config with pkgs and services
     ./base.nix
 
-    ./bluetooth.nix
-    ./cups.nix
+    # modules
+    ./modules/bluetooth.nix
+    ./modules/cups.nix
+    ./modules/gaming.nix
 
-    ./gaming.nix
+    # hardware
+    ./hardware/machines/ASIMOV.nix
+    ./hardware/nvidia.nix
 
+    # graphics
     ./graphics/hyprland.nix
 
-    # nvidia
-    ./graphics/nvidia.nix
-
-    # Hardware configuration (nixos-generate-config)
-    ./ASIMOV/hardware-configuration.nix
+    # programs
+    ./programs/transmission.nix
   ];
 
   networking.hostName = "ASIMOV";
+
+  services.transmission.home = "/bigboy/Torrents";
 }
