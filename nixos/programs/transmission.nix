@@ -9,7 +9,7 @@
     downloadDirPermissions = "666";
     settings = {
       umask = 0;
-      download-dir = "${config.services.transmission.home}/Dowloads";
+      download-dir = "${config.services.transmission.home}/Downloads";
       incomplete-dir-enabled = true;
       incomplete-dir = "${config.services.transmission.home}/.incomplete";
       watch-dir-enabled = true;
