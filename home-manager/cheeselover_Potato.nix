@@ -1,7 +1,7 @@
 {
   imports = [
     ./modules/home.nix
-    ./users/arthank.nix
+    ./users/cheeselover.nix
     ./awesome
     ./rofi
   ];

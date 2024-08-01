@@ -1,7 +1,8 @@
 {
   imports = [
     # base config with pkgs and services
-    ./base.nix
+    ./modules/base.nix
+    ./users/arthank.nix
 
     # modules
     ./modules/pulseaudio.nix
@@ -10,7 +11,7 @@
     ./modules/gaming.nix
 
     # hardware
-    ./ASIMOV/hardware-configuration.nix
+    ./hardware/machines/ASIMOV.nix
     ./hardware/nvidia.nix
 
     # graphics

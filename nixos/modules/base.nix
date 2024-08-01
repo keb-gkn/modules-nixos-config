@@ -13,8 +13,7 @@
   # You can import other NixOS modules here
   imports = [
     # My modules
-    ./users.nix
-    ./graphics/xresources-nord.nix
+    ../graphics/xresources-nord.nix
   ];
 
   nixpkgs = {

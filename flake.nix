@@ -94,7 +94,7 @@
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@'
+    # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "arthank@AWESIMOV" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
@@ -110,6 +110,14 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/arthank_ASIMOWL.nix
+        ];
+      };
+      "cheeselover@Potato" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/cheeselover_Potato.nix
         ];
       };
     };

@@ -8,9 +8,9 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    ./programs
-    ./services
-    ./style
+    ../programs
+    ../services
+    ../style
   ];
 
   nixpkgs = {
@@ -27,14 +27,6 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
-    };
-  };
-
-  home = {
-    username = "arthank";
-    homeDirectory = "/home/arthank";
-    sessionVariables = {
-      EDITOR = "neovim";
     };
   };
 

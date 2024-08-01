@@ -1,7 +1,8 @@
 {
   imports = [
     # base config with pkgs and services
-    ./base.nix
+    ./modules/base.nix
+    ./users/arthank.nix
 
     # modules
     ./modules/bluetooth.nix

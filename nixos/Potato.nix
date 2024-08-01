@@ -1,7 +1,8 @@
 {
   imports = [
-    # base config with pkgs and services
-    ./base.nix
+    # base config and user
+    ./modules/base.nix
+    ./users/cheeselover.nix
 
     # modules
     ./modules/pulseaudio.nix

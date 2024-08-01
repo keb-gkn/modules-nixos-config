@@ -1,6 +1,7 @@
 {
   imports = [
-    ./home.nix
+    ./modules/home.nix
+    ./users/arthank.nix
     ./hyprland
   ];
 }
