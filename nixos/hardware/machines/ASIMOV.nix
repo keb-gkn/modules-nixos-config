@@ -62,7 +62,7 @@
         efiSupport = true;
         device = "nodev";
         fsIdentifier = "label";
-        splashImage = ../assets/raven_eats_eye_2556x1440.png;
+        splashImage = ../../assets/raven_eats_eye_2556x1440.png;
         splashMode = "stretch";
       };
       timeout = 5;
