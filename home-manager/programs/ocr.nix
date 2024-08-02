@@ -14,5 +14,6 @@
   xdg.desktopEntries.ocr = {
     name = "OCR image";
     exec = "\"~/.local/bin/ocr\"";
+    icon = "org.xfce.screenshooter";
   };
 }
