@@ -1,4 +1,8 @@
 {
+  programs.rofi = {
+    enable = true;
+    theme = "/home/arthank/.local/share/rofi/themes/nord-round.rasi";
+  };
   home.file = {
     "/home/arthank/.local/share/rofi/themes/nord-full.rasi" = {
       source = ./nord-full.rasi;

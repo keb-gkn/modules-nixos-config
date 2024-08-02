@@ -69,7 +69,6 @@
     freetype
     wev
     bluetuith
-    rofi
     mimeo
 
     # documents
