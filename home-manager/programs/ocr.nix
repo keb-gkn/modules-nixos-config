@@ -13,6 +13,6 @@
   };
   xdg.desktopEntries.ocr = {
     name = "OCR image";
-    exec = "\"~/.local/bin/ocr\"";
+    exec = "\"$HOME/.local/bin/ocr\"";
   };
 }
