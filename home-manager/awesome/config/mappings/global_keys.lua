@@ -79,6 +79,9 @@ return gears.table.join(
 	awful.key({}, "#107", function()
 		awful.spawn(user_vars.screenshot_program)
 	end, { description = "Screenshot", group = "Applications" }),
+	awful.key({ "Control", "Shift" }, "#107", function()
+		awful.spawn("ocr")
+	end, { description = "Screenshot", group = "Applications" }),
 	awful.key({}, "XF86AudioLowerVolume", function(c)
 		awful.spawn.easy_async_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -2%", function()
 			awesome.emit_signal("module::volume_osd:show", true)
