@@ -8,11 +8,11 @@
         cat /tmp/ocr-out.txt | ${pkgs.xclip}/bin/xclip -sel clip
         rm /tmp/ocr-tmp.png
       ''}";
+      executable = true;
     };
   };
   xdg.desktopEntries.ocr = {
     name = "OCR image";
     exec = "~/.local/bin/ocr";
-    executable = true;
   };
 }
