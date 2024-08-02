@@ -9,7 +9,6 @@
         savePath = "${config.home.homeDirectory}/Pictures/Screenshots";
         savePathFixed = true;
         saveAsFileExtension = ".png";
-        jpegQuality = 75;
         useJpgForClipboard = false;
         startupLaunch = true;
       };
