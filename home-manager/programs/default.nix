@@ -4,6 +4,7 @@
     ./bash.nix
     ./zsh.nix
     ./fish.nix
+    ./ocr.nix
   ];
 
   programs.home-manager.enable = true;

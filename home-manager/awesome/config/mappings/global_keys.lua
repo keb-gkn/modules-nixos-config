@@ -67,6 +67,9 @@ return gears.table.join(
 	awful.key({ "Mod1" }, "#23", function()
 		awful.spawn("rofi -show window -show-icons -icon-theme \"Papirus-Dark\" -theme /home/arthank/.local/share/rofi/themes/nord-round.rasi")
 	end, { descripton = "Client switcher (alt+tab)", group = "Applications" }),
+	awful.key({ modkey }, "#118", function()
+		awful.spawn("clipmenu")
+	end, { descripton = "Clipboard history", group = "Other" }),
 	awful.key({ modkey }, "#26", function()
 		awful.spawn(user_vars.file_manager)
 	end, { descripton = "Open file manager", group = "System" }),
