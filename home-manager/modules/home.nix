@@ -85,6 +85,10 @@
     vlc
     libmicrodns
 
+    # other media players
+    mpv
+    cmus
+
     # muzak
     lmms
 
