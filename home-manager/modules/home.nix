@@ -69,8 +69,8 @@
     freetype
     wev
     bluetuith
-    flameshot
     rofi
+    mimeo
 
     # documents
     pdfslicer
