@@ -69,7 +69,7 @@ return gears.table.join(
 	end, { descripton = "Client switcher (alt+tab)", group = "Applications" }),
 	awful.key({ modkey }, "#118", function()
 		awful.spawn("clipmenu")
-	end, { descripton = "Clipboard history", group = "Other" }),
+	end, { descripton = "Clipboard history", group = "System" }),
 	awful.key({ modkey }, "#26", function()
 		awful.spawn(user_vars.file_manager)
 	end, { descripton = "Open file manager", group = "System" }),
