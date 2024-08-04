@@ -13,6 +13,10 @@
 
     # graphics
     ./graphics/awesomewm.nix
+
+    # services
+    ./services/flatpak.nix
+    ./services/transmission.nix
   ];
 
   networking.hostName = "Potato";

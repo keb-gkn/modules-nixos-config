@@ -17,8 +17,9 @@
     # graphics
     ./graphics/awesomewm.nix
 
-    # programs
-    ./programs/transmission.nix
+    # services
+    ./services/flatpak.nix
+    ./services/transmission.nix
   ];
 
   networking.hostName = "ASIMOV";
