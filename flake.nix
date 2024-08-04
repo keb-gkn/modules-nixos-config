@@ -103,7 +103,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          nix-flatpak.nixosModules.nix-flatpak
           # > Our main home-manager configuration file <
           ./home-manager/arthank_AWESIMOV.nix
         ];
@@ -112,7 +111,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          nix-flatpak.nixosModules.nix-flatpak
           # > Our main home-manager configuration file <
           ./home-manager/arthank_ASIMOWL.nix
         ];
@@ -121,7 +119,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          nix-flatpak.nixosModules.nix-flatpak
           # > Our main home-manager configuration file <
           ./home-manager/cheeselover_Potato.nix
         ];

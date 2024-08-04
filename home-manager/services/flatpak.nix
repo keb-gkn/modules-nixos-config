@@ -1,5 +1,5 @@
-{flake-inputs, ...}: {
-  imports = [../../default.nix flake-inputs.flatpaks.homeManagerModules.nix-flatpak];
+{inputs, ...}: {
+  imports = [inputs.nix-flatpak.homeManagerModules.nix-flatpak];
 
   services.flatpak = {
     enable = true;
