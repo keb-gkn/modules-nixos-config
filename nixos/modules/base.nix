@@ -85,6 +85,8 @@
 
   # Enabling sound
   sound.enable = true;
+
+  # portals for flatpaks and sandboxed apps
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -92,6 +94,13 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-kde
     ];
+    config = {
+      common = {
+        default = [
+          "gtk"
+        ];
+      };
+    };
   };
 
   # Enable internet
