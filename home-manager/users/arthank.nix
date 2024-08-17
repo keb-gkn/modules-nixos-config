@@ -6,4 +6,12 @@
       EDITOR = "neovim";
     };
   };
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 }

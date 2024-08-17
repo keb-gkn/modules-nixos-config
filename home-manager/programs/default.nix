@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./git.nix
     ./bash.nix
@@ -32,4 +32,125 @@
       };
     };
   };
+
+  # Add programs
+  home.packages = with pkgs; [
+    # terminals
+    termite
+    alacritty
+
+    # web browser
+    firefox
+
+    # apps
+    discord
+
+    # shells
+    fish
+
+    # shell utils
+    bat
+    colordiff
+    unstable.neofetch
+    unstable.eza
+
+    # fonts
+    nerdfonts
+
+    # utils
+    xclip
+    dconf
+    xdg-utils
+    wget
+    curl
+    dex
+    htop
+    vulkan-tools
+    wine
+    gnome.eog
+    fontconfig
+    xorg.libX11
+    freetype
+    wev
+    bluetuith
+    mimeo
+    unzip
+
+    # documents
+    pdfslicer
+    zathura
+    libreoffice
+
+    # audio / pulse
+    noisetorch
+    pavucontrol
+
+    # vlc
+    vlc
+    libmicrodns
+
+    # other media players
+    mpv
+    cmus
+
+    # muzak
+    lmms
+
+    # gaming
+    lutris
+
+    # dev tools
+    gnumake
+    libclang
+    ccls
+    libgcc
+    gdb
+    gdbm
+    cgdb
+    scons
+    cmakeWithGui
+    cmake-format
+
+    # game dev
+    unstable.godot_4
+    blender
+
+    # cad
+    openscad
+
+    # editor
+    inputs.neovim-flake.packages.x86_64-linux.maximal
+
+    # icons
+    papirus-nord
+
+    # cursors
+    nordzy-cursor-theme
+
+    # gnome bs
+    gnome.gnome-settings-daemon
+    gsettings-desktop-schemas
+    gnome.zenity
+
+    # gnome-bluetooth
+    blueberry
+
+    # file explorer
+    gnome.nautilus
+    nautilus-open-any-terminal
+    gnome.nautilus-python
+    gnome.sushi
+
+    # ssh
+    gnome.gnome-keyring
+    gnome.libgnome-keyring
+
+    #################### apps
+    # graphics
+    gimp-with-plugins
+    gimpPlugins.gap
+    gimpPlugins.fourier
+    gimpPlugins.texturize
+    inkscape
+  ];
 }
