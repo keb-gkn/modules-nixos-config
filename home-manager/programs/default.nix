@@ -132,7 +132,6 @@
     nordzy-cursor-theme
 
     # gnome bs
-    gnome.gnome-settings-daemon
     gsettings-desktop-schemas
     gnome.zenity
 

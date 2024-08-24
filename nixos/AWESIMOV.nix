@@ -20,6 +20,7 @@
     # services
     ./services/flatpak.nix
     ./services/transmission.nix
+    ./services/gnome.nix
   ];
 
   networking.hostName = "ASIMOV";
