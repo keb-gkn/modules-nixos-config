@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   wayland.windowManager.hyprland = {
     enable = true;
     systemd = {
@@ -27,7 +27,7 @@
         kb_layout = "ro";
         kb_variant = "";
         kb_model = "p105+inet";
-        kb_options = "lv3:ralt_switch_multikey, grp:sclk_toggle";
+        kb_options = "lv3:ralt_switch, compose:sclk, grp:menu_switch";
         kb_rules = "";
 
         follow_mouse = 1;
