@@ -72,7 +72,7 @@
         layout = "ro";
         model = "p105+inet";
         variant = "";
-        options = "lv3:ralt_switch_multikey, grp:sclk_toggle";
+        options = "lv3:ralt_switch, compose:sclk, grp:menu_switch";
       };
     };
     displayManager = {
