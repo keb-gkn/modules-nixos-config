@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  serives.gnome = {
+  services.gnome = {
     gnome-settings-daemon.enable = true;
   };
   environment.systemPackages = with pkgs; [
