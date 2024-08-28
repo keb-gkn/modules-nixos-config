@@ -32,6 +32,7 @@ for i = 1, 9 do
 			if tag then
 				awful.tag.viewtoggle(tag)
 			end
+            client.focus:move_to_tag(tag)
 		end, { description = "Move focused client on tag " .. i, group = "Tag" })
 	)
 end
