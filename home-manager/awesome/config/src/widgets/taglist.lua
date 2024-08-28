@@ -10,6 +10,16 @@ local dpi = require("beautiful").xresources.apply_dpi
 local color = require("src.theme.colors")
 require("src.tools.icon_handler")
 
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
 local list_update = function(widget, buttons, label, data, objects)
 	widget:reset()
 
@@ -68,7 +78,7 @@ local list_update = function(widget, buttons, label, data, objects)
 		if object.urgent == true then
 			tag_widget:set_bg(color["nord11"])
 			tag_widget:set_fg(color["nord0"])
-		elseif object == awful.screen.focused().selected_tag then
+		elseif has_value(awful.screen.focused().selected_tags, object) then
 			tag_widget:set_bg(color["nord6"])
 			tag_widget:set_fg(color["nord0"])
 		else

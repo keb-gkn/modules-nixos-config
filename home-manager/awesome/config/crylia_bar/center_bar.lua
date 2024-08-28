@@ -74,34 +74,42 @@ return function(s, widgets)
 	})
 
 	client.connect_signal("manage", function(c)
-		if #s.selected_tag:clients() < 1 then
-			top_center.visible = false
-		else
-			top_center.visible = true
-		end
+        if selected_tag then
+            if #s.selected_tag:clients() < 1 then
+                top_center.visible = false
+            else
+                top_center.visible = true
+            end
+        end
 	end)
 
 	client.connect_signal("unmanage", function(c)
-		if #s.selected_tag:clients() < 1 then
-			top_center.visible = false
-		else
-			top_center.visible = true
-		end
+        if selected_tag then
+            if #s.selected_tag:clients() < 1 then
+                top_center.visible = false
+            else
+                top_center.visible = true
+            end
+        end
 	end)
 
 	client.connect_signal("tag::switched", function(c)
-		if #s.selected_tag:clients() < 1 then
-			top_center.visible = false
-		else
-			top_center.visible = true
-		end
+        if selected_tag then
+            if #s.selected_tag:clients() < 1 then
+                top_center.visible = false
+            else
+                top_center.visible = true
+            end
+        end
 	end)
 
 	awesome.connect_signal("refresh", function(c)
-		if #s.selected_tag:clients() < 1 then
-			top_center.visible = false
-		else
-			top_center.visible = true
-		end
+        if selected_tag then
+            if #s.selected_tag:clients() < 1 then
+                top_center.visible = false
+            else
+                top_center.visible = true
+            end
+        end
 	end)
 end

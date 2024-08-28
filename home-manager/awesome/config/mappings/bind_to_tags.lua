@@ -27,12 +27,14 @@ for i = 1, 9 do
 		end, { description = "Toggle Tag " .. i, group = "Tag" }),
 		-- Brings the window over without chaning the tag, reverts automatically on tag change
 		awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9, function()
-			local screen = awful.screen.focused()
-			local tag = screen.tags[i]
-			if tag then
-				awful.tag.viewtoggle(tag)
-			end
-            client.focus:move_to_tag(tag)
+            if client.focus then
+                local screen = awful.screen.focused()
+                local tag = screen.tags[i]
+                if tag then
+                    awful.tag.viewtoggle(tag)
+                end
+                client.focus:move_to_tag(tag)
+            end
 		end, { description = "Move focused client on tag " .. i, group = "Tag" })
 	)
 end
