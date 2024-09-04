@@ -142,10 +142,6 @@
     lfs.enable = true;
   };
 
-  programs.dconf = {
-    enable = true;
-  };
-
   programs.command-not-found = {
     enable = false;
   };

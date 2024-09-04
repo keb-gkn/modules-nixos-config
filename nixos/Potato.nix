@@ -17,6 +17,7 @@
     # services
     ./services/flatpak.nix
     ./services/transmission.nix
+    ./services/gnome-settings.nix
   ];
 
   networking.hostName = "Potato";
