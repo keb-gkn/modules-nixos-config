@@ -63,7 +63,6 @@
 
     # utils
     xclip
-    dconf
     xdg-utils
     wget
     curl
@@ -79,11 +78,13 @@
     bluetuith
     mimeo
     unzip
+    unstable.stig
 
     # documents
     pdfslicer
     zathura
     libreoffice
+    lyx
 
     # audio / pulse
     noisetorch
