@@ -84,6 +84,7 @@
     pdfslicer
     zathura
     libreoffice
+    texliveFull
     texmaker
 
     # audio / pulse
