@@ -84,7 +84,7 @@
     pdfslicer
     zathura
     libreoffice
-    lyx
+    texmaker
 
     # audio / pulse
     noisetorch
