@@ -39,10 +39,13 @@
         "application/http" = "firefox.desktop";
         "application/https" = "firefox.desktop";
         "application/octet-stream" = "nvim.desktop";
-        "image/*" = ["org.gnome.eog.desktop" "gimp.desktop"];
+        "image/*" = "org.gnome.eog.desktop";
+        "image/jpg" = "org.gnome.eog.desktop";
+        "image/jpeg" = "org.gnome.eog.desktop";
+        "image/png" = "org.gnome.eog.desktop";
         "image/svg+xml-compressed" = ["org.gnome.eog.desktop" "org.inkscape.Inkscape.desktop" "gimp.desktop"];
-        "audio/*" = ["vlc.desktop"];
-        "video/*" = ["vlc.desktop"];
+        "audio/*" = "vlc.desktop";
+        "video/*" = "vlc.desktop";
       };
     };
   };

@@ -24,7 +24,8 @@ user_vars = {
 	-- Write the terminal command to start anything here
 	autostart = {
 		"picom --experimental-backends",
-        "blueman-applet"
+        "blueman-applet",
+        "nm-applet"
 	},
 
 	-- Type 'ip a' and check your wlan and ethernet name
