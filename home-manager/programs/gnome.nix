@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # io
+    glib
+
     # gsettings
     gsettings-desktop-schemas
 
