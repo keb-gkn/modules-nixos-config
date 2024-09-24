@@ -104,7 +104,14 @@
   };
 
   # Enable internet
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
+    };
+  };
 
   # Enable OpenGL
   hardware.opengl = {

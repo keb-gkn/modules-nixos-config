@@ -4,10 +4,18 @@
   ...
 }: {
   imports = [
-    ./git.nix
     ./bash.nix
     ./zsh.nix
     ./fish.nix
+    ./xorg.nix
+    ./git.nix
+    ./gnome.nix
+    ./mime.nix
+    ./utils.nix
+    ./icons.nix
+    ./fonts.nix
+    ./audio.nix
+    ./documents.nix
     ./ocr.nix
   ];
 
@@ -28,6 +36,8 @@
         "x-scheme-handler/about" = "firefox.desktop";
         "x-scheme-handler/unknown" = "firefox.desktop";
         "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop" "com.github.junrrein.PDFSlicer.desktop"];
+        "application/http" = "firefox.desktop";
+        "application/https" = "firefox.desktop";
         "application/octet-stream" = "nvim.desktop";
         "image/*" = ["org.gnome.eog.desktop" "gimp.desktop"];
         "image/svg+xml-compressed" = ["org.gnome.eog.desktop" "org.inkscape.Inkscape.desktop" "gimp.desktop"];
@@ -43,53 +53,14 @@
     termite
     alacritty
 
+    # editor
+    inputs.neovim-flake.packages.x86_64-linux.maximal
+
     # web browser
     firefox
 
     # apps
     discord
-
-    # shells
-    fish
-
-    # shell utils
-    bat
-    colordiff
-    unstable.neofetch
-    unstable.eza
-
-    # fonts
-    nerdfonts
-
-    # utils
-    xclip
-    xdg-utils
-    wget
-    curl
-    dex
-    htop
-    vulkan-tools
-    wine
-    gnome.eog
-    fontconfig
-    xorg.libX11
-    freetype
-    wev
-    bluetuith
-    mimeo
-    unzip
-    unstable.stig
-
-    # documents
-    pdfslicer
-    zathura
-    libreoffice
-    texliveFull
-    texmaker
-
-    # audio / pulse
-    noisetorch
-    pavucontrol
 
     # vlc
     vlc
@@ -116,6 +87,7 @@
     scons
     cmakeWithGui
     cmake-format
+    vulkan-tools
 
     # game dev
     unstable.godot_4
@@ -123,32 +95,6 @@
 
     # cad
     openscad
-
-    # editor
-    inputs.neovim-flake.packages.x86_64-linux.maximal
-
-    # icons
-    papirus-nord
-
-    # cursors
-    nordzy-cursor-theme
-
-    # gnome bs
-    gsettings-desktop-schemas
-    gnome.zenity
-
-    # gnome-bluetooth
-    blueberry
-
-    # file explorer
-    gnome.nautilus
-    nautilus-open-any-terminal
-    gnome.nautilus-python
-    gnome.sushi
-
-    # ssh
-    gnome.gnome-keyring
-    gnome.libgnome-keyring
 
     #################### apps
     # graphics

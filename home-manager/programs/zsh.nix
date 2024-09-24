@@ -5,9 +5,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
+      l = "eza";
       ll = "eza -alh";
-      nors = "sudo nixos-rebuild switch --flake /etc/nixos#ASIMOV";
-      hmrs = "home-manager switch --flake /etc/nixos#arthank@ASIMOV";
+      nosrs = "sudo nixos-rebuild switch --flake /etc/nixos#AWESIMOV";
+      hmrs = "home-manager switch --flake /etc/nixos#arthank@AWESIMOV";
     };
     history = {
       size = 10000;
