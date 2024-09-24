@@ -2,7 +2,6 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    enableLsColors = true;
     shellAliases = {
       l = "eza";
       ll = "eza -alh";
