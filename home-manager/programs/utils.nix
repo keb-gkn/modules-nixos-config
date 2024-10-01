@@ -20,7 +20,6 @@
     bluetuith
 
     # torrents
-    stig
 
     # fonts
     fontconfig
