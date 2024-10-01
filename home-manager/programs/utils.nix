@@ -20,7 +20,7 @@
     bluetuith
 
     # torrents
-    unstable.stig
+    stig
 
     # fonts
     fontconfig
