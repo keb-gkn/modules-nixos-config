@@ -75,6 +75,7 @@
 
     # muzak
     lmms
+    musescore
 
     # gaming
     lutris
