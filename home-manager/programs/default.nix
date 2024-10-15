@@ -75,7 +75,7 @@
 
     # muzak
     lmms
-    musescore
+    unstable.musescore
 
     # gaming
     lutris
