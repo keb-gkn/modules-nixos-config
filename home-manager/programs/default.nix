@@ -63,7 +63,7 @@
     firefox
 
     # apps
-    discord
+    unstable.vesktop
 
     # vlc
     vlc
