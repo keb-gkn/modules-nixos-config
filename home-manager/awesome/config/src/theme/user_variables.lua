@@ -77,7 +77,7 @@ user_vars = {
 		{ "Alacritty", "alacritty", "Alacritty" },
 		{ "nautilus", "nautilus", "Nautilus" },
 		{ "firefox", "firefox", "Firefox" },
-		{ "discord", "discord", "Discord" },
+		{ "vesktop", "vesktop", "Vesktop" },
 		{ "steam", "steam", "Steam" },
 	},
 }
