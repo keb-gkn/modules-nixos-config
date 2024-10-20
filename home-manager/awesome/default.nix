@@ -1,10 +1,10 @@
-{
+{config, ...}: {
   home.file = {
-    "/home/arthank/.config/awesome" = {
+    "${config.home.homeDirectory}/.config/awesome" = {
       source = ./config;
       recursive = true;
     };
-    "/home/arthank/.config/awesome/src/assets/userpfp/arthank.png" = {
+    "${config.home.homeDirectory}/.config/awesome/src/assets/userpfp/arthank.png" = {
       source = ../assets/user-icon.png;
     };
   };

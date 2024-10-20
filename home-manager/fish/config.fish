@@ -14,4 +14,4 @@ end
 fish_ssh_agent
 
 # Created by `pipx` on 2023-08-11 12:51:49
-set PATH $PATH /home/arthank/.local/bin
+set PATH $PATH $HOME/.local/bin

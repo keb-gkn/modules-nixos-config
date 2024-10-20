@@ -1,14 +1,14 @@
-{
+{config, ...}: {
   programs.rofi = {
     enable = true;
-    theme = "/home/arthank/.local/share/rofi/themes/nord-round.rasi";
+    theme = "${config.home.homeDirectory}/.local/share/rofi/themes/nord-round.rasi";
   };
   home.file = {
-    "/home/arthank/.local/share/rofi/themes/nord-full.rasi" = {
+    "${config.home.homeDirectory}/.local/share/rofi/themes/nord-full.rasi" = {
       source = ./nord-full.rasi;
       recursive = true;
     };
-    "/home/arthank/.local/share/rofi/themes/nord-round.rasi" = {
+    "${config.home.homeDirectory}/.local/share/rofi/themes/nord-round.rasi" = {
       source = ./nord-round.rasi;
       recursive = true;
     };

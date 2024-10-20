@@ -1,18 +1,40 @@
-{pkgs, ...}: {
-  home.file."/home/arthank/.appimages/.dummy" = {
-    text = "dummy";
-    recursive = true;
-    onChange = ''
-      if test -f "/home/arthank/.appimages/lmms-1.2.2.AppImage"; then
-        echo "LMMS already downloaded"
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  home.activation.lmmsInstallScript = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    if test -d "${config.home.homeDirectory}/.appimages/"; then
+      echo ".appimages dir exists"
+    else
+      if [$DRY_RUN]; then
+        echo "mkdir ${config.home.homeDirectory}/.appimages"
       else
-        ${pkgs.curl}/bin/curl -o /home/arthank/.appimages/lmms-1.2.2.AppImage https://github.com/LMMS/lmms/releases/download/v1.2.2/lmms-1.2.2-linux-x86_64.AppImage
-        chmod +x /home/arthank/.appimages/lmms-1.2.2.AppImage
+        mkdir ${config.home.homeDirectory}/.appimages
       fi
-      if test -f "/home/arthank/.local/share/applications/lmms.desktop"; then
-        cp /etc/nixos/home-manager/lmms/lmms.desktop /home/arthank/.local/share/applications/lmms.desktop
-        chmod +x /home/arthank/.local/share/applications/lmms.desktop
+    fi
+    if test -f "${config.home.homeDirectory}/.appimages/lmms-1.2.2.AppImage"; then
+      echo "LMMS already downloaded"
+    else
+      if [$DRY_RUN]; then
+        echo "${pkgs.curl}/bin/curl -o ${config.home.homeDirectory}/.appimages/lmms-1.2.2.AppImage http://github.com/LMMS/lmms/releases/download/v1.2.2/lmms-1.2.2-linux-x86_64.AppImage"
+        echo "chmod +x ${config.home.homeDirectory}/.appimages/lmms-1.2.2.AppImage"
+      else
+        ${pkgs.curl}/bin/curl -o ${config.home.homeDirectory}/.appimages/lmms-1.2.2.AppImage http://github.com/LMMS/lmms/releases/download/v1.2.2/lmms-1.2.2-linux-x86_64.AppImage
+        chmod +x ${config.home.homeDirectory}/.appimages/lmms-1.2.2.AppImage
       fi
-    '';
-  };
+    fi
+    if test -f "${config.home.homeDirectory}/.local/share/applications/lmms.desktop"; then
+      echo "LMMS desktop file already moved to share/applications"
+    else
+      if [$DRY_RUN]; then
+        echo "cp /etc/nixos/home-manager/lmms/lmms.desktop ${config.home.homeDirectory}/.local/share/applications/lmms.desktop"
+        echo "chmod +x ${config.home.homeDirectory}/.local/share/applications/lmms.desktop"
+      else
+        cp /etc/nixos/home-manager/lmms/lmms.desktop ${config.home.homeDirectory}/.local/share/applications/lmms.desktop
+        chmod +x ${config.home.homeDirectory}/.local/share/applications/lmms.desktop
+      fi
+    fi
+  '';
 }
