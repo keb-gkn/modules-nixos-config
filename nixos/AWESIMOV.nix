@@ -9,6 +9,7 @@
     ./modules/bluetooth.nix
     ./modules/cups.nix
     ./modules/gaming.nix
+    ./modules/appimage.nix
 
     # hardware
     ./hardware/machines/ASIMOV.nix
