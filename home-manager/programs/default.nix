@@ -15,6 +15,7 @@
     ./icons.nix
     ./fonts.nix
     ./audio.nix
+    ./lmms.nix
     ./documents.nix
     ./ocr.nix
   ];
@@ -72,10 +73,6 @@
     # other media players
     mpv
     cmus
-
-    # muzak
-    lmms
-    unstable.musescore
 
     # gaming
     lutris
