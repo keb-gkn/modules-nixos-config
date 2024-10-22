@@ -4,6 +4,7 @@
     homeDirectory = "/home/arthank";
     sessionVariables = {
       EDITOR = "neovim";
+      TERMINAL = ["alacritty"];
     };
   };
 
