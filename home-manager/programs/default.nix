@@ -76,6 +76,7 @@
 
     # gaming
     lutris
+    piper
 
     # dev tools
     gnumake

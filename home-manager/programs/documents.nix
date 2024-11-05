@@ -5,5 +5,6 @@
     texliveFull
     texmaker
     pdfslicer
+    obsidian
   ];
 }
