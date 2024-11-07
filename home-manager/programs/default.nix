@@ -72,6 +72,10 @@
 
     # other audio utils
     audacity
+    gnome.gnome-sound-recorder
+
+    # recording
+    obs-studio
 
     # other media players
     mpv
