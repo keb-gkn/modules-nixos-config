@@ -70,6 +70,9 @@
     vlc
     libmicrodns
 
+    # other audio utils
+    audacity
+
     # other media players
     mpv
     cmus
