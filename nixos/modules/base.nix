@@ -66,6 +66,7 @@
   };
 
   services = {
+    libinput.mouse.middleEmulation = false;
     xserver = {
       enable = true;
       xkb = {

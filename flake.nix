@@ -82,18 +82,6 @@
           ./nixos/AWESIMOV.nix
         ];
       };
-      ASIMOWL = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./nixos/ASIMOWL.nix
-        ];
-      };
-      Potato = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./nixos/Potato.nix
-        ];
-      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -105,22 +93,6 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/arthank_AWESIMOV.nix
-        ];
-      };
-      "arthank@ASIMOWL" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/arthank_ASIMOWL.nix
-        ];
-      };
-      "cheeselover@Potato" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/cheeselover_Potato.nix
         ];
       };
     };
