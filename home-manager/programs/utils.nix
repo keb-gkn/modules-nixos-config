@@ -27,5 +27,9 @@
 
     # windows compatibility layer
     wine
+
+    # glx
+    glxinfo
+    gpu-viewer
   ];
 }
