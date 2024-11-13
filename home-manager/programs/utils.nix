@@ -5,6 +5,7 @@
     colordiff
     unstable.neofetch
     unstable.eza
+    inxi
 
     # url
     wget
