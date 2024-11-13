@@ -23,7 +23,6 @@ user_vars = {
 
 	-- Write the terminal command to start anything here
 	autostart = {
-		"picom --experimental-backends",
         "blueman-applet",
         "nm-applet"
 	},
