@@ -27,6 +27,5 @@
     gamescopeSession = {
       enable = true;
     };
-    protontricks.enable = true;
   };
 }
