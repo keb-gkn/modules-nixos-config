@@ -12,9 +12,21 @@
     };
   };
 
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+    env = {
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    };
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    gamescopeSession = {
+      enable = true;
+    };
+    protontricks.enable = true;
   };
 }

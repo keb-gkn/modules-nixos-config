@@ -26,7 +26,8 @@
       defaultSession = "none+awesome";
     };
     picom = {
-      enable = true;
+      enable = false;
+      backend = "glx";
     };
   };
 
