@@ -10,8 +10,6 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     nur.url = "github:nix-community/NUR";
 
-    neovim-flake.url = "github:CloudyChris/neovim-flake";
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     # Libraries
@@ -37,6 +35,17 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvchad-starter = {
+      url = "github:CloudyChris/NvChad-config";
+      flake = false;
+    };
+
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nvchad-starter.follows = "nvchad-starter";
     };
   };
 

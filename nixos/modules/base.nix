@@ -23,6 +23,9 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      (final: prev: {
+        nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+       })
     ];
 
     # Configure your nixpkgs instance
@@ -194,11 +197,6 @@
     lua54Packages.luarocks-nix
     stylua
 
-    # terminals
-    alacritty
-    termite
-    kitty
-
     # shells
     fish
 
@@ -270,9 +268,6 @@
 
     # settings
     xsettingsd
-
-    # neovim
-    inputs.neovim-flake.packages.x86_64-linux.maximal
 
     # sddm
     sddm-themes.nord

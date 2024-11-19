@@ -53,13 +53,6 @@
 
   # Add programs
   home.packages = with pkgs; [
-    # terminals
-    termite
-    alacritty
-
-    # editor
-    inputs.neovim-flake.packages.x86_64-linux.maximal
-
     # web browser
     firefox
 
