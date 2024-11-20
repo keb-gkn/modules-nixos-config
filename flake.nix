@@ -36,17 +36,6 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvchad-starter = {
-      url = "github:CloudyChris/NvChad-config";
-      flake = false;
-    };
-
-    nvchad4nix = {
-      url = "github:nix-community/nix4nvchad";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nvchad-starter.follows = "nvchad-starter";
-    };
   };
 
   outputs = {
