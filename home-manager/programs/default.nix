@@ -9,6 +9,7 @@
     ./fish.nix
     ./xorg.nix
     ./git.nix
+    ./alacritty.nix
     ./gnome.nix
     ./mime.nix
     ./utils.nix
@@ -18,6 +19,7 @@
     ./lmms.nix
     ./documents.nix
     ./ocr.nix
+    ./doom_emacs.nix
   ];
 
   programs.home-manager.enable = true;
