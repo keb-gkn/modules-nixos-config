@@ -1,14 +1,17 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #deps
+    # deps
     git
     emacs
     ripgrep
-    #optional
+    # optional
     coreutils
     fd
     clang
+    # debugger
+    lldb
+    nodejs_22
   ];
   
   home.activation.doomInstallScript = lib.hm.dag.entryAfter ["writeBoundary"] ''

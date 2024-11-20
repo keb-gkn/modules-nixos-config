@@ -10,6 +10,7 @@
     ./xorg.nix
     ./git.nix
     ./alacritty.nix
+    ./doom_emacs.nix
     ./gnome.nix
     ./mime.nix
     ./utils.nix
@@ -19,7 +20,7 @@
     ./lmms.nix
     ./documents.nix
     ./ocr.nix
-    ./doom_emacs.nix
+    ./games.nix
   ];
 
   programs.home-manager.enable = true;
