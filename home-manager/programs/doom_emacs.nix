@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
   home.packages = with pkgs; [
     # deps
@@ -46,4 +46,5 @@
     fi
   fi
   '';
+  # THIS STILL NEEDS WORK
 }
