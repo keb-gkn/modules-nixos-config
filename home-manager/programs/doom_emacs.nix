@@ -12,6 +12,11 @@
     # debugger
     lldb
     nodejs_22
+    # everywhere
+    xclip
+    xdotool
+    xorg.xprop
+    xorg.xwininfo
   ];
   
   home.activation.doomInstallScript = lib.hm.dag.entryAfter ["writeBoundary"] ''
