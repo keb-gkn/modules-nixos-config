@@ -3,7 +3,7 @@
     username = "arthank";
     homeDirectory = "/home/arthank";
     sessionVariables = {
-      EDITOR = "neovim";
+      EDITOR = "emacs";
       TERMINAL = "alacritty";
     };
   };
