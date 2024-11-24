@@ -54,12 +54,6 @@
       ${pkgs.git}/bin/git clone --depth 1 https://github.com/CloudyChris/doom-config ${config.home.homeDirectory}/.config/doom
     fi
   fi
-  if [[ $PATH: =~ ^${config.home.homeDirectory}/.config/emacs/bin:|:${config.home.homeDirectory}/.config/emacs/bin:|:${config.home.homeDirectory}/.config/emacs/bin$ ]]; then
-    echo "[ INFO ] PATH updated successfully. Run doom sync after the finalization of this script"
-  else
-    echo "[ ERROR ] failed to add ${config.home.homeDirectory}/.config/emacs/bin to PATH"
-    ehco "[ ERROR ] could not install doom"
-  fi
   '';
   # THIS STILL NEEDS WORK
 }
