@@ -39,7 +39,15 @@
       git clone --depth 1 https://github.com/CloudyChris/doom-emacs ~/.config/emacs
     fi
   fi
-  export PATH="${config.home.homeDirectory}/.config/emacs/bin:$PATH"
+  if [[ ":$PATH:" == *":${config.home.homeDirectory}/.config/emacs/bin:"* ]]; then
+    echo "[ INFO ] ~/.config/emacs/bin already in path"
+  else
+    if [[ -v DRY_RUN ]]; then
+      echo "[ DRY ] adding ~/.config/emacs/bin to PATH"
+    else
+      export PATH="${config.home.homeDirectory}/.config/emacs/bin:$PATH"
+    fi
+  fi
   if [[ -d "${config.home.homeDirectory}/.config/doom" ]]; then
     echo "[ INFO ] .config/doom dir exists, your config is probably there"
     echo "[ INFO ] If something's wrong simply delete the directory and re-run your home-manager switch command"
