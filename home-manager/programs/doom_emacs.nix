@@ -3,24 +3,42 @@
   home.packages = with pkgs; [
     # deps
     git
-    emacs
+    emacs-gtk
     ripgrep
     # optional
     coreutils
     fd
     clang
-    # debugger
+    libtool
+    libvterm
+    # :tools debugger
     lldb
     nodejs_22
-    # everywhere
+    # :tools everywhere
     xclip
     xdotool
     xorg.xprop
     xorg.xwininfo
+    # :lang cc
+    glslang
+    # :tools editorconfig
+    editorconfig-core-c
+    # :lang nix
+    nixfmt-rfc-style
+    # :lang python
+    isort
+    pipenv
+    python311Packages.pynose
+    python311Packages.pytest
+    python311Packages.setuptools
+    # :lang sh
+    shellcheck
+    # :lang markdown
+    discount
   ];
 
   home.sessionPath = [
-    "${config.home.homeDirectory}/.config/emacs/bin"
+    "$HOME/.config/emacs/bin"
   ];
   
   home.activation.doomInstallScript = lib.hm.dag.entryAfter ["writeBoundary"] ''
