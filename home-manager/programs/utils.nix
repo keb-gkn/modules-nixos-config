@@ -13,6 +13,7 @@
 
     # resource management
     htop
+    btop
 
     # archiving and compression
     unzip
