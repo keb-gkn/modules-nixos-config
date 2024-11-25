@@ -5,31 +5,31 @@
       colors = {
         primary = {
           background = "#242933";
-          foreground = "#BBBDAF";
+          foreground = "#d8dee9";
         };
         normal = {
-          black = "#191C1D";
-          red = "#BD6062";
-          green = "#A3D6A9";
-          yellow = "#F0DFAF";
-          blue = "#8FB4D8";
-          magenta = "#C7A9D9";
-          cyan = "#B6D7A8";
-          white = "#BDC5BD";
+          black = "#191D24";
+          red = "#BF616A";
+          green = "#A3BE8C";
+          yellow = "#EBCB8D";
+          blue = "#81A1C1";
+          magenta = "#B48EAD";
+          cyan = "#8FBCBB";
+          white = "#D8DEE9";
         };
         bright = {
-          black = "#727C7C";
-          red = "#D18FAF";
-          green = "#B7CEB0";
-          yellow = "#BCBCBC";
-          blue = "#E0CF9F";
-          magenta = "#C7A9D9";
-          cyan = "#BBDA97";
-          white = "#BDC5BD";
+          black = "#3B4252";
+          red = "#D06F79";
+          green = "#B1D169";
+          yellow = "#F0D399";
+          blue = "#88C0D0";
+          magenta = "#C895BF";
+          cyan = "#93CCDC";
+          white = "#E5E9F0";
         };
         selection = {
-          text = "#000000";
-          background = "#F0DFAF";
+          text = "#D8DEE9";
+          background = "#2E3440";
         };
       };
     };
