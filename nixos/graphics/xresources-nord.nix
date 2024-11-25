@@ -1,45 +1,42 @@
 {pkgs, ...}: {
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
-      #define nord0 #2E3440
-      #define nord1 #3B4252
-      #define nord2 #434C5E
-      #define nord3 #4C566A
-      #define nord4 #D8DEE9
-      #define nord5 #E5E9F0
-      #define nord6 #ECEFF4
-      #define nord7 #8FBCBB
-      #define nord8 #88C0D0
-      #define nord9 #81A1C1
-      #define nord10 #5E81AC
-      #define nord11 #BF616A
-      #define nord12 #D08770
-      #define nord13 #EBCB8B
-      #define nord14 #A3BE8C
-      #define nord15 #B48EAD
+      ! special
+      *.foreground:   #d8dee9
+      *.background:   #242933
+      *.cursorColor:  #d8dee9
 
-      *.foreground:   nord4
-      *.background:   nord0
-      *.cursorColor:  nord4
-      *fading: 35
-      *fadeColor: nord3
+      ! black
+      *.color0:       #191d24
+      *.color8:       #3b4252
 
-      *.color0: nord1
-      *.color1: nord11
-      *.color2: nord14
-      *.color3: nord13
-      *.color4: nord9
-      *.color5: nord15
-      *.color6: nord8
-      *.color7: nord5
-      *.color8: nord3
-      *.color9: nord11
-      *.color10: nord14
-      *.color11: nord13
-      *.color12: nord9
-      *.color13: nord15
-      *.color14: nord7
-      *.color15: nord6
+      ! red
+      *.color1:       #bf616a
+      *.color9:       #d06f79
+
+      ! green
+      *.color2:       #a3be8c
+      *.color10:      #b1d196
+
+      ! yellow
+      *.color3:       #ebcb8b
+      *.color11:      #f0d399
+
+      ! blue
+      *.color4:       #81a1c1
+      *.color12:      #88c0d0
+
+      ! magenta
+      *.color5:       #b48ead
+      *.color13:      #c895bf
+
+      ! cyan
+      *.color6:       #8fbcbb
+      *.color14:      #93ccdc
+
+      ! white
+      *.color7:       #d8dee9
+      *.color15:      #e5e9f0
     ''}
   '';
 }
