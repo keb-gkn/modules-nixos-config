@@ -20,11 +20,13 @@
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       };
       args = [
+        "--adaptive-sync"
+        "--hrd-enabled"
+        "--rt"
         "-W 2560"
         "-H 1440"
         "-F nis"
         "-S integer"
-        "-b"
       ];
     };
     extraPackages = with pkgs; [
@@ -37,11 +39,12 @@
       gtk3
       mono
       unstable.simpleDBus
+      steamPackages.steam-runtime-wrapped
     ];
     extraCompatPackages = with pkgs; [
       proton-ge-bin
       protonup-qt
-      vk3d-proton
+      vkd3d-proton
     ];
   };
 
