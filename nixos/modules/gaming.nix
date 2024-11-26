@@ -1,22 +1,12 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.gamemode = {
     enable = true;
+    enableRenice = true;
     settings = {
       general = {
         renice = 10;
       };
-      custom = {
-        start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-        end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-      };
-    };
-  };
-
-  programs.gamescope = {
-    enable = true;
-    capSysNice = true;
-    env = {
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };
   };
 
@@ -26,6 +16,61 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession = {
       enable = true;
+      env = {
+        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      };
+      args = [
+        "-W 2560"
+        "-H 1440"
+        "-F nis"
+        "-S integer"
+        "-b"
+      ];
     };
+    extraPackages = with pkgs; [
+      unstable.gamescope
+      mangohud
+      SDL2
+      libjpeg
+      openal
+      libglvnd
+      gtk3
+      mono
+      unstable.simpleDBus
+    ];
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+      protonup-qt
+      vk3d-proton
+    ];
   };
+
+  powerManagement = {
+    cpuFreqGovernor = "ondemand";
+  };
+
+  services.cpupower-gui.enable = true;
+
+  # We're going in so deep the dwarves of Khazad'dum are calling us crazy
+  boot.kernel.sysctl = {
+    # 20-shed.conf
+    "kernel.sched_cfs_bandwidth_slice_us" = 3000;
+    # 20-net-timeout.conf
+    # This is required due to some games being unable to reuse their TCP ports
+    # if they're killed and restarted quickly - the default timeout is too large.
+    "net.ipv4.tcp_fin_timeout" = 5;
+    # 30-vm.conf
+    # USE MAX_INT - MAPCOUNT_ELF_CORE_MARGIN.
+    # see comment in include/linux/mm.h in the kernel tree.
+    "vm.max_map_count" = 2147483642;
+  };
+
+  environment.systemPackages = with pkgs; [
+    dxvk
+    vkd3d
+    vulkan-volk
+    vkbasalt
+    steam-run
+    gpu-viewer
+  ];
 }

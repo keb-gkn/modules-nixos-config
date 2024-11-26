@@ -23,7 +23,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  environment.systemPackages = with pkgs; [
+  hardware.opengl.extraPackages = with pkgs; [
     nvidia-vaapi-driver
   ];
+
+  environment.sessionVariables.VK_DRIVER_FILES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json";
 }
