@@ -13,7 +13,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.unstable.linuxPackages_zen;
+    kernelPackages = pkgs.unstable.linuxPackages_lqx;
     plymouth = {
       enable = true;
       theme = "black_hud";
