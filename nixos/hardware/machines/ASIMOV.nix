@@ -13,6 +13,7 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
     plymouth = {
       enable = true;
       theme = "black_hud";
@@ -42,7 +43,7 @@
         storePaths = [config.console.font];
       };
     };
-    extraModulePackages = [];
+    extraModulePackages = with config.boot.kernelPackages; [ nvidia_x11 ];
     kernelModules = ["kvm-intel"];
     kernelParams = [
       "quiet"
@@ -52,6 +53,9 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "nowatchdog"
+      "modprobe.blacklist=iTCO_wdt" # Turn off Intel hardware watchdog
+      #"modprobe.blacklist=sp5100_tco" # Turn off AMD hardware watchdog
     ];
 
     loader = {
