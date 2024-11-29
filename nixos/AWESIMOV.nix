@@ -11,6 +11,7 @@
     ./modules/gaming.nix
     ./modules/appimage.nix
     ./modules/alsa.nix
+    ./modules/hotspot.nix
 
     # hardware
     ./hardware/machines/ASIMOV.nix
