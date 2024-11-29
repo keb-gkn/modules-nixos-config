@@ -40,7 +40,6 @@
       gtk3
       mono
       unstable.simpleDBus
-      steamPackages.steam-runtime-wrapped
     ];
     extraCompatPackages = with pkgs; [
       proton-ge-bin
