@@ -43,7 +43,6 @@
     ];
     extraCompatPackages = with pkgs; [
       proton-ge-bin
-      protonup-qt
       vkd3d-proton
     ];
   };

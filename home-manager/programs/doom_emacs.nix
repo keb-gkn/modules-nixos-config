@@ -28,7 +28,6 @@
     # :lang python
     isort
     pipenv
-    python311Packages.pynose
     python311Packages.pytest
     python311Packages.setuptools
     # :lang sh
