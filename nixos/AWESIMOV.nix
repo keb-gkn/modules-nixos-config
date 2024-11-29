@@ -5,7 +5,7 @@
     ./users/arthank.nix
 
     # modules
-    ./modules/pulseaudio.nix
+    ./modules/pipewire.nix
     ./modules/bluetooth.nix
     ./modules/cups.nix
     ./modules/gaming.nix
