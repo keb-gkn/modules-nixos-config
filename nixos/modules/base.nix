@@ -8,7 +8,6 @@
   pkgs,
   ...
 }: {
-  # TODO: split into multiple files (one for hyprland and all related stuff, one for pipewire and all replated stuff, one for installed programs (general), you get the jist)
 
   # You can import other NixOS modules here
   imports = [
@@ -84,9 +83,6 @@
     };
   };
 
-  # Enabling sound
-  sound.enable = true;
-
   # portals for flatpaks and sandboxed apps
   xdg.portal = {
     enable = true;
@@ -117,11 +113,10 @@
     };
   };
 
-  # Enable OpenGL
-  hardware.opengl = {
+  # Enable harware acceleration
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Set your time zone.
@@ -281,5 +276,5 @@
   environment.sessionVariables.TERMINAL = "alacritty";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

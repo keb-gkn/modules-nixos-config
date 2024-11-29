@@ -10,6 +10,7 @@
     ./modules/cups.nix
     ./modules/gaming.nix
     ./modules/appimage.nix
+    ./modules/alsa.nix
 
     # hardware
     ./hardware/machines/ASIMOV.nix
@@ -21,7 +22,6 @@
     # services
     ./services/flatpak.nix
     ./services/transmission.nix
-    ./services/gnome-settings.nix
     ./services/ratbagd.nix
   ];
 

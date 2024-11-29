@@ -1,6 +1,6 @@
 {config, ...}:
 {
-  home.file."${config.home.homeDirectory}.nv/nvidia-application-profiles-rc".text = ''
+  home.file."${config.home.homeDirectory}/.nv/nvidia-application-profiles-rc".text = ''
 {
   "rules": [
     {

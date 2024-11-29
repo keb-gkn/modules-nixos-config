@@ -3,6 +3,9 @@
   hardware.pulseaudio = {
     enable = true;
     package = pkgs.pulseaudioFull;
+    extraModules = with pkgs; [
+      pulseaudio-modules-bt
+    ];
     support32Bit = true;
     zeroconf.discovery.enable = true;
     extraConfig = ''

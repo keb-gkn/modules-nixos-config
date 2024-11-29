@@ -42,7 +42,7 @@
         "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop" "com.github.junrrein.PDFSlicer.desktop"];
         "application/http" = "firefox.desktop";
         "application/https" = "firefox.desktop";
-        "application/octet-stream" = "nvim.desktop";
+        "application/octet-stream" = "emacs.desktop";
         "image/*" = "org.gnome.eog.desktop";
         "image/jpg" = "org.gnome.eog.desktop";
         "image/jpeg" = "org.gnome.eog.desktop";
@@ -68,7 +68,6 @@
 
     # other audio utils
     audacity
-    gnome.gnome-sound-recorder
 
     # recording
     obs-studio

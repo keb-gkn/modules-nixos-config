@@ -7,26 +7,29 @@
     gsettings-desktop-schemas
 
     # gnome-notify
-    gnome.zenity
+    zenity
 
     # networking
     networkmanagerapplet
-    gnome.gnome-nettool
+    gnome-nettool
 
     # bluetooth
     blueberry
 
     # file explorer
-    gnome.nautilus
-    gnome.nautilus-python
-    gnome.sushi
+    nautilus
+    nautilus-python
+    sushi
     nautilus-open-any-terminal
 
     # keyring
-    gnome.gnome-keyring
-    gnome.libgnome-keyring
+    gnome-keyring
+    libgnome-keyring
 
     # image viewer
-    gnome.eog
+    eog
+
+    # sound recorder
+    gnome-sound-recorder
   ];
 }
