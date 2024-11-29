@@ -113,7 +113,7 @@
     };
   };
 
-  # Enable harware acceleration
+  # Enable hardware acceleration
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -267,10 +267,6 @@
     libsForQt5.plasma-framework
     libsForQt5.breeze-qt5
     libsForQt5.breeze-icons
-
-    # steam
-    steamPackages.steamcmd
-    steamPackages.steam-runtime
   ];
 
   environment.sessionVariables.TERMINAL = "alacritty";

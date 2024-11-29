@@ -23,7 +23,7 @@
     package = config.boot.kernelPackages.nvidiaPackages.latest;
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     nvidia-vaapi-driver
   ];
 

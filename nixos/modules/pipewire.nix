@@ -1,3 +1,4 @@
+{ pkgs, config, ... }:
 {
   security.rtkit.enable = true;
   services.pipewire = {
@@ -7,7 +8,7 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber = {
-      enable = true;
+      enable = config.services.pipewire.enable;
       extraConfig = {
         bluetoothEnhancements = {
             "monitor.bluez.properties" = {
