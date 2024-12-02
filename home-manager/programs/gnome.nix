@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    # dep
+    dconf
+
     # io
     glib
 
