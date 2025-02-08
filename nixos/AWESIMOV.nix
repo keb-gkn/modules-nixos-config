@@ -15,15 +15,9 @@
 
     # hardware
     ./hardware/machines/ASIMOV.nix
-    ./hardware/nvidia.nix
-
-    # graphics
-    ./graphics/awesomewm.nix
 
     # services
     ./services/flatpak.nix
-    ./services/transmission.nix
-    ./services/ratbagd.nix
   ];
 
   networking.hostName = "ASIMOV";
