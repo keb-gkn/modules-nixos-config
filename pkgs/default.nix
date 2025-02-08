@@ -5,7 +5,4 @@
 
   # pkgs
   sddm-themes = pkgs.callPackage ./sddm-themes.nix {};
-
-  # lua
-  extraLuaPackages = pkgs.callPackage ./lua {};
 }
