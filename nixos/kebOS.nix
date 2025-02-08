@@ -25,7 +25,7 @@
     
 
     # hardware
-    ./hardware/machines/hardware-configuration.nix
+    ./hardware/hardware-configuration.nix
     
 
     # services
