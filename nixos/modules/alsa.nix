@@ -1,3 +1,0 @@
-{
-  hardware.alsa.enablePersistence = true;
-}
