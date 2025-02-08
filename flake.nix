@@ -8,34 +8,8 @@
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-    nur.url = "github:nix-community/NUR";
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-
-    # Libraries
-    systems-dep.url = "github:nix-systems/default";
-    flake-utils-dep = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems-dep";
-    };
-    flake-compat-dep = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
-    # NixOS utils
-    hardware.url = "github:nixos/nixos-hardware/master";
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Home manager
-    home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -74,10 +48,10 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      AWESIMOV = nixpkgs.lib.nixosSystem {
+      kebOS = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/AWESIMOV.nix
+          ./nixos/kebOS.nix
         ];
       };
     };
@@ -85,12 +59,12 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "arthank@AWESIMOV" = home-manager.lib.homeManagerConfiguration {
+      "kebzcool@kebOS" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/arthank_AWESIMOV.nix
+          ./home-manager/home.nix
         ];
       };
     };
