@@ -11,7 +11,6 @@
     ./modules/gaming.nix
     ./modules/appimage.nix
     ./modules/vm.nix
-    ./modules/tor.nix
     ./modules/networking.nix 
     ./modules/ssh.nix
     ./modules/printing.nix
