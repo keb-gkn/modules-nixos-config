@@ -1,9 +1,9 @@
 {
   home = {
-    username = "arthank";
-    homeDirectory = "/home/arthank";
+    username = "kebzcool";
+    homeDirectory = "/home/kebzcool";
     sessionVariables = {
-      EDITOR = "emacs";
+      EDITOR = "nano";
       TERMINAL = "alacritty";
     };
   };
