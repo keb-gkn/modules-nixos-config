@@ -16,7 +16,6 @@
     self,
     nixpkgs,
     home-manager,
-    nix-flatpak,
     ...
   } @ inputs: let
     inherit (self) outputs;
