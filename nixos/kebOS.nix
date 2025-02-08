@@ -2,7 +2,7 @@
   imports = [
     # base config with pkgs and services
     ./modules/configuration.nix
-    ./users/user.nix
+    ./users/kebzcool.nix
 
     # modules
     ./modules/pipewire.nix
