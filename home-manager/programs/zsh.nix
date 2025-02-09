@@ -7,8 +7,8 @@
     shellAliases = {
       l = "eza";
       ll = "eza -alh";
-      norse = "sudo nixos-rebuild switch --flake /etc/nixos#AWESIMOV";
-      horse = "home-manager switch --flake /etc/nixos#arthank@AWESIMOV";
+      norse = "sudo nixos-rebuild switch --flake /etc/nixos#kebOS";
+      horse = "home-manager switch --flake /etc/nixos#kebzcool@kebOS";
     };
     history = {
       size = 10000;
