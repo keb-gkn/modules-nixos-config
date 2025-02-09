@@ -1,12 +1,11 @@
 { lib, config, pkgs, ... }:
 
 {
-   
-  # services.xserver.enable = true;
   
   # Activation de KDE
   services = {
-    desktopManager.plasma6.enable = lib.mkDefault true;
+    desktopManager.plasma6.enable = true;
+  };
 
   # Required for SDDM
   qt.style = "breeze";
@@ -37,6 +36,7 @@
       };
     };
   };
+
   documentation.nixos.enable = false;
 
   # Packages système
