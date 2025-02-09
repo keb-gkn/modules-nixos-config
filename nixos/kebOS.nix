@@ -17,7 +17,7 @@
     ./modules/ollama.nix  
     ./modules/firefox.nix
     ./modules/packages.nix
-    ./modules/optimisation.nix
+    ./modules/system.nix
     ./modules/kde.nix
     ./modules/boot.nix
     ./modules/sh.nix
