@@ -2,7 +2,7 @@
 
 {
    
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
   
   # Activation de KDE
   services = {
