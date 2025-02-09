@@ -53,7 +53,6 @@
  # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
  console = {
-    keyMap = "fr";
     earlySetup = true;
     font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
     packages = with pkgs; [
@@ -85,7 +84,7 @@
   };
 
   # Configure console keymap
-  # console.keyMap = "fr";
+   console.keyMap = "fr";
     
   # My traceroute
   programs.mtr.enable = true;
