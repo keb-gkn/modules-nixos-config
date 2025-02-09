@@ -3,9 +3,6 @@
     # cmd
     bat
     colordiff
-    unstable.neofetch
-    unstable.eza
-    inxi
 
     # url
     wget
@@ -15,20 +12,9 @@
     htop
     btop
 
-    # archiving and compression
-    unzip
-
-    # networking
-    bluetuith
-
-    # torrents
-
     # fonts
     fontconfig
     freetype
-
-    # windows compatibility layer
-    wine
 
     # glx
     glxinfo
