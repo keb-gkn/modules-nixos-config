@@ -58,7 +58,7 @@
     packages = with pkgs; [
       terminus_font
    ];
-
+ };
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
