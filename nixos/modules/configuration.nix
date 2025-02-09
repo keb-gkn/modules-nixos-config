@@ -52,13 +52,8 @@
 
  # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
-  console = {
-    earlySetup = true;
-    font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
-    packages = with pkgs; [
-      terminus_font
-   ];
  };
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
