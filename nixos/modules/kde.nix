@@ -9,10 +9,8 @@
     displayManager = {
       sddm = {
         enable = true; # This line is necessary to enable SDDM
-        wayland = {
-          enable = true;
-          theme = "nord";
-        };
+        wayland.enable = true;
+        theme = "nord";
       };
     };  
   };  
