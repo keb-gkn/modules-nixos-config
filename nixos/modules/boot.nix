@@ -30,8 +30,5 @@
     };
   };
 
-  # Activer le "Silent Boot"
-  consoleLogLevel = 0;
-  initrd.verbose = false;
-   
+
 }
