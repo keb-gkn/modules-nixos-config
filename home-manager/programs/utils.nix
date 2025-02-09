@@ -16,8 +16,5 @@
     fontconfig
     freetype
 
-    # glx
-    glxinfo
-    gpu-viewer
   ];
 }
