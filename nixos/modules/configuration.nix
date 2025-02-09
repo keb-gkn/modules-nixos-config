@@ -60,7 +60,6 @@
     font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
     packages = with pkgs; [
       terminus_font
-      kbd
     ];
   };
 
@@ -76,10 +75,6 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-  };
-
-  programs.command-not-found = {
-    enable = false;
   };
 
   programs.nix-index = {
