@@ -20,7 +20,6 @@
     ./modules/system.nix
     ./modules/kde.nix
     ./modules/boot.nix
-    ./modules/sh.nix
     ./modules/fstrim.nix
 
     # hardware
