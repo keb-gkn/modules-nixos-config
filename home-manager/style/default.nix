@@ -4,22 +4,10 @@
   ...
 }: {
   imports = [
-    ./gtk.nix
     ./qt.nix
   ];
 
   fonts.fontconfig.enable = true;
-
-  home = {
-    pointerCursor = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
-      x11.enable = true;
-      gtk.enable = true;
-      size = 32;
-    };
-
-    sessionVariables.GTK_THEME = "Nordic";
 
     file = {
       "${config.home.homeDirectory}/.face" = {
