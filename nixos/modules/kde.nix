@@ -1,40 +1,11 @@
 { lib, config, pkgs, ... }:
 
 {
-  
-  # Activation de KDE
+
+   # Activation de KDE
   services = {
-    desktopManager.plasma6.enable = true;
-  };
-
-  # Required for SDDM
-  qt.style = "breeze";
-
-  security = {
-    polkit = {
-      enable = true;
-    };
-    rtkit = {
-      enable = true;
-    };
-  };
-
-  services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "fr";
-        model = "pc104";
-        variant = "oss";
-        options = "lv3:ralt_switch, compose:sclk, grp:menu_switch";
-      };
-    };
-    displayManager = {
-      sddm = {
-        enable = true;
-        theme = "nord";
-      };
-    };
+    displayManager.sddm.enable = lib.mkDefault true;
+    desktopManager.plasma6.enable = lib.mkDefault true;
   };
 
   documentation.nixos.enable = false;
