@@ -34,7 +34,7 @@
       enable = true;
       xkb = {
         layout = "fr";
-        model = "pc105";
+        model = "pc104";
         variant = "oss";
         options = "lv3:ralt_switch, compose:sclk, grp:menu_switch";
       };
@@ -45,7 +45,6 @@
         theme = "nord";
       };
     };
-  };
 
   documentation.nixos.enable = false;
 
