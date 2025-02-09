@@ -24,7 +24,28 @@
     polkit = {
       enable = true;
     };
-  };  
+    rtkit = {
+      enable = true;
+    };
+  };
+
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "fr";
+        model = "pc105";
+        variant = "oss";
+        options = "lv3:ralt_switch, compose:sclk, grp:menu_switch";
+      };
+    };
+    displayManager = {
+      sddm = {
+        enable = true;
+        theme = "nord";
+      };
+    };
+  };
 
   documentation.nixos.enable = false;
 
