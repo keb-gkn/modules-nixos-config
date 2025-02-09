@@ -112,8 +112,6 @@
     # cursors
     nordzy-cursor-theme
 
-    # sddm
-    sddm-themes.nord
   ];
 
   environment.sessionVariables.TERMINAL = "alacritty";
