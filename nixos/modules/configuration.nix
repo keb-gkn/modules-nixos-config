@@ -57,7 +57,6 @@
     packages = with pkgs; [
       terminus_font
      ];
-    useXkbConfig = true;
   };
 
   i18n.extraLocaleSettings = {
@@ -83,7 +82,7 @@
   };
 
   # Configure console keymap
-   console.keyMap = "fr";
+    console.keyMap = "fr";
     
   # My traceroute
   programs.mtr.enable = true;
