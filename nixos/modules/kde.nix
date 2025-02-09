@@ -2,10 +2,13 @@
 
 {
 
-   # Activation de KDE
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
   services = {
-    displayManager.sddm.enable = lib.mkDefault true;
-    desktopManager.plasma6.enable = lib.mkDefault true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   documentation.nixos.enable = false;
