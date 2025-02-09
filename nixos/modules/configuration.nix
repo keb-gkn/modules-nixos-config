@@ -89,8 +89,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-   
-    # shells
+   # shells
     fish
 
     #shell utils
@@ -107,11 +106,10 @@
 
     # sddm
     sddm-themes.nord
-
   ];
 
   environment.sessionVariables.TERMINAL = "alacritty";
 
-
-  system.stateVersion = "24.11"; # Did you read the comment?
+  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  system.stateVersion = "24.11";
 }
