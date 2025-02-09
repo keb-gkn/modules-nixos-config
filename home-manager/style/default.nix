@@ -9,7 +9,7 @@
 
   fonts.fontconfig.enable = true;
 
-    file = {
+    home.file = {
       "${config.home.homeDirectory}/.face" = {
         source = ../assets/user-icon.png;
       };
@@ -18,5 +18,4 @@
         recursive = true;
       };
     };
-  };
-}
+  }
