@@ -8,15 +8,6 @@
   services = {
     desktopManager.plasma6.enable = lib.mkDefault true;
 
-    # SDDM
-    displayManager = {
-      sddm = {
-        enable = true; # This line is necessary to enable SDDM
-        theme = "nord";
-      };
-    };  
-  };  
-
   # Required for SDDM
   qt.style = "breeze";
 
@@ -45,7 +36,7 @@
         theme = "nord";
       };
     };
-
+  };
   documentation.nixos.enable = false;
 
   # Packages système
