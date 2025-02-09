@@ -52,6 +52,14 @@
 
  # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
+ console = {
+    earlySetup = true;
+    font = "${pkgs.kbd}/share/consolefonts/Lat2-Terminus16.psfu.gz";
+    packages = with pkgs; [
+      terminus_font
+     ];
+    useXkbConfig = true;
+  };
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
@@ -65,6 +73,19 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "fr";
+    variant = "azerty";
+  };
+
+  # Configure console keymap
+  console.keyMap = "fr";
+    
   # My traceroute
   programs.mtr.enable = true;
 
