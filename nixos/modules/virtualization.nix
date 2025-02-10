@@ -14,4 +14,5 @@
     enable = true;
     headless = true;
   };
+  virtualisation.waydroid.enable = true;
 }
