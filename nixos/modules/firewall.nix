@@ -8,8 +8,8 @@
 
       # Ports autorisés en entrée (TCP)
       allowedTCPPorts = lib.mkForce [
-         22000 # Sync
-         2002  # SSH
+               # Sync
+         22000 # SSH
        # 80    # HTTP (si nécessaire)
        # 443   # HTTPS (si nécessaire)
       ];
