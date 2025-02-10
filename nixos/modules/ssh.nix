@@ -4,7 +4,7 @@
   # Configuration SSH
   services.openssh = {
     enable = true;
-    ports = [2002];                                 
+    ports = [22000];                                 
     settings = {
       PasswordAuthentication = false;              
       PermitRootLogin = "no";                     
