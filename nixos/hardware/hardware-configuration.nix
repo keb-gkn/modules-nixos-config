@@ -16,6 +16,8 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  hardware.amdgpu.opencl.enable = true; 
+
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/4e578162-dfe8-4f39-9332-9dc069f7a17a";
