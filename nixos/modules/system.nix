@@ -2,9 +2,6 @@
 
 {
 
- # Fonctionnement de Davinci Resolve avec les GPU AMD 
-   hardware.amdgpu.opencl.enable = true; 
-
   # zRAM Configuration
    zramSwap.enable = true;
 
