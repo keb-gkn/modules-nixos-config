@@ -52,6 +52,7 @@
  # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
 
+ # Timezone and locale
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
     LC_IDENTIFICATION = "fr_FR.UTF-8";
@@ -106,7 +107,7 @@
    # shells
     fish
 
-    #shell utils
+    # shell utils
     bat
     colordiff
     curl
