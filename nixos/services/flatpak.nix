@@ -6,6 +6,9 @@ let
   # 1. Déclarez les Flatpaks que vous *souhaitez* sur votre système
   desiredFlatpaks = [
    "org.dupot.easyflatpak"
+   "com.jeffser.Alpaca"
+   "com.jeffser.Alpaca.Plugins.AMD"
+
   ];
 in
 {
