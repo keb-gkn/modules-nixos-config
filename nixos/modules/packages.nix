@@ -12,6 +12,7 @@
    # App
    kdePackages.kate
    kdePackages.kcalc
+   #Utils
    cool-retro-term 
    bottles
    ntfs3g # support NTFS
@@ -22,10 +23,12 @@
    bitwarden 
    # Fetch
    fastfetch   
-   # Photos
+   # Photos and image
    gimp
    inkscape
    darktable
+   upscayl 
+   krita
    # Médias
    vlc
    freetube
