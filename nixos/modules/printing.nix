@@ -17,8 +17,6 @@
       epkowa
       gutenprint
       gutenprintBin
-      hplip
-      hplipWithPlugin
       samsung-unified-linux-driver
       splix
     ];
@@ -34,7 +32,6 @@
     hardware.sane = {
      enable = true;
      extraBackends = with pkgs; [
-          hplipWithPlugin
           sane-airscan
           epkowa
     ];
