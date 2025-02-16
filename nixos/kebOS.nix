@@ -13,8 +13,7 @@
     ./modules/networking.nix 
     ./modules/ssh.nix
     ./modules/printing.nix
-    ./modules/firewall.nix
-    ./modules/ollama.nix  
+    ./modules/firewall.nix 
     ./modules/firefox.nix
     ./modules/packages.nix
     ./modules/system.nix
