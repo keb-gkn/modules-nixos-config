@@ -9,7 +9,7 @@
     ./modules/bluetooth.nix
     ./modules/printing.nix
     ./modules/gaming.nix
-    ./modules/vm.nix
+    ./modules/virtualization.nix
     ./modules/networking.nix 
     ./modules/ssh.nix
     ./modules/printing.nix
