@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-neofetch
+fastfetch
 
 # Start X at login
 if status is-login
