@@ -63,9 +63,9 @@
         installation_mode = "force_installed";
       };
       
-      # ProtonPass
-      "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
-        install_url = "https://addons.mozilla.org/firefox/downloads/file/4433286/proton_pass-1.29.2.xpi";
+      # SimpleLogin
+      "addon@simplelogin" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/4332232/simplelogin-3.0.5.xpi";
         installation_mode = "force_installed";
       };
     };
