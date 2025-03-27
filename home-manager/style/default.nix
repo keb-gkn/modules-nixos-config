@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./qt.nix
+    ./gtk.nix
   ];
 
   fonts.fontconfig.enable = true;
