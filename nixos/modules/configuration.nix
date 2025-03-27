@@ -117,7 +117,7 @@
     papirus-nord
 
     # cursors
-    nordzy-cursor-theme
+    nordic-cursor-theme
 
   ];
 
