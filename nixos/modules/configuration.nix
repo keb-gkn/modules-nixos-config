@@ -116,9 +116,6 @@
     # icons
     papirus-nord
 
-    # cursors
-    nordic-cursor-theme
-
   ];
 
   environment.sessionVariables.TERMINAL = "alacritty";
