@@ -12,6 +12,7 @@
    # App
    kdePackages.kate
    kdePackages.kcalc
+   kdePackages.kdenlive
 
    #Utils
    cool-retro-term 
@@ -19,7 +20,6 @@
    ntfs3g # support NTFS
 
    # Montage video
-   kdenlive
    davinci-resolve 
 
    # Security
