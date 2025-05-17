@@ -10,7 +10,6 @@
     ./git.nix
     ./alacritty.nix
     ./utils.nix
-    ./icons.nix
     ./fonts.nix
   ];
 
