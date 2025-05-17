@@ -48,6 +48,7 @@
    joplin-desktop
 
    # Navigateur
+   tor-browser
    brave
 
    # Messagerie
