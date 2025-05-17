@@ -7,12 +7,6 @@
   virtualisation.libvirtd.enable = true;
   services.qemuGuest.enable = true;
 
- # VMware
-  virtualisation.vmware.host.enable = true;
-
-  virtualisation.vmware.guest = {
-    enable = true;
-    headless = true;
-  };
+# Waydroid
   virtualisation.waydroid.enable = true;
 }
