@@ -65,7 +65,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/kebzcool_kebOS.nix
+          ./home-manager/home_kebOS.nix
         ];
       };
     };
