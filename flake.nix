@@ -49,7 +49,7 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      kebOS = nixpkgs.lib.nixosSystem {
+      GKNOS = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/GKN-OS.nix
