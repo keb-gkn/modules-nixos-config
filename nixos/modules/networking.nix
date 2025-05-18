@@ -34,7 +34,7 @@
  ];
 
   # Configure hostname
-  networking.hostName = "kebOS";
+  networking.hostName = "gknos";
 
   # Enable DHCP on another interface (optional)
   #networking.interfaces.enp4s0.useDHCP = true;
