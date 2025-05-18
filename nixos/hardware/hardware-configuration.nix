@@ -20,18 +20,18 @@
 
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4e578162-dfe8-4f39-9332-9dc069f7a17a";
+    { device = "/dev/disk/by-uuid/e1d7ace8-4981-4099-b052-774d5aaca87b";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/32F2-8CE3";
+    { device = "/dev/disk/by-uuid/06B2-8EBF";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."home/gkn/Saves" =
-    { device = "/dev/disk/by-uuid/6b33f298-ad54-4671-bae7-da34725fafd0";
+    { device = "/dev/disk/by-uuid/e1d7ace8-4981-4099-b052-774d5aaca87b";
       fsType = "ext4";
     };
  
