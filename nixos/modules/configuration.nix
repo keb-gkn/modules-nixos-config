@@ -106,6 +106,7 @@
   environment.systemPackages = with pkgs; [
    # shells
     fish
+    alacritty
 
     # shell utils
     bat
