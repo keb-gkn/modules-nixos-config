@@ -1,6 +1,6 @@
 {
   home = {
-    username = "Gen-Kn";
+    username = "gkn";
     homeDirectory = "/home/GKN";
     sessionVariables = {
       EDITOR = "nano";
