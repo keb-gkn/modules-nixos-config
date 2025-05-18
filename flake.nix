@@ -52,7 +52,7 @@
       kebOS = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/kebOS.nix
+          ./nixos/GKN-OS.nix
         ];
       };
     };
@@ -65,7 +65,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home_kebOS.nix
+          ./home-manager/home_GKN.nix
         ];
       };
     };
