@@ -49,10 +49,10 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      GKNOS = nixpkgs.lib.nixosSystem {
+      gknos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/GKN-OS.nix
+          ./nixos/GKNOS.nix
         ];
       };
     };
@@ -60,7 +60,7 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "Gen-Kn@GKNOS" = home-manager.lib.homeManagerConfiguration {
+      "Gen-Kn@gknos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
