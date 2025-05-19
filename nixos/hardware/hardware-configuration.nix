@@ -31,7 +31,7 @@
     };
 
   fileSystems."home/gkn/Saves" =
-    { device = "/dev/disk/by-uuid/e1d7ace8-4981-4099-b052-774d5aaca87b";
+    { device = "/dev/disk/by-uuid/6b33f298-ad54-4671-bae7-da34725fafd0";
       fsType = "ext4";
     };
  
