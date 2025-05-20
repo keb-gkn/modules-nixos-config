@@ -103,6 +103,9 @@
     enableZshIntegration = true;
   };
 
+  chaotic.mesa-git.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
    # shells
     fish
