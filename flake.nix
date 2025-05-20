@@ -56,7 +56,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/GKNOS.nix
-          chaotic.nixosModules.default
         ];
       };
     };
