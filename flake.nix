@@ -20,6 +20,7 @@
     self,
     nixpkgs,
     home-manager,
+    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -55,6 +56,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/GKNOS.nix
+          chaotic.nixosModules.default
         ];
       };
     };
