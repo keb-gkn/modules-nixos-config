@@ -6,7 +6,7 @@
     tmp.cleanOnBoot = true;
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos;
     kernelParams = [ "amd_pstate=active" ];
 
     # Configuration de Plymouth
