@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts._0xproto
+    nerd-fonts.droid-sans-mono
     open-sans
   ];
 }
