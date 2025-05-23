@@ -1,6 +1,10 @@
 {
-  catppuccin = {
+  programs.starship = {
     enable = true;
-    flavor = "frappe";
- };
+    enableZshIntegration = true;
+    catppuccin = {
+      enable = true;
+      flavor = "frappe";
+    };
+  };
 }
