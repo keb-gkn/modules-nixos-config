@@ -114,10 +114,23 @@
     curl
     wget
 
-    # icons
-    papirus-nord
-
+    # Cappucin
+    catppuccin-kde
   ];
+
+  fonts = {
+    packages = with pkgs; [
+      victor-mono
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "noto-serif" ];
+        sansSerif = [ "noto-sans-meetei-mayek" ];
+        monospace = [ "victor-mono" ];
+      };
+    };
+  };
 
   environment.sessionVariables.TERMINAL = "alacritty";
 
