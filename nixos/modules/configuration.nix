@@ -107,6 +107,7 @@
    # shells
     fish
     alacritty
+    ghostty
 
     # shell utils
     bat
