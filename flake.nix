@@ -10,7 +10,7 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     nur.url = "github:nix-community/NUR";
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # catppuccin flake
     catppuccin.url = "github:catppuccin/nix";
