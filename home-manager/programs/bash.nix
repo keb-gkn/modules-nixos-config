@@ -5,8 +5,8 @@
     shellAliases = {
       l = "eza";
       ll = "eza -alh";
-      norse = "sudo nixos-rebuild switch --flake /etc/nixos#kebOS";
-      horse = "home-manager switch --flake /etc/nixos#kebzcool@kebOS";
+      norse = "sudo nixos-rebuild switch --flake /etc/nixos#gknos";
+      horse = "home-manager switch --flake /etc/nixos#gkn@gknos";
     };
   };
 }
