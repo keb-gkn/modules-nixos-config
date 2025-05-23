@@ -19,5 +19,8 @@
     # VPN
     protonvpn-gui
 
+    #shell
+    ghostty
+
   ];
 }
