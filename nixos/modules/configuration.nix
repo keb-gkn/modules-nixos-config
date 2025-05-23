@@ -114,7 +114,7 @@
     curl
     wget
 
-    # Cappucin
+    # Catppucin
     catppuccin-kde
   ];
 
