@@ -1,8 +1,10 @@
 {
   programs.git = {
     enable = true;
-    lfs.enable = true;
-    userEmail = "keb.displace317@simplelogin.com";
-    userName = "kebZcool";
+    userName = "Gen-Kn";
+    userEmail = "157246690-Gen-Kn-users.noreply.github.com";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
   };
 }
