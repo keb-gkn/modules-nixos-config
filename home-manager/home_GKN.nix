@@ -1,6 +1,6 @@
 {
   imports = [
     ./modules/home.nix
-    ./users/HGKN.nix
+    ./users/GKN.nix
   ];
 }
