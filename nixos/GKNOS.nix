@@ -20,7 +20,6 @@
     ./modules/kde.nix
     ./modules/boot.nix
     ./modules/fstrim.nix
-    ./modules/vscode.nix
 
     # hardware
     ./hardware/hardware-configuration.nix
