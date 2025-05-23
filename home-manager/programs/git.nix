@@ -7,5 +7,7 @@
     extraConfig = {
       init = {
         defaultBranch = "main";
+      };
+    };
   };
 }
