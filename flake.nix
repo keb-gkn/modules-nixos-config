@@ -12,12 +12,15 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # catppuccin flake
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    catppuccin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -52,6 +55,7 @@
       gknos = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          catppuccin.nixosModules.catppuccin
           ./nixos/GKNOS.nix
         ];
       };
@@ -65,6 +69,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
+          catppuccin.homeModules.catppuccin
           ./home-manager/home_GKN.nix
         ];
       };
