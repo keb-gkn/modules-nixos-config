@@ -39,6 +39,7 @@
 
     # Configuration des extensions
       ExtensionSettings = {
+
       # Enhancer for YouTube
       "jid1-ZAdIEUB7XOzOJw@jetpack" = {
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4393561/enhancer_for_youtube-2.0.130.1.xpi";
@@ -66,6 +67,12 @@
       # SimpleLogin
       "addon@simplelogin" = {
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4332232/simplelogin-3.0.5.xpi";
+        installation_mode = "force_installed";
+      };
+      
+      # Firefox color
+      "	FirefoxColor@mozilla.com" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/3643624/firefox_color-2.1.7.xpi";
         installation_mode = "force_installed";
       };
     };
