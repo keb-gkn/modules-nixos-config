@@ -12,6 +12,7 @@
 
   catppuccin.starship = {
     enable = true;
+    flavor = "frappe";
 
   };
 }
