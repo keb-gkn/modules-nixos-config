@@ -16,8 +16,5 @@
     fontconfig
     freetype
 
-    # VPN
-    protonvpn-gui
-
   ];
 }
