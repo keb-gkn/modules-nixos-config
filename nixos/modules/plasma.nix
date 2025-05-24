@@ -12,7 +12,6 @@
 
   # Kdeconnect
   programs.kdeconnect.enable = true;
-  };
 
   environment.systemPackages = with pkgs; [
     # Catppucin
