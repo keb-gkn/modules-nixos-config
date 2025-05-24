@@ -11,6 +11,7 @@
     ./alacritty.nix
     ./utils.nix
     ./fonts.nix
+    ./vscode.nix
   ];
 
   programs.home-manager.enable = true;
