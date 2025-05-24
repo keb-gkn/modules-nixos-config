@@ -71,7 +71,7 @@
       };
       
       # Firefox color
-      "	FirefoxColor@mozilla.com" = {
+      "FirefoxColor@mozilla.com" = {
         install_url = "https://addons.mozilla.org/firefox/downloads/file/3643624/firefox_color-2.1.7.xpi";
         installation_mode = "force_installed";
       };
