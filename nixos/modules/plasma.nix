@@ -4,8 +4,16 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services = {
-    displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
+      displayManager = {
+        defaultSession = "plasma";
+        sddm = {
+          enable = true;
+          theme = "breeze";
+          autoNumlock = true; 
+        };
+      };
+
+  desktopManager.plasma6.enable = true;
   };
 
   documentation.nixos.enable = false;
