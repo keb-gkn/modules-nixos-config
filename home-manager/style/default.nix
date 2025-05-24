@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-  
+   ./catppuccin.nix
   ];
 
   fonts.fontconfig.enable = true;
