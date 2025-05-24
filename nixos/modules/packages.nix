@@ -34,6 +34,9 @@
    art 
    krita
 
+   # Upscaler
+   upscayl
+
    # Médias
    vlc
    freetube
