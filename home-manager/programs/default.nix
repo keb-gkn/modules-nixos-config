@@ -29,5 +29,8 @@
     gimpPlugins.fourier
     gimpPlugins.texturize
 
+   # Storage photos
+    ente-desktop
+    
   ];
 }
