@@ -12,8 +12,6 @@
 
   catppuccin.starship = {
     enable = true;
-    enableZshIntegration = true;
-    
-    };
+
   };
 }
