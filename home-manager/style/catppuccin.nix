@@ -5,12 +5,12 @@
     flavor = "frappe";
    };
 
-  catppuccin.pointerCursor = {
+  catppuccin.cursors = {
     enable = true;
     flavor = "frappe";
    };
 
-  programs.starship = {
+  catppuccin.starship = {
     enable = true;
     enableZshIntegration = true;
     catppuccin = {
