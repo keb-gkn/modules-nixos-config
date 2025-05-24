@@ -17,7 +17,7 @@
     ./modules/firefox.nix
     ./modules/packages.nix
     ./modules/system.nix
-    ./modules/kde.nix
+    ./modules/plasma.nix
     ./modules/boot.nix
     ./modules/fstrim.nix
 
