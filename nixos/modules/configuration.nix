@@ -115,9 +115,6 @@
     colordiff
     curl
     wget
-
-    # Catppucin
-    catppuccin-kde
   ];
 
   fonts = {
