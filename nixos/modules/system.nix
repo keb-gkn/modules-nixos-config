@@ -2,8 +2,15 @@
 
 {
 
+  time.hardwareClockInLocalTime = true;
+
   # zRAM Configuration
-   zramSwap.enable = true;
+   zramSwap = {
+      enable = true;
+      algorithm = "zstd";
+      memoryPercent = 25;
+      priority = 5;
+    };
 
    hardware.graphics = {
       enable = true;
@@ -26,14 +33,14 @@
       ];
     };
 
-  # Automatic Garbage collection
+  # Automatic Garbage
    nix.gc = {
      automatic = true;
      dates = "daily";
      options = "--delete-older-than 7d";
   };
 
-  # Auto system Update
+  # System Update
    system.autoUpgrade = {
      enable = true;
      dates = "weekly";
