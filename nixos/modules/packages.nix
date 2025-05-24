@@ -31,8 +31,7 @@
    # Photos and image
    gimp
    inkscape
-   darktable
-   upscayl 
+   art 
    krita
 
    # Médias
