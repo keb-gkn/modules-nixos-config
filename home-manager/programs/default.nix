@@ -25,7 +25,6 @@
 
    # plugins gimp
     gimp-with-plugins
-    gimpPlugins.gap
     gimpPlugins.fourier
     gimpPlugins.texturize
 
