@@ -1,5 +1,0 @@
-{
-    imports = [
-        ./sddm-astronaut-theme
-    ];
-}
