@@ -5,6 +5,7 @@
 }: {
   imports = [
    ./catppuccin.nix
+   ./sddm.nix
   ];
 
   fonts.fontconfig.enable = true;
