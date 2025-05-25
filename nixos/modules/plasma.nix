@@ -9,7 +9,7 @@
       # settings = {
       #   General = {
       #     HeaderText = "Hi";
-      #     Background = "/etc/nixos/ressources/wallpapers/1359465.png";
+      #     Background = "/etc/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
       #   };
       # };
       extraPackages = with pkgs; [
@@ -19,7 +19,7 @@
       ];
     };
 
-  environment.systemPackages = with pkgs; [ #would be pkgs.packagename without the with pkgs;
+  environment.systemPackages = with pkgs; [
       (pkgs.callPackage ../../../ressources/sddm-astronaut-theme {
         # theme = "hyprland_kath";
         # theme = "black_hole";
