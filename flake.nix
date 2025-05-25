@@ -15,6 +15,9 @@
     # catppuccin flake
     catppuccin.url = "github:catppuccin/nix";
     utils.url = "github:numtide/flake-utils";
+   };   
+    sddm-astronaut-theme = {
+      url = "./ressources/sddm-astronaut-theme";
   };
 
   outputs = {
