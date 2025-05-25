@@ -8,6 +8,7 @@
         defaultSession = "plasma";
         sddm = {
           enable = true;
+          theme = "astronaut";
         };
       };
 
