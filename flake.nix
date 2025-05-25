@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "GKN-OS";
 
   inputs = {
     # Nixpkgs
@@ -14,6 +14,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # catppuccin flake
     catppuccin.url = "github:catppuccin/nix";
+    utils.url = "github:numtide/flake-utils";
   };
 
   outputs = {
