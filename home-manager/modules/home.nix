@@ -6,7 +6,6 @@
     ../programs
     ../services
     ../style
-    ../common
   ];
 
   nixpkgs = {
