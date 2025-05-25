@@ -8,8 +8,6 @@
         defaultSession = "plasma";
         sddm = {
           enable = true;
-          theme = "breeze";
-          autoNumlock = true; 
         };
       };
 
