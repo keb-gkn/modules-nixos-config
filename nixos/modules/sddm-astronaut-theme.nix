@@ -28,8 +28,8 @@
         themeConfig = {
           General = {
             HeaderText = "Hi Bitch!";
-            # Background = "/home/maike/.dofiles/nixos/ressources/wallpapers/";
-            Background = "${config.stylix.image}";
+            Background = "/home/maike/.dofiles/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
+            # Background = "${config.stylix.image}";
             FullBlur = "false";
           };
         };
