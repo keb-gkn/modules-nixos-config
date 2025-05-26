@@ -8,7 +8,7 @@
     loader.efi.canTouchEfiVariables = true;
     supportedFilesystems.zfs = lib.mkForce false; # Force disable ZFS
     kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
-    kernelModules = ["kvm-intel"];
+    kernelModules = ["kvm-amd"];
     kernelParams = [
       "amd_pstate=active"
       "nosplit_lock_mitigate"
@@ -21,19 +21,6 @@
       enable = true;  
       theme = "black_hud";
       themePackages = [ pkgs.adi1090x-plymouth-themes ];           
-    };
-
-   # Enable "Silent Boot" 
-    consoleLogLevel = 0; 
-    initrd = {
-      availableKernelModules = [
-        "xhci_pci"
-        "ahci"
-        "nvme"  
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
    };
       kernel.sysctl = {
         vm_swappiness = 100;
