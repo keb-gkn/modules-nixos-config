@@ -30,7 +30,7 @@
         themeConfig = {
           General = {
             HeaderText = "Hi Bitch!";
-            Background = "/home/gkn/.config/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
+            Background = "/home/gkn/.dotfiles/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
             FullBlur = "false";
            };   
         };
