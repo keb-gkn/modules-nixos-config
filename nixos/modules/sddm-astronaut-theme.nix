@@ -20,15 +20,15 @@
   environment.systemPackages = with pkgs; [ #would be pkgs.packagename without the with pkgs;
       (pkgs.callPackage ../../../ressources/sddm-astronaut-theme {
         # theme = "hyprland_kath";
-        theme = "black_hole";
+        # theme = "black_hole";
         # theme = "japanese_aesthetic";
-        # theme = "astronaut";
+          theme = "astronaut";
         # theme = "purple_leaves";
         # theme = "pixel_sakura(-static)";
         themeConfig = {
           General = {
             HeaderText = "Hi Bitch!";
-            Background = "/home/maike/.dofiles/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
+            Background = "/home/gkn/.dofiles/nixos/ressources/wallpapers/ghost_in_the_shell.jpg";
             # Background = "${config.stylix.image}";
             FullBlur = "false";
           };
