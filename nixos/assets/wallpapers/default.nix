@@ -1,3 +1,12 @@
+{
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+   ./assets/wallpapers/aenami.nix
+  ];
+
 let
   dir = "/etc/nixos/common/wallpapers"; 
 in
