@@ -18,7 +18,7 @@
       systemPackages = [
         (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
           [General]
-          background=/etc/nixos/common/wallpapers/ghost_in_the_shell.jpg
+          background=/home/gkn/.config/nixos/assets/wallpapers/ghost_in_the_shell.jpg
         '')
        ];
      };
