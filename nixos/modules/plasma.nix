@@ -13,6 +13,10 @@
    # Kdeconnect
    programs.kdeconnect.enable = true;
 
+   environment.systemPackages = with pkgs; [
+    catppuccin-kde
+  ];
+
      environment = {
       plasma6.excludePackages = [ pkgs.kdePackages.discover ];
       systemPackages = [
