@@ -4,9 +4,10 @@
  
   boot = {
     tmp.cleanOnBoot = true;
+    supportedFilesystems.zfs = lib.mkForce false; # Force disable ZFS
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    supportedFilesystems.zfs = lib.mkForce false; # Force disable ZFS
+    initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
     kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
     kernelModules = ["kvm-amd"];
     kernelParams = [
