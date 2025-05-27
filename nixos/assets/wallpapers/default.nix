@@ -1,12 +1,11 @@
 let
-  dir = "/etc/nixos/common/wallpapers/aenami"; 
+  dir = "/etc/nixos/common/wallpapers"; 
 in
 [
-    "${dir}/aenami_at_last.jpg"
-    "${dir}/aenami_eclipse.jpg"
-    "${dir}/aenami_im_here.jpg"
-    "${dir}/aenami_i_wait_for_you.jpg"
-    "${dir}/aenami_million_little_pieces.jpg"
-    "${dir}/aenami_the_day_you_left.jpg"
-    "${dir}/aenami_wish_you_were_here.jpg"
+    "${dir}/abandoned_satellite_dishes.jpg"
+    "${dir}/escaping_the_well.jpg"
+    "${dir}/fedex_cargo_ship.jpg"
+    "${dir}/ghost_in_the_shell.jpg"
+    "${dir}/the_neon_shallows.png"
+    "${dir}/the_wormworld_saga_edited.jpg"
 ]
