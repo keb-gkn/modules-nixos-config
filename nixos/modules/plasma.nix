@@ -4,7 +4,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services = {
-   #displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
   };
 
