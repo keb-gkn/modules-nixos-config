@@ -16,10 +16,10 @@
   environment.systemPackages = with pkgs; [
     catppuccin-kde
   # Configure SDDM theme with custom wallpaper
-      (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
-        [General]
-        background=/home/gkn/.dotfiles/nixos/assets/wallpapers/ghost_in_the_shell.jpg
-      '')
+      #(pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+       # [General]
+       # background=/home/gkn/.dotfiles/nixos/assets/wallpapers/ghost_in_the_shell.jpg
+     # '')
     ];
 
   environment = {
