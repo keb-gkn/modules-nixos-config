@@ -30,7 +30,7 @@
 
    # Storage photos
     ente-desktop
-    ente-auth
+    # ente-auth
     
   ];
 }
