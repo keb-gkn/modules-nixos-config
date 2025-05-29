@@ -17,6 +17,16 @@ environment.sessionVariables = {
       # MANGOHUD_CONFIG = "control=mangohud,legacy_layout=0,vertical,background_alpha=0,gpu_stats,gpu_power,cpu_stats,core_load,ram,vram,fps,fps_metrics=AVG,0.001,frametime,refresh_rate,resolution, vulkan_driver,wine";
     }; 
 
+    hardware.steam-hardware.enable = true;
+    hardware.xone.enable = true;
+    hardware.xpadneo.enable = true;
+    programs.steam.gamescopeSession.enable = true;
+
+  programs.gamescope = {
+   enable = true;
+   capSysNice = true;
+
+ };
  # Steam
   programs.steam = {
     enable = true;
