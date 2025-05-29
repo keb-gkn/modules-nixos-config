@@ -8,6 +8,7 @@ let
    "org.dupot.easyflatpak"
    "com.jeffser.Alpaca"
    "com.jeffser.Alpaca.Plugins.AMD"
+   "flathub org.luanti.luanti"
 
   ];
 in
