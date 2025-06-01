@@ -23,6 +23,7 @@
         vaapiVdpau
         libvdpau-va-gl
         libva
+        mesa
       ];
       extraPackages32 = with pkgs; [
         intel-gpu-tools
@@ -31,6 +32,7 @@
         vaapiVdpau
         libvdpau-va-gl
         libva
+        
       ];
     };
 
