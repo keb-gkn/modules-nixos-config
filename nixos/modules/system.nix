@@ -2,9 +2,6 @@
 
 {
 
-  time.timeZone = "Europe/Paris";
-  time.hardwareClockInLocalTime = true;
-
   # zRAM Configuration
    zramSwap = {
       enable = true;
