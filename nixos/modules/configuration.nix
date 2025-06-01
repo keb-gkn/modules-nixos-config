@@ -65,6 +65,9 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
+  time.timeZone = "Europe/Paris";
+  time.hardwareClockInLocalTime = true;
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
