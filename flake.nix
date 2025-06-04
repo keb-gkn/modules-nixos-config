@@ -60,6 +60,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           catppuccin.nixosModules.catppuccin
+          nixos-cachyos-kernel.nixosModules.default
           ./nixos/GKNOS.nix
         ];
       };
