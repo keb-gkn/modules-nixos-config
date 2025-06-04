@@ -24,7 +24,7 @@
     nixpkgs,
     home-manager,
     catppuccin,
-    nixos-cachyos-kernel,
+    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -60,7 +60,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           catppuccin.nixosModules.catppuccin
-          nixos-cachyos-kernel.nixosModules.default
+          chaotic.nixosModules.default
           ./nixos/GKNOS.nix
         ];
       };
