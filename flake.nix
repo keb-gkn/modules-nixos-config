@@ -16,7 +16,7 @@
     catppuccin.url = "github:catppuccin/nix";
     utils.url = "github:numtide/flake-utils";
     # kernel cachyOS
-    nixos-cachyos-kernel.url = "github:drakon64/nixos-cachyos-kernel";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
