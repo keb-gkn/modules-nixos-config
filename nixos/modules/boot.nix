@@ -8,7 +8,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+    kernelPackages = with pkgs; linuxPackagesFor linuxPackages_cachyos;
     kernelModules = ["kvm-amd"];
     kernelParams = [
       "amd_pstate=active"
