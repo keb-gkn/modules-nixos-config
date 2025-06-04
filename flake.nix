@@ -15,6 +15,8 @@
     # catppuccin flake
     catppuccin.url = "github:catppuccin/nix";
     utils.url = "github:numtide/flake-utils";
+    # kernel cachyOS
+    nixos-cachyos-kernel.url = "github:drakon64/nixos-cachyos-kernel";
   };
 
   outputs = {
@@ -22,6 +24,7 @@
     nixpkgs,
     home-manager,
     catppuccin,
+    nixos-cachyos-kernel,
     ...
   } @ inputs: let
     inherit (self) outputs;
