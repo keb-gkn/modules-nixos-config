@@ -16,9 +16,7 @@
 
       # Ports autorisés en entrée (UDP)
       allowedUDPPorts = lib.mkDefault [
-        53 
-        22000 #Sync
-        21027 #Sync
+        53
       ];
 
       # Journalisation
