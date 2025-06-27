@@ -40,9 +40,9 @@
     # Configuration des extensions
       ExtensionSettings = {
 
-      # Enhancer for YouTube
-      "jid1-ZAdIEUB7XOzOJw@jetpack" = {
-        install_url = "https://addons.mozilla.org/firefox/downloads/file/4393561/enhancer_for_youtube-2.0.130.1.xpi";
+      # SponsorBlock
+      "sponsorBlocker@ajay.app" = {
+        install_url = "https://addons.mozilla.org/firefox/downloads/file/4501802/sponsorblock-5.12.4.xpi";
         installation_mode = "force_installed";
       };
       
@@ -55,12 +55,6 @@
       # Bitwarden
       "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
         install_url = "https://addons.mozilla.org/firefox/downloads/file/4410896/bitwarden_password_manager-2024.12.4.xpi";
-        installation_mode = "force_installed";
-      };
-      
-      # Pure URL
-      "pure-url@jetpack" = {
-        install_url = "https://addons.mozilla.org/firefox/downloads/file/4270514/pure_url-1.3.1resigned1.xpi";
         installation_mode = "force_installed";
       };
       
