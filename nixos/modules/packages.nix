@@ -13,6 +13,7 @@
    kdePackages.kate
    kdePackages.kcalc
    kdePackages.kdenlive
+   kdePackages.partitionmanager
 
    #Utils
    cool-retro-term 
