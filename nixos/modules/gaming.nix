@@ -6,6 +6,10 @@
       heroic
       lutris
       mangohud
+      wineWowPackages.staging
+      winetricks       
+      glxinfo 
+
     ];
 
   # Config Mangohud inspiré de GLF-OS https://github.com/Gaming-Linux-FR
@@ -30,6 +34,7 @@ environment.sessionVariables = {
  # Steam
   programs.steam = {
     enable = true;
+    gamescopeSession.enable = true;
     package = pkgs.steam.override {
        extraEnv = {
          MANGOHUD = true;
