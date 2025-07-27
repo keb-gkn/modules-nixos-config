@@ -42,7 +42,6 @@
    # Médias
    vlc
    freetube
-   spotube
 
    # Bureautique
    libreoffice-fresh
