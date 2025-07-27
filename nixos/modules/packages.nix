@@ -19,6 +19,7 @@
    cool-retro-term 
    bottles
    ntfs3g # support NTFS
+   nicotine-plus
 
    # Montage video
    davinci-resolve 
