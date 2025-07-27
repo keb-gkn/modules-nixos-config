@@ -6,7 +6,6 @@
   imports = [
     ./bash.nix
     ./zsh.nix
-    ./fish.nix
     ./git.nix
     ./alacritty.nix
     ./utils.nix
