@@ -56,7 +56,7 @@
 
    # Messagerie
    thunderbird 
-   discord
+  # discord 
 
    # Sync
    git

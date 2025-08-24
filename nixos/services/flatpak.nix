@@ -9,7 +9,7 @@ let
    "com.jeffser.Alpaca"
    "com.jeffser.Alpaca.Plugins.AMD"
    "flathub org.luanti.luanti"
-
+   "com.discordapp.Discord"
   ];
 in
 {
